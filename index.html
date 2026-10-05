@@ -410,6 +410,45 @@
     font-family:"Cormorant Garamond",serif;font-weight:600;font-size:23px;color:var(--gold);
     font-variant-numeric:tabular-nums;line-height:1;
   }
+  .sp-nutri.sp-gia{grid-template-columns:repeat(2,1fr)}
+  .bang-combo{
+    margin-top:40px;border:1px solid var(--line);background:var(--surface);
+  }
+  .bang-combo-dau{
+    padding:26px 28px 20px;border-bottom:1px solid var(--line);
+  }
+  .bang-combo-dau h3{
+    margin:0 0 8px;font-size:19px;font-weight:500;letter-spacing:.02em;color:var(--ink);
+  }
+  .bang-combo-dau p{
+    margin:0;font-size:14px;font-weight:300;color:var(--ink-soft);
+  }
+  .bang-combo-bang{
+    width:100%;border-collapse:collapse;font-size:14.5px;
+  }
+  .bang-combo-bang th{
+    padding:13px 18px;text-align:left;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;color:var(--ink-soft);background:var(--surface-2);border-bottom:1px solid var(--line);
+  }
+  .bang-combo-bang td{
+    padding:14px 18px;border-bottom:1px solid var(--line);font-weight:300;color:var(--ink);
+  }
+  .bang-combo-bang tbody tr:last-child td{border-bottom:none}
+  .bang-combo-bang td:first-child{font-weight:500}
+  .bang-combo-bang td:last-child{font-weight:600;color:var(--gold);white-space:nowrap}
+  .bang-combo-bang em{
+    font-style:normal;color:var(--ruby);font-weight:600;
+  }
+  .bang-combo-chu{
+    margin:0;padding:18px 28px 22px;border-top:1px solid var(--line);background:var(--surface-2);
+    font-size:13px;font-weight:300;color:var(--ink-soft);
+  }
+  .bang-combo-chu strong{font-weight:600;color:var(--ink)}
+  @media (max-width:680px){
+    .bang-combo-bang{font-size:13px}
+    .bang-combo-bang th,.bang-combo-bang td{padding:11px 12px}
+    .bang-combo-dau,.bang-combo-chu{padding-left:16px;padding-right:16px}
+  }
   .product-note{
     margin-top:40px;padding:24px 28px;background:var(--surface-2);border-left:2px solid var(--gold);
     font-size:14px;color:var(--ink-soft);font-weight:300;
@@ -973,7 +1012,7 @@
         <span class="muc-anh"><img src="muc-tinh-che.jpg" alt="T&#7893; y&#7871;n th&#244; v&#224; y&#7871;n tinh ch&#7871; cao c&#7845;p Lanest" loading="lazy"></span>
         <span class="muc-noi">
           <span class="muc-ten">T&#7893; y&#7871;n th&#244; v&#224; tinh ch&#7871;</span>
-          <span class="muc-so">Y&#7871;n kh&#244; &#183; 1.700.000 &#8211; 3.200.000&#273;</span>
+          <span class="muc-so">H&#7897;p 100g &#183; 1.800.000 &#8211; 3.400.000&#273;</span>
         </span>
       </label>
       <label class="muc-the" for="t4">
@@ -1220,6 +1259,25 @@
         </div>
       </div>
       <p class="product-note">Trọn bộ 14 hương vị yến chưng hũ 7g — đồng giá 40.000đ/hũ. Bấm vào từng vị để xem thành phần ghi trên nhãn, kết quả kiểm nghiệm và hướng dẫn dùng. Đặt theo lốc hoặc theo thùng, liên hệ hotline <strong style="font-weight:600;color:var(--ink);">025.8627.8627</strong> để nhận giá sỉ và chính sách đại lý.</p>
+      <div class="bang-combo">
+        <div class="bang-combo-dau">
+          <h3>Bảng giá combo yến chưng hũ 7g</h3>
+          <p>Đồng giá 40.000đ/hũ cho cả 14 vị — mua combo được tặng thêm hũ, không tăng giá.</p>
+        </div>
+        <table class="bang-combo-bang">
+          <thead>
+            <tr><th>Cấp bậc</th><th>Số lượng</th><th>Đơn giá/hũ</th><th>Thành tiền</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Giá lẻ</td><td>01 hũ</td><td>40.000đ</td><td>40.000đ</td></tr>
+            <tr><td>Combo tiện lợi</td><td>10 hũ <em>tặng 1 hũ</em></td><td>40.000đ</td><td>400.000đ</td></tr>
+            <tr><td>Combo tiện lợi</td><td>20 hũ <em>tặng 2 hũ</em></td><td>40.000đ</td><td>800.000đ</td></tr>
+            <tr><td>Combo tiết kiệm</td><td>30 hũ <em>tặng 5 hũ</em></td><td>40.000đ</td><td>1.200.000đ</td></tr>
+            <tr><td>Combo tiết kiệm</td><td>50 hũ <em>tặng 10 hũ</em></td><td>40.000đ</td><td>2.000.000đ</td></tr>
+          </tbody>
+        </table>
+        <p class="bang-combo-chu">Giá đã gồm VAT 8%. Khách mua số lượng lớn hoặc muốn làm đại lý, vui lòng liên hệ hotline <strong>025.8627.8627</strong> để được báo giá và nhận chính sách riêng.</p>
+      </div>
     </div>
 
     <!-- PANEL 2 -->
@@ -1248,170 +1306,173 @@
     <!-- PANEL 3 -->
     <div id="panel3" class="tab-panel">
       <div class="product-grid grid-3">
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag ruby">Yến thô</span><img src="to-yen-tho.jpg" alt="Tổ Yến Thô Lanest thu hái từ nhà yến"></div>
+        <a class="product-card" href="#sp-to-yen-tho">
+          <div class="product-art"><span class="product-tag ruby">Yến thô</span><img src="to-yen-tho.jpg" alt="Tổ Yến Thô Lanest thu hái từ nhà yến Khánh Hòa"></div>
           <div class="product-body">
             <div class="product-name">Tổ Yến Thô</div>
-            <p class="product-desc">Tổ yến nguyên bản thu hái trực tiếp từ nhà yến, chưa qua xử lý — anh chị tự ngâm, nhặt lông và chưng tại nhà.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.500.000đ</span></div>
+            <p class="product-desc">Giữ nguyên dáng tổ sau khi thu hái, chưa phun sương, chưa ngâm nước — anh chị tự ngâm, nhặt lông và chưng tại nhà.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">Liên hệ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
+        </a>
+        <a class="product-card" href="#sp-chan-yen-tho">
           <div class="product-art"><span class="product-tag ruby">Yến thô</span><img src="chan-yen-tho.jpg" alt="Chân Yến Thô Lanest nguyên chất chưa qua xử lý"></div>
           <div class="product-body">
             <div class="product-name">Chân Yến Thô</div>
-            <p class="product-desc">100% chân yến nguyên chất tách ra từ tổ yến thô, hoàn toàn tự nhiên, không pha trộn, không hóa chất.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.200.000đ</span></div>
+            <p class="product-desc">Phần gốc tổ — nơi sợi yến dày, chắc và cô đặc nhất. Làm sạch nhẹ bên ngoài, không ngâm nước, không tẩy trắng.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">Liên hệ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-rut-long-kho">
+          <div class="product-art"><span class="product-tag">Cao cấp nhất</span><img src="rut-long-kho.jpg" alt="Tổ Yến Rút Lông Khô Cao Cấp Lanest, hộp quà tặng"></div>
           <div class="product-body">
-            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
-            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+            <div class="product-name">Yến Rút Lông Khô Cao Cấp</div>
+            <p class="product-desc">Phun sương làm ẩm rồi rút lông bằng nhíp, không ngâm nước — sạch 98–99% mà vẫn nguyên dáng tổ.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">3.400.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
+        </a>
       </div>
       <p class="sp-tieu">Các sản phẩm khác trong mục</p>
       <div class="cn-bang sp-bang">
         <div class="cn-chay">
-
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
+        <a class="product-card" href="#sp-100-soi">
+          <div class="product-art"><span class="product-tag">100% sợi</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest, hộp hút ẩm"></div>
           <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Vụn</div>
-            <p class="product-desc">Yến vụn tinh chế 100% nguyên chất, không pha trộn, không hóa chất.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">1.700.000đ</span></div>
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">Trọn sợi yến thật, không pha vụn, không tẩy trắng — làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">3.200.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Sợi Non</div>
-            <p class="product-desc">Xơ mướp bụng 100% nguyên chất, sợi mảnh, cung cấp 18+ axit amin.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.300.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Chân Yến Tinh Chế</div>
-            <p class="product-desc">Chân yến sạch lông 100%, tinh chế thủ công, không tạp chất — phần dai và giàu dưỡng chất nhất của tổ.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-thuong-hang">
+          <div class="product-art"><span class="product-tag">70% sợi</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest 70% sợi 30% xơ mướp bụng"></div>
           <div class="product-body">
             <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
-            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+            <p class="product-desc">70% sợi yến nguyên vẹn kết hợp 30% xơ mướp bụng — sợi dai mềm, nở đều khi chưng.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">3.000.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-tieu-chuan">
+          <div class="product-art"><span class="product-tag">50% sợi</span><img src="tinh-che-tieu-chuan.jpg" alt="Yến Tinh Chế Tiêu Chuẩn Lanest 50% sợi 50% xơ mướp bụng"></div>
           <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Vụn</div>
-            <p class="product-desc">Yến vụn tinh chế 100% nguyên chất, không pha trộn, không hóa chất.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">1.700.000đ</span></div>
+            <div class="product-name">Yến Tinh Chế Tiêu Chuẩn</div>
+            <p class="product-desc">Tỷ lệ 50% sợi – 50% xơ mướp bụng, nở tơi không vón cục. Chất lượng cao, giá hợp lý.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.800.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Sợi Non</div>
-            <p class="product-desc">Xơ mướp bụng 100% nguyên chất, sợi mảnh, cung cấp 18+ axit amin.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.300.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-chan-tinh-che">
+          <div class="product-art"><span class="product-tag">Chân yến</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest sạch lông"></div>
           <div class="product-body">
             <div class="product-name">Chân Yến Tinh Chế</div>
-            <p class="product-desc">Chân yến sạch lông 100%, tinh chế thủ công, không tạp chất — phần dai và giàu dưỡng chất nhất của tổ.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
+            <p class="product-desc">Phần chân tổ sạch lông — sợi dày, dai nhẹ, chưng xong vẫn giòn sần sật, vị đậm đà.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.600.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
-            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Vụn</div>
-            <p class="product-desc">Yến vụn tinh chế 100% nguyên chất, không pha trộn, không hóa chất.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">1.700.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-soi-non">
+          <div class="product-art"><span class="product-tag">Sợi non</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest, xơ mướp bụng"></div>
           <div class="product-body">
             <div class="product-name">Yến Tinh Chế Sợi Non</div>
-            <p class="product-desc">Xơ mướp bụng 100% nguyên chất, sợi mảnh, cung cấp 18+ axit amin.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.300.000đ</span></div>
+            <p class="product-desc">Phần bụng tổ, sợi mảnh và mềm như xơ mướp — dễ nở, hợp người lớn tuổi và trẻ nhỏ.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.500.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Chân Yến Tinh Chế</div>
-            <p class="product-desc">Chân yến sạch lông 100%, tinh chế thủ công, không tạp chất — phần dai và giàu dưỡng chất nhất của tổ.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
-            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-vun">
+          <div class="product-art"><span class="product-tag">Tiết kiệm</span><img src="tinh-che-vun-hop.jpg" alt="Yến Tinh Chế Vụn Lanest, đắp tổ hoặc chia viên"></div>
           <div class="product-body">
             <div class="product-name">Yến Tinh Chế Vụn</div>
-            <p class="product-desc">Yến vụn tinh chế 100% nguyên chất, không pha trộn, không hóa chất.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">1.700.000đ</span></div>
+            <p class="product-desc">Đắp tổ hoặc chia viên baby 1–2g — vẫn 100% yến thật, dễ định lượng, dùng mỗi ngày.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">1.800.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-100-soi">
+          <div class="product-art"><span class="product-tag">100% sợi</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest, hộp hút ẩm"></div>
           <div class="product-body">
-            <div class="product-name">Yến Tinh Chế Sợi Non</div>
-            <p class="product-desc">Xơ mướp bụng 100% nguyên chất, sợi mảnh, cung cấp 18+ axit amin.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.300.000đ</span></div>
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">Trọn sợi yến thật, không pha vụn, không tẩy trắng — làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">3.200.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest"></div>
-          <div class="product-body">
-            <div class="product-name">Chân Yến Tinh Chế</div>
-            <p class="product-desc">Chân yến sạch lông 100%, tinh chế thủ công, không tạp chất — phần dai và giàu dưỡng chất nhất của tổ.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+        </a>
+        <a class="product-card" href="#sp-thuong-hang">
+          <div class="product-art"><span class="product-tag">70% sợi</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest 70% sợi 30% xơ mướp bụng"></div>
           <div class="product-body">
             <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
-            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
-            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+            <p class="product-desc">70% sợi yến nguyên vẹn kết hợp 30% xơ mướp bụng — sợi dai mềm, nở đều khi chưng.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">3.000.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
           </div>
-        </div>
-
+        </a>
+        <a class="product-card" href="#sp-tieu-chuan">
+          <div class="product-art"><span class="product-tag">50% sợi</span><img src="tinh-che-tieu-chuan.jpg" alt="Yến Tinh Chế Tiêu Chuẩn Lanest 50% sợi 50% xơ mướp bụng"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Tiêu Chuẩn</div>
+            <p class="product-desc">Tỷ lệ 50% sợi – 50% xơ mướp bụng, nở tơi không vón cục. Chất lượng cao, giá hợp lý.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.800.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-chan-tinh-che">
+          <div class="product-art"><span class="product-tag">Chân yến</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest sạch lông"></div>
+          <div class="product-body">
+            <div class="product-name">Chân Yến Tinh Chế</div>
+            <p class="product-desc">Phần chân tổ sạch lông — sợi dày, dai nhẹ, chưng xong vẫn giòn sần sật, vị đậm đà.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.600.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-soi-non">
+          <div class="product-art"><span class="product-tag">Sợi non</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest, xơ mướp bụng"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Sợi Non</div>
+            <p class="product-desc">Phần bụng tổ, sợi mảnh và mềm như xơ mướp — dễ nở, hợp người lớn tuổi và trẻ nhỏ.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">2.500.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-vun">
+          <div class="product-art"><span class="product-tag">Tiết kiệm</span><img src="tinh-che-vun-hop.jpg" alt="Yến Tinh Chế Vụn Lanest, đắp tổ hoặc chia viên"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Vụn</div>
+            <p class="product-desc">Đắp tổ hoặc chia viên baby 1–2g — vẫn 100% yến thật, dễ định lượng, dùng mỗi ngày.</p>
+            <div class="product-foot"><span class="product-spec">Hộp 100g · hút ẩm</span><span class="product-price">1.800.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
         </div>
       </div>
-      <p class="product-note">Dòng yến thô giữ nguyên tổ như khi thu hái — anh chị tự ngâm và nhặt lông tại nhà. Dòng tinh chế đã làm sạch lông, chỉ cần ngâm nở rồi chưng cách thủy theo khẩu vị. Liên hệ để được tư vấn định lượng phù hợp từng đối tượng sử dụng.</p>
+
+      <div class="bang-combo">
+        <div class="bang-combo-dau">
+          <h3>Bảng giá tổ yến thô và yến tinh chế</h3>
+          <p>Giá niêm yết theo quy cách hộp hút ẩm, áp dụng cho khách mua lẻ.</p>
+        </div>
+        <table class="bang-combo-bang">
+          <thead>
+            <tr><th>Sản phẩm</th><th>Hộp 100g</th><th>Hộp 50g</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tổ yến thô</td><td>Liên hệ</td><td>Liên hệ</td></tr>
+            <tr><td>Chân yến thô</td><td>Liên hệ</td><td>Liên hệ</td></tr>
+            <tr><td>Yến rút lông khô cao cấp</td><td>3.400.000đ</td><td>1.750.000đ</td></tr>
+            <tr><td>Yến tinh chế 100% sợi</td><td>3.200.000đ</td><td>1.650.000đ</td></tr>
+            <tr><td>Yến tinh chế thượng hạng (70% sợi – 30% xơ mướp bụng)</td><td>3.000.000đ</td><td>1.500.000đ</td></tr>
+            <tr><td>Yến tinh chế tiêu chuẩn (50% sợi – 50% xơ mướp bụng)</td><td>2.800.000đ</td><td>1.450.000đ</td></tr>
+            <tr><td>Chân yến tinh chế (chân yến sạch lông)</td><td>2.600.000đ</td><td>1.350.000đ</td></tr>
+            <tr><td>Yến tinh chế sợi non (xơ mướp bụng)</td><td>2.500.000đ</td><td>1.300.000đ</td></tr>
+            <tr><td>Yến tinh chế vụn (đắp tổ hoặc chia viên)</td><td>1.800.000đ</td><td>950.000đ</td></tr>
+          </tbody>
+        </table>
+        <p class="bang-combo-chu">Giá đã gồm VAT 8%. Quy cách đóng hộp hút ẩm: hộp 100g và hộp 50g. Giá tổ yến thô và chân yến thô thay đổi theo thời vụ — vui lòng gọi hotline <strong>025.8627.8627</strong> để nhận giá đang áp dụng.</p>
+      </div>
+
+      <p class="product-note">Dòng yến thô giữ nguyên tổ như khi thu hái — anh chị tự ngâm và nhặt lông tại nhà. Dòng tinh chế đã làm sạch lông, chỉ cần ngâm nở rồi chưng cách thủy theo khẩu vị. Bấm vào từng sản phẩm để xem quy trình làm sạch, cách dùng và cam kết chất lượng.</p>
     </div>
 
     <!-- PANEL 4 -->
@@ -2208,6 +2269,440 @@
         </ul>
       </div>
       <p class="sp-warn">Vị mới, số tự công bố 01/CÔNG TY TNHH YẾN SÀO LANEST/2026. Phiếu kiểm nghiệm Newcenlab của vị này chưa có trong hồ sơ công bố 2025 nên trang chưa đăng số liệu dinh dưỡng — sẽ bổ sung khi có kết quả. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHI TIET DONG YEN THO VA TINH CHE ============ -->
+<div class="sp-modal" id="sp-to-yen-tho">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="to-yen-tho.jpg" alt="Tổ Yến Thô Lanest – món quà tinh túy từ thiên nhiên Việt Nam"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Tổ Yến Thô</h3><span class="product-spec">Hộp hút ẩm 100g · 50g</span></div>
+        <div class="sp-price">Liên hệ<small>theo thời vụ</small></div>
+      </div>
+      <p class="sp-lead">Tổ yến thô là sản phẩm tự nhiên quý giá nhất do chim yến tạo nên. Tổ yến thô của Lanest được thu hoạch trực tiếp từ các nhà yến trong nước, phần lớn đến từ dải ven biển miền Trung — Khánh Hòa, Bình Định, Phú Yên, Ninh Thuận, Bình Thuận — những vùng đất nổi tiếng lâu đời với nghề nuôi và khai thác yến sào.</p>
+      <div class="sp-block"><h4>Đặc điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Giữ nguyên dáng tổ tự nhiên:</strong> chỉ làm sạch nhẹ bên ngoài, chưa phun sương hay ngâm nước, nên giữ nguyên cấu trúc, màu sắc và hương vị đặc trưng.</li>
+          <li><strong>Giữ trọn dưỡng chất:</strong> không dùng hóa chất, không ngâm giặt nhiều lần nên sợi yến giữ được protein, acid amin và khoáng chất tự nhiên.</li>
+          <li><strong>Tính nguyên bản cao:</strong> còn giữ được "chân tổ" — phần thể hiện rõ nguồn gốc tự nhiên của tổ yến.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Quy trình thu hoạch và sơ chế</h4>
+        <ul class="sp-facts">
+          <li><strong>Thu hoạch cẩn trọng:</strong> tổ yến được lấy khi đạt độ trưởng thành tự nhiên, bảo đảm chất lượng sợi và độ dày đồng đều.</li>
+          <li><strong>Sơ chế nhẹ bên ngoài:</strong> nhặt bớt lông chim, bỏ vỏ trứng, mài bớt phần không đẹp và chải nhẹ cho bớt bụi. Hoàn toàn không tẩy trắng hay ngâm hóa chất.</li>
+          <li><strong>Phân loại và sấy khô:</strong> làm khô tự nhiên, giữ nguyên hình dạng, rồi phân loại theo kích thước và độ nguyên vẹn.</li>
+          <li><strong>Đóng gói và bảo quản:</strong> đóng gói trong môi trường khô sạch, có tem chống hàng giả và thông tin truy xuất nguồn gốc rõ ràng.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng và bảo quản</h4>
+        <ul class="sp-facts">
+          <li>Ngâm tổ yến trong nước sạch khoảng 1–2 giờ cho sợi yến mềm ra.</li>
+          <li>Dùng nhíp nhỏ nhặt sạch lông tơ và tạp chất còn sót.</li>
+          <li>Chưng cách thủy 20–30 phút cùng đường phèn, táo đỏ hoặc hạt sen tùy khẩu vị.</li>
+          <li>Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Yến đã ngâm nên để ngăn mát và dùng trong 1–2 ngày.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Vì sao nên chọn tổ yến thô Lanest</h4>
+        <ul class="sp-facts">
+          <li>Nguồn gốc rõ ràng: 100% tổ yến thu từ nhà yến trong nước, chủ yếu tại miền Trung.</li>
+          <li>Chất lượng tự nhiên: không pha trộn, không dùng hóa chất tẩy trắng.</li>
+          <li>Quy trình an toàn: từ thu hoạch, làm sạch đến đóng gói đều làm thủ công trong môi trường kiểm soát vệ sinh.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Giá tổ yến thô thay đổi theo thời vụ — vui lòng gọi hotline để nhận giá đang áp dụng. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-chan-yen-tho">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="chan-yen-tho.jpg" alt="Chân Yến Thô Lanest – phần tinh túy nhất của tổ yến tự nhiên"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Chân Yến Thô</h3><span class="product-spec">Hộp hút ẩm 100g · 50g</span></div>
+        <div class="sp-price">Liên hệ<small>theo thời vụ</small></div>
+      </div>
+      <p class="sp-lead">Chân yến thô là phần gốc của tổ yến — nơi chim yến bắt đầu dệt những sợi đầu tiên để cố định tổ vào vách nhà yến. Dù không cong đều như tổ hoàn chỉnh, chân yến lại là phần sợi dày, chắc và cô đặc nhất của tổ.</p>
+      <div class="sp-block"><h4>Đặc điểm nhận diện</h4>
+        <ul class="sp-facts">
+          <li><strong>Màu sắc:</strong> trắng ngà hoặc vàng nhạt tự nhiên, không tẩy trắng.</li>
+          <li><strong>Hình dạng:</strong> không đều, sợi yến dày và chắc, có thể thấy rõ phần "đế" tổ.</li>
+          <li><strong>Hương vị:</strong> khi chưng có mùi thơm đậm hơn yến sào tinh chế.</li>
+          <li><strong>Dinh dưỡng:</strong> giàu đạm và acid amin như serine, lysine, valine.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng</h4>
+        <p>Phần chân tổ thường chứa tỷ lệ protein cao nhất trong toàn bộ tổ yến, khoảng 55–60% khối lượng khô.</p>
+        <ul class="sp-facts">
+          <li>18 loại acid amin tự nhiên, trong đó có 9 loại cơ thể không tự tổng hợp được.</li>
+          <li>Hơn 30 nguyên tố vi lượng như canxi, sắt, magie, kẽm, selen…</li>
+          <li>Chất chống oxy hóa tự nhiên, hỗ trợ tăng cường sức đề kháng.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Quy trình thu hoạch và sơ chế</h4>
+        <ul class="sp-facts">
+          <li><strong>Thu hoạch cẩn trọng:</strong> chân yến được lấy thủ công khi tổ đạt độ khô nhất định để giữ nguyên cấu trúc.</li>
+          <li><strong>Làm sạch nhẹ:</strong> chỉ nhặt bớt lông, tạp chất lớn và bụi bẩn bên ngoài; không ngâm nước, không tẩy trắng.</li>
+          <li><strong>Sấy khô tự nhiên:</strong> giữ độ ẩm lý tưởng để chân yến giữ mùi thơm và độ giòn tự nhiên.</li>
+          <li><strong>Phân loại và đóng gói:</strong> phân theo màu sắc, độ dày, độ nguyên vẹn; đóng gói kín, có tem truy xuất nguồn gốc.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cách sử dụng và ưu điểm</h4>
+        <ul class="sp-facts">
+          <li>Ngâm chân yến trong nước sạch 1–2 giờ cho mềm sợi, nhặt sạch lông tơ còn sót, rồi chưng cách thủy với đường phèn, hạt sen, táo đỏ hoặc đông trùng hạ thảo.</li>
+          <li>Có thể nấu cháo yến, súp yến hoặc pha chế thức uống bổ dưỡng.</li>
+          <li><strong>Sợi dày, đậm đặc:</strong> nhiều dưỡng chất hơn phần thân tổ.</li>
+          <li><strong>Giá thành hợp lý:</strong> dành cho khách muốn dùng yến nguyên chất nhưng tiết kiệm hơn tổ yến nguyên.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <ul class="sp-facts">
+          <li>100% chân yến nguyên chất, không pha trộn, không hóa chất.</li>
+          <li>Quy trình sản xuất tuân thủ tiêu chuẩn an toàn thực phẩm.</li>
+          <li>Mỗi sản phẩm có mã truy xuất nguồn gốc rõ ràng.</li>
+          <li>Hoàn tiền 100% nếu phát hiện hàng giả, hàng kém chất lượng.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Giá chân yến thô thay đổi theo thời vụ — vui lòng gọi hotline để nhận giá đang áp dụng. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-rut-long-kho">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="rut-long-kho.jpg" alt="Tổ Yến Rút Lông Khô Cao Cấp Lanest trong hộp quà tặng"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Rút Lông Khô Cao Cấp</h3><span class="product-spec">Hộp hút ẩm 100g · 50g</span></div>
+        <div class="sp-price">3.400.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Tổ Yến Rút Lông Khô Cao Cấp là dòng sản phẩm cao cấp nhất của Lanest, tuyển chọn từ những tổ yến nguyên chất thu hoạch tại các nhà yến ven biển miền Trung. Sản phẩm được làm sạch hoàn toàn thủ công bằng phương pháp phun sương làm ẩm nhẹ rồi rút lông tỉ mỉ, <strong>không ngâm nước</strong>, giữ nguyên hình dáng, màu sắc và giá trị dinh dưỡng tự nhiên của tổ yến.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>3.400.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.750.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Quy trình sản xuất — giữ trọn giá trị tự nhiên</h4>
+        <ul class="sp-facts">
+          <li><strong>Bước 1 · Tuyển chọn tổ yến thô:</strong> chọn kỹ theo độ dày, màu sắc, độ sạch lông và kết cấu sợi yến tự nhiên.</li>
+          <li><strong>Bước 2 · Phun sương làm ẩm, rút lông thủ công:</strong> thay vì ngâm nước, tổ yến chỉ được phun sương bằng nước tinh khiết; người thợ dùng nhíp chuyên dụng rút từng sợi lông nhỏ bằng tay.</li>
+          <li><strong>Bước 3 · Định hình và sấy khô nhẹ:</strong> định hình thủ công để giữ dáng cong đều, rồi sấy ở nhiệt độ thấp để giữ dưỡng chất và hương thơm.</li>
+          <li><strong>Bước 4 · Kiểm tra và đóng gói:</strong> kiểm tra độ sạch, trọng lượng và hình dáng; chỉ tổ đạt chuẩn mới được đóng hộp cao cấp, có tem chống hàng giả và mã QR truy xuất nguồn gốc.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Đặc điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Sạch 98–99%:</strong> lông tơ và tạp chất được loại bỏ thủ công, không hóa chất.</li>
+          <li><strong>Không ngâm nước:</strong> chỉ phun sương làm ẩm bề mặt, giữ trọn hương vị và dưỡng chất.</li>
+          <li><strong>Giữ nguyên sợi yến:</strong> sợi dày, dẻo, liên kết chặt, không rã hay nát.</li>
+          <li><strong>Khô tự nhiên:</strong> độ ẩm lý tưởng giúp bảo quản lâu mà không cần chất bảo quản.</li>
+          <li><strong>Sẵn sàng sử dụng:</strong> tiện lợi, sang trọng, hợp làm quà tặng hoặc dùng hằng ngày.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng</h4>
+        <p>Tổ yến chứa 18 loại acid amin và hơn 30 vi chất khoáng. Nhờ làm sạch không ngâm nước, tổ yến rút lông khô giữ được protein, acid sialic và glycoprotein, hỗ trợ tăng cường sức đề kháng, chăm sóc làn da, giúp tinh thần sảng khoái, ngủ ngon hơn và bồi bổ cho người mới ốm dậy, người cao tuổi.</p>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng và bảo quản</h4>
+        <ul class="sp-facts">
+          <li>Ngâm tổ yến trong nước lạnh 15–20 phút cho sợi nở mềm.</li>
+          <li>Chưng cách thủy 20–30 phút cùng đường phèn, hạt sen hoặc táo đỏ. Dùng nóng hoặc lạnh tùy sở thích.</li>
+          <li>Để nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Sau khi mở hộp, đậy kín và dùng trong vòng 30 ngày.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-100-soi">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest, tạo hình cánh hoa trong hộp hút ẩm"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Tinh Chế 100% Sợi</h3><span class="product-spec">Hộp hút ẩm 100g · 50g</span></div>
+        <div class="sp-price">3.200.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Yến tinh chế 100% sợi được chọn lọc từ những tổ yến nguyên chất có nguồn gốc rõ ràng, làm sạch thủ công hoàn toàn bằng nước tinh khiết. Quy trình tinh chế giữ trọn sợi yến tự nhiên: <strong>không pha vụn, không tẩy trắng, không chất bảo quản</strong>. Từng sợi yến trắng ngà, dai nhẹ, thơm dịu là minh chứng cho chất lượng thật.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>3.200.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.650.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>100% sợi yến thật:</strong> giữ nguyên cấu trúc sợi, không pha tạp, không độn vụn.</li>
+          <li><strong>Làm sạch hoàn toàn bằng tay:</strong> nhặt tỉ mỉ lông tơ và tạp chất, không hóa chất hay phụ gia.</li>
+          <li><strong>Giàu dưỡng chất tự nhiên:</strong> protein, acid amin, canxi và khoáng chất, hỗ trợ tăng cường sức đề kháng, chăm sóc làn da và bồi bổ cơ thể.</li>
+          <li><strong>Phù hợp nhiều đối tượng:</strong> trẻ em, người cao tuổi, người cần bồi bổ sau ốm; phụ nữ mang thai nên hỏi ý kiến bác sĩ về lượng dùng.</li>
+          <li><strong>Đóng gói sang trọng:</strong> quà tặng sức khỏe ý nghĩa cho gia đình, bạn bè và đối tác.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm yến trong nước sạch 15–20 phút cho sợi nở đều, rửa nhẹ rồi chưng cách thủy theo khẩu vị.</li>
+          <li><strong>Bảo quản:</strong> nơi khô ráo, tránh ánh sáng trực tiếp và độ ẩm cao. Sau khi mở hộp nên dùng trong vòng 6 tháng.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm 100g và 50g, bao bì sang trọng, hợp làm quà biếu.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết 100% yến thật, 0% pha trộn. Mỗi tổ yến được tuyển chọn, làm sạch và đóng gói theo quy trình khép kín, tuân thủ tiêu chuẩn an toàn thực phẩm.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-thuong-hang">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest 70% sợi 30% xơ mướp bụng"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Tinh Chế Thượng Hạng</h3><span class="product-spec">70% sợi – 30% xơ mướp bụng</span></div>
+        <div class="sp-price">3.000.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Yến Tinh Chế Thượng Hạng được chế biến từ tổ yến nguyên chất, làm sạch và tinh chế thủ công tỉ mỉ. Với 70% sợi yến nguyên vẹn kết hợp 30% xơ mướp bụng tự nhiên, sản phẩm có kết cấu hài hòa, sợi dai mềm, nở đều, giữ nguyên hương vị và giá trị dinh dưỡng đặc trưng của yến sào.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>3.000.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.500.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Tỷ lệ chuẩn 70/30:</strong> khi chưng nở đều, sợi mảnh đẹp, giữ độ giòn nhẹ tự nhiên.</li>
+          <li><strong>Nguồn gốc minh bạch:</strong> thu hoạch từ các nhà yến đạt chuẩn vệ sinh.</li>
+          <li><strong>Không tạp chất, không chất bảo quản:</strong> xử lý hoàn toàn thủ công.</li>
+          <li><strong>Dễ sử dụng:</strong> chưng đường phèn, hầm, nấu súp hoặc làm quà tặng.</li>
+          <li><strong>Bao bì sang trọng:</strong> hợp làm quà tri ân, quà sức khỏe cho đối tác, người thân.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm yến trong nước sạch 15–20 phút cho sợi nở đều, rửa nhẹ rồi chế biến theo khẩu vị.</li>
+          <li><strong>Bảo quản:</strong> nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp và độ ẩm cao. Sau khi mở hộp nên dùng trong vòng 6 tháng.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm 100g và 50g.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết yến thật 100%, tinh chế từ nguồn yến sạch, không pha trộn, không hóa chất tẩy trắng. Mỗi tổ yến đều được kiểm tra theo quy trình an toàn thực phẩm, giữ nguyên dinh dưỡng tự nhiên.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-tieu-chuan">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="tinh-che-tieu-chuan.jpg" alt="Yến Tinh Chế Tiêu Chuẩn Lanest 50% sợi 50% xơ mướp bụng"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Tinh Chế Tiêu Chuẩn</h3><span class="product-spec">50% sợi – 50% xơ mướp bụng</span></div>
+        <div class="sp-price">2.800.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Yến Tinh Chế Tiêu Chuẩn kết hợp 50% sợi yến nguyên chất và 50% xơ mướp bụng tự nhiên, tạo cấu trúc vừa mềm dẻo vừa dai giòn, dễ ngâm nở và hợp với mọi cách chế biến. Mỗi tổ yến được làm sạch thủ công từ nguồn yến nhà bảo đảm vệ sinh, giữ màu trắng ngà tự nhiên và hương vị thanh khiết. Đây là lựa chọn cho người muốn chất lượng cao với mức giá hợp lý.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>2.800.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.450.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Tỷ lệ cân đối 50/50:</strong> nở đều, sợi tơi, không vón cục khi chưng.</li>
+          <li><strong>Giữ trọn dưỡng chất tự nhiên:</strong> 18 loại acid amin cùng khoáng chất, hỗ trợ tăng cường sức khỏe và chăm sóc làn da.</li>
+          <li><strong>Tinh chế thủ công:</strong> môi trường sạch, không hóa chất, không phụ gia.</li>
+          <li><strong>Dễ dùng, dễ bảo quản:</strong> hợp với người lớn tuổi, phụ nữ, trẻ em và người cần bồi bổ.</li>
+          <li><strong>Hình thức sang trọng:</strong> món quà sức khỏe ý nghĩa cho người thân, đối tác.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm yến trong nước sạch 20–30 phút cho sợi nở đều, rửa nhẹ rồi chế biến (chưng đường phèn, súp, chè…).</li>
+          <li><strong>Bảo quản:</strong> nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp và ẩm. Sau khi mở hộp nên dùng trong vòng 6 tháng.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm 100g và 50g.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết yến thật 100%, tinh chế từ nguồn yến sạch, không pha trộn, không tẩy trắng, không chất bảo quản. Mỗi tổ yến đều qua kiểm tra trước khi đến tay khách hàng.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-soi-non">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest – xơ mướp bụng, sợi mảnh mềm"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Tinh Chế Sợi Non</h3><span class="product-spec">Xơ mướp bụng · hộp 100g · 50g</span></div>
+        <div class="sp-price">2.500.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Yến Tinh Chế Sợi Non là phần yến lấy từ bên trong bụng tổ, nơi có nhiều sợi yến mảnh, mềm, đan xen tự nhiên như xơ mướp. Sản phẩm được làm sạch thủ công hoàn toàn, không pha trộn, không tẩy trắng, giữ màu ngà tự nhiên và vị thanh của yến thật. Nhờ sợi nhẹ và dễ nở, sản phẩm hợp với mọi đối tượng, nhất là người lớn tuổi, trẻ em và người cần bồi bổ.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>2.500.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.300.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Phần bụng tổ yến:</strong> kết cấu mềm mịn tự nhiên.</li>
+          <li><strong>Sợi mảnh, tơi, nhẹ:</strong> dễ nở đều khi ngâm, giữ vị ngọt thanh sau khi chưng.</li>
+          <li><strong>Giàu dinh dưỡng:</strong> 18 loại acid amin và khoáng chất, hỗ trợ tăng cường sức đề kháng, chăm sóc làn da và bồi bổ thể trạng.</li>
+          <li><strong>Tinh chế tỉ mỉ:</strong> xử lý thủ công trong môi trường sạch, không hóa chất, không phụ gia.</li>
+          <li><strong>Dùng hằng ngày hoặc làm quà:</strong> vừa bồi bổ vừa trang nhã khi biếu tặng.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm yến trong nước sạch 15–20 phút cho sợi nở đều, rồi chưng với đường phèn hoặc nấu cùng các món bổ dưỡng.</li>
+          <li><strong>Bảo quản:</strong> nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Sau khi mở hộp nên dùng trong vòng 6 tháng.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm 100g và 50g.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết Yến Tinh Chế Sợi Non 100% nguyên chất, tinh chế từ nguồn yến nhà đạt chuẩn vệ sinh: không pha trộn, không hóa chất, không chất tẩy trắng. Mỗi sản phẩm đều được kiểm tra trước khi đến tay khách hàng.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-chan-tinh-che">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="chan-yen.jpg" alt="Chân Yến Sạch Lông Lanest – chân yến tinh chế"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Chân Yến Tinh Chế</h3><span class="product-spec">Chân yến sạch lông · hộp 100g · 50g</span></div>
+        <div class="sp-price">2.600.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Chân Yến Sạch Lông là phần chân tổ yến được làm sạch hoàn toàn thủ công, giữ nguyên sợi yến dày và dai đặc trưng. Đây là phần gắn liền với vách nhà yến, nơi sợi yến dày và chắc nhất của tổ. Sản phẩm được tinh chế tỉ mỉ: làm sạch, nhặt lông tơ, giữ màu ngà tự nhiên, không dùng hóa chất hay chất tẩy trắng. Khi chưng, chân yến có vị đậm đà, sợi giòn nhẹ.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>2.600.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>1.350.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>Giàu dưỡng chất:</strong> hàm lượng protein cao cùng 18 loại acid amin và khoáng chất, hỗ trợ bồi bổ cơ thể, tăng cường sức đề kháng và chăm sóc làn da.</li>
+          <li><strong>Kết cấu sợi đặc trưng:</strong> sợi dày, dai nhẹ, chưng xong vẫn giòn sần sật, thơm đặc trưng.</li>
+          <li><strong>Tinh chế thủ công 100%:</strong> làm sạch bằng tay trong điều kiện vệ sinh nghiêm ngặt, sạch lông, không tạp chất.</li>
+          <li><strong>Đa dạng cách chế biến:</strong> chưng đường phèn, nấu chè, súp hoặc kết hợp món ăn cao cấp.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm yến trong nước sạch 30–45 phút cho sợi nở mềm, rửa nhẹ rồi chưng cùng đường phèn hoặc nguyên liệu tùy chọn.</li>
+          <li><strong>Bảo quản:</strong> nơi khô thoáng, tránh ánh nắng và ẩm ướt. Sau khi mở hộp nên để ngăn mát và dùng trong vòng 6 tháng.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm cao cấp 100g và 50g.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết Chân Yến Sạch Lông 100% nguyên chất, tinh chế từ nguồn yến nhà sạch, có nguồn gốc rõ ràng: không hóa chất, không tẩy trắng, không pha trộn. Mỗi sản phẩm đều được kiểm tra chất lượng trước khi đến tay khách hàng.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-vun">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="tinh-che-vun-hop.jpg" alt="Yến Tinh Chế Vụn Lanest – đắp tổ hoặc chia viên baby"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Tinh Chế Vụn</h3><span class="product-spec">Đắp tổ hoặc chia viên · hộp 100g · 50g</span></div>
+        <div class="sp-price">1.800.000đ<small>hộp 100g</small></div>
+      </div>
+      <p class="sp-lead">Yến Tinh Chế Vụn được làm từ những mảnh yến nguyên chất rơi ra trong quá trình tinh chế tổ yến. Tuy là phần vụn nhưng vẫn là 100% yến thật, giữ nguyên dinh dưỡng và hương vị đặc trưng. Yến được làm sạch thủ công hoàn toàn lông và tạp chất, rồi đắp lại thành tổ hoặc chia viên nhỏ (baby) tiện chưng nấu và bảo quản. Đây là lựa chọn kinh tế cho người dùng yến thường xuyên, gia đình có trẻ nhỏ hoặc người cần bồi bổ hằng ngày.</p>
+      <div class="sp-block"><h4>Giá niêm yết</h4>
+        <dl class="sp-nutri sp-gia">
+          <div><dt>Hộp 100g</dt><dd>1.800.000đ</dd></div>
+          <div><dt>Hộp 50g</dt><dd>950.000đ</dd></div>
+        </dl>
+      </div>
+      <div class="sp-block"><h4>Điểm nổi bật</h4>
+        <ul class="sp-facts">
+          <li><strong>100% yến thật:</strong> tuyển từ yến vụn trong quá trình tinh chế, không pha trộn, không chất bảo quản.</li>
+          <li><strong>Dinh dưỡng giữ nguyên:</strong> protein, acid amin và khoáng chất như tổ yến nguyên vẹn.</li>
+          <li><strong>Tiện lợi:</strong> dạng viên nhỏ hoặc đắp tổ gọn gàng, dễ định lượng từng khẩu phần.</li>
+          <li><strong>Giá hợp lý:</strong> dễ duy trì thói quen dùng yến mỗi ngày.</li>
+          <li><strong>Hợp nhiều đối tượng:</strong> trẻ nhỏ, người cao tuổi, người cần bồi bổ; phụ nữ mang thai nên hỏi ý kiến bác sĩ về lượng dùng.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hướng dẫn sử dụng, bảo quản và quy cách</h4>
+        <ul class="sp-facts">
+          <li><strong>Cách sử dụng:</strong> ngâm viên yến trong nước sạch 10–15 phút cho nở mềm, rửa nhẹ rồi chưng cùng đường phèn hoặc món bổ dưỡng khác.</li>
+          <li><strong>Bảo quản:</strong> nơi khô ráo, thoáng mát, tránh ẩm mốc và ánh nắng trực tiếp. Sau khi mở nắp, đậy kín và dùng trong vòng 6 tháng.</li>
+          <li><strong>Dạng đắp tổ:</strong> tạo lại hình tổ nhỏ, giữ form tự nhiên. <strong>Dạng chia viên baby:</strong> mỗi viên 1–2g, tiện cho khẩu phần hằng ngày.</li>
+          <li><strong>Quy cách:</strong> hộp hút ẩm 100g và 50g.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Cam kết chất lượng</h4>
+        <p>Lanest cam kết Yến Tinh Chế Vụn 100% nguyên chất: không pha trộn, không chất tẩy trắng, không hương liệu nhân tạo. Mỗi sản phẩm đều được kiểm tra an toàn thực phẩm trước khi đến tay khách hàng.</p>
+      </div>
+      <p class="sp-warn">Giá đã gồm VAT 8%. Đây là thực phẩm thông thường, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
       <div class="sp-actions">
         <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
         <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
