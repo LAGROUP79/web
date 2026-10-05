@@ -199,7 +199,9 @@
     background:linear-gradient(96deg, rgba(8,32,24,.93) 0%, rgba(8,32,24,.78) 42%, rgba(8,32,24,.34) 72%, rgba(8,32,24,.2) 100%);
   }
   /* --- video gioi thieu chay nen o dau trang --- */
-  .hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+  .hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;
+    opacity:0;transition:opacity 1s ease;}
+  .hero-video.da-san-sang{opacity:1;}
   .hero-video iframe{
     position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
     width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0;
@@ -2115,6 +2117,17 @@
       if(t) t.checked = false;
     });
   });
+  // video nen: giu anh nen trong luc video dang tai, tai xong moi hien ra
+  (function(){
+    var khungNen = document.querySelector('.hero-video');
+    if(!khungNen) return;
+    var ifr = khungNen.querySelector('iframe');
+    if(!ifr) return;
+    function hien(){ setTimeout(function(){ khungNen.classList.add('da-san-sang'); }, 1400); }
+    if(ifr.complete) hien(); else ifr.addEventListener('load', hien);
+    setTimeout(hien, 9000); // phong khi su kien load khong ban
+  })();
+
   // video gioi thieu: chi nap khi mo, go ra khi dong de video dung han
   (function(){
     var ID = 'yv-USNf0pc0';
