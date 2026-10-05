@@ -425,7 +425,7 @@
     transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
   }
   .muc-the:hover{border-color:var(--gold-pale);transform:translateY(-3px);}
-  .muc-anh{aspect-ratio:3/4;overflow:hidden;background:var(--surface-2);position:relative;}
+  .muc-anh{aspect-ratio:1/1;overflow:hidden;background:var(--surface-2);position:relative;}
   .muc-anh img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
   .muc-the:hover .muc-anh img{transform:scale(1.05);}
   .muc-anh::after{
@@ -970,9 +970,9 @@
         </span>
       </label>
       <label class="muc-the" for="t3">
-        <span class="muc-anh"><img src="muc-tinh-che.jpg" alt="T&#7893; y&#7871;n tinh ch&#7871; cao c&#7845;p Lanest" loading="lazy"></span>
+        <span class="muc-anh"><img src="muc-tinh-che.jpg" alt="T&#7893; y&#7871;n th&#244; v&#224; y&#7871;n tinh ch&#7871; cao c&#7845;p Lanest" loading="lazy"></span>
         <span class="muc-noi">
-          <span class="muc-ten">Y&#7871;n tinh ch&#7871; cao c&#7845;p</span>
+          <span class="muc-ten">T&#7893; y&#7871;n th&#244; v&#224; tinh ch&#7871;</span>
           <span class="muc-so">Y&#7871;n kh&#244; &#183; 1.700.000 &#8211; 3.200.000&#273;</span>
         </span>
       </label>
@@ -2877,6 +2877,16 @@
       if(t) t.checked = false;
     });
   });
+  // doi muc san pham: cuon xuong danh sach de khach thay ngay
+  document.querySelectorAll('input[name="ptab"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      var p = document.getElementById('panel' + this.id.replace('t',''));
+      if(!p) return;
+      var y = p.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
   // video nen: giu anh nen trong luc video dang tai, tai xong moi hien ra
   (function(){
     var khungNen = document.querySelector('.hero-video');
