@@ -198,6 +198,32 @@
     content:"";position:absolute;inset:0;
     background:linear-gradient(96deg, rgba(8,32,24,.93) 0%, rgba(8,32,24,.78) 42%, rgba(8,32,24,.34) 72%, rgba(8,32,24,.2) 100%);
   }
+  /* --- video gioi thieu chay nen o dau trang --- */
+  .hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+  .hero-video iframe{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0;
+  }
+  .hero-video::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(96deg, rgba(8,32,24,.93) 0%, rgba(8,32,24,.78) 42%, rgba(8,32,24,.34) 72%, rgba(8,32,24,.2) 100%);
+  }
+  @media (max-width:820px){ .hero-video{display:none;} }
+
+  .vid-modal{position:fixed;inset:0;z-index:110;display:none;}
+  .vid-modal:target{display:flex;align-items:center;justify-content:center;}
+  .vid-overlay{position:absolute;inset:0;background:rgba(6,20,15,.9);}
+  .vid-box{position:relative;z-index:2;width:min(1040px,92vw);}
+  .vid-frame{position:relative;padding-top:56.25%;background:#000;box-shadow:var(--shadow);}
+  .vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .vid-close{
+    position:absolute;top:-54px;right:0;width:42px;height:42px;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+    background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:22px;line-height:1;font-weight:300;
+  }
+  .vid-close:hover{background:var(--gold);color:#FFF8E8;border-color:var(--gold);}
+  @media (max-width:560px){ .vid-close{top:-48px;} }
+
   .hero-inner{position:relative;z-index:1;padding:112px 0 104px;max-width:680px;}
   @media (max-width:820px){ .hero-inner{padding:72px 0 68px;} }
   .hero-award{
@@ -678,6 +704,11 @@
 <div id="top"></div>
 <section class="hero" style="padding:0;">
   <div class="hero-bg"><img src="pro-2.jpg" alt="Tổ yến thô nguyên chất trên tay"></div>
+  <div class="hero-video" aria-hidden="true">
+    <iframe src="https://www.youtube-nocookie.com/embed/yv-USNf0pc0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=yv-USNf0pc0&amp;controls=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;disablekb=1"
+            title="Video giới thiệu Công ty TNHH Yến Sào Lanest" loading="lazy"
+            allow="autoplay; encrypted-media" tabindex="-1"></iframe>
+  </div>
   <div class="container hero-inner">
     <span class="hero-award">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-2.5L17 22l-1.5-8"/></svg>
@@ -688,6 +719,7 @@
     <p class="hero-sub">Công Ty TNHH Yến Sào Lanest tuyển chọn tổ yến từ vùng nguyên liệu Cam Ranh, làm sạch hoàn toàn thủ công và chưng cách thủy theo quy trình khép kín — cam kết không pha trộn, không chất bảo quản.</p>
     <div class="hero-cta">
       <a class="btn btn-on-photo" href="#san-pham">Khám phá sản phẩm</a>
+      <a class="btn btn-outline-photo" href="#video-gioi-thieu">▶ &nbsp;Xem video giới thiệu</a>
       <a class="btn btn-outline-photo" href="tel:02586278627">Gọi tư vấn</a>
     </div>
   </div>
@@ -1041,6 +1073,15 @@
     </div>
   </div>
 </section>
+
+<!-- ============ VIDEO GIOI THIEU (bat tieng, xem day du) ============ -->
+<div class="vid-modal" id="video-gioi-thieu">
+  <a class="vid-overlay" href="#top" aria-label="Đóng video"></a>
+  <div class="vid-box">
+    <a class="vid-close" href="#top" aria-label="Đóng video">×</a>
+    <div class="vid-frame" id="khung-video"></div>
+  </div>
+</div>
 
 <!-- ============ CHI TIET TUNG VI YEN HU 7G ============ -->
 <div class="sp-modal" id="sp-duong-phen">
@@ -2066,6 +2107,29 @@
       if(t) t.checked = false;
     });
   });
+  // video gioi thieu: chi nap khi mo, go ra khi dong de video dung han
+  (function(){
+    var ID = 'yv-USNf0pc0';
+    var khung = document.getElementById('khung-video');
+    if(!khung) return;
+    function dongBo(){
+      if(location.hash === '#video-gioi-thieu'){
+        if(!khung.firstChild){
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + ID + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          f.title = 'Video giới thiệu Công ty TNHH Yến Sào Lanest';
+          f.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+          f.setAttribute('allowfullscreen', '');
+          khung.appendChild(f);
+        }
+      } else {
+        khung.innerHTML = '';
+      }
+    }
+    window.addEventListener('hashchange', dongBo);
+    dongBo();
+  })();
+
   var form = document.getElementById('contact-form');
   if(form){
     form.addEventListener('submit', function(e){
