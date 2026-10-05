@@ -415,6 +415,59 @@
     font-size:14px;color:var(--ink-soft);font-weight:300;
   }
 
+  /* ===== 4 muc san pham co anh dai dien ===== */
+  .muc-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:52px;}
+  @media (max-width:900px){ .muc-nav{grid-template-columns:repeat(2,1fr);gap:16px;} }
+  @media (max-width:460px){ .muc-nav{grid-template-columns:1fr;} }
+  .muc-the{
+    cursor:pointer;display:flex;flex-direction:column;background:var(--surface);
+    border:1px solid var(--line-soft);overflow:hidden;
+    transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+  }
+  .muc-the:hover{border-color:var(--gold-pale);transform:translateY(-3px);}
+  .muc-anh{aspect-ratio:3/4;overflow:hidden;background:var(--surface-2);position:relative;}
+  .muc-anh img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .muc-the:hover .muc-anh img{transform:scale(1.05);}
+  .muc-anh::after{
+    content:"";position:absolute;inset:0;background:rgba(10,32,24,.34);
+    transition:opacity .3s ease;
+  }
+  .muc-noi{padding:16px 18px 18px;display:flex;flex-direction:column;gap:5px;flex:1;}
+  .muc-ten{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:19px;line-height:1.25;color:var(--ink);}
+  .muc-so{font-size:11.5px;color:var(--ink-faint);font-weight:300;}
+  .muc-the::after{
+    content:"";height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;
+    transition:transform .3s ease;
+  }
+  #t1:checked ~ .muc-nav label[for="t1"],
+  #t2:checked ~ .muc-nav label[for="t2"],
+  #t3:checked ~ .muc-nav label[for="t3"],
+  #t4:checked ~ .muc-nav label[for="t4"]{border-color:var(--gold-pale);box-shadow:var(--shadow);}
+  #t1:checked ~ .muc-nav label[for="t1"]::after,
+  #t2:checked ~ .muc-nav label[for="t2"]::after,
+  #t3:checked ~ .muc-nav label[for="t3"]::after,
+  #t4:checked ~ .muc-nav label[for="t4"]::after{transform:scaleX(1);}
+  #t1:checked ~ .muc-nav label[for="t1"] .muc-anh::after,
+  #t2:checked ~ .muc-nav label[for="t2"] .muc-anh::after,
+  #t3:checked ~ .muc-nav label[for="t3"] .muc-anh::after,
+  #t4:checked ~ .muc-nav label[for="t4"] .muc-anh::after{opacity:0;}
+
+  .grid-3{grid-template-columns:repeat(3,1fr) !important;}
+  @media (max-width:820px){ .grid-3{grid-template-columns:repeat(2,1fr) !important;} }
+  @media (max-width:520px){ .grid-3{grid-template-columns:1fr !important;} }
+
+  /* bang chuyen san pham con lai */
+  .sp-bang{--mau-nen:var(--bg);margin-top:28px;}
+  .sp-bang .cn-chay{gap:24px;animation-duration:66s;}
+  .sp-bang .product-card{width:258px;flex:none;}
+  .sp-bang .product-name{font-size:19px;}
+  .sp-bang .product-desc{font-size:12.5px;}
+  .sp-tieu{
+    font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+    margin:34px 0 12px;display:flex;align-items:center;gap:12px;
+  }
+  .sp-tieu::after{content:"";height:1px;flex:1;background:var(--line);}
+
   /* --- the "BAN CHAY" + card bam duoc --- */
   .product-hot{
     position:absolute;top:0;right:0;z-index:3;
@@ -572,8 +625,9 @@
   .cn-bang::before,.cn-bang::after{
     content:"";position:absolute;top:0;bottom:0;width:70px;z-index:3;pointer-events:none;
   }
-  .cn-bang::before{left:0;background:linear-gradient(90deg,var(--surface-2),transparent);}
-  .cn-bang::after{right:0;background:linear-gradient(270deg,var(--surface-2),transparent);}
+  .cn-bang{--mau-nen:var(--surface-2);}
+  .cn-bang::before{left:0;background:linear-gradient(90deg,var(--mau-nen),transparent);}
+  .cn-bang::after{right:0;background:linear-gradient(270deg,var(--mau-nen),transparent);}
   @media (max-width:620px){ .cn-bang::before,.cn-bang::after{width:28px;} }
 
   .cn-chay{display:flex;gap:22px;width:max-content;animation:cn-truot 72s linear infinite;}
@@ -900,16 +954,40 @@
     <input type="radio" name="ptab" id="t2">
     <input type="radio" name="ptab" id="t3">
     <input type="radio" name="ptab" id="t4">
-    <div class="tabs-nav">
-      <label for="t1">Yến chưng hũ · 14 vị</label>
-      <label for="t2">Tổ yến nguyên chất 100%</label>
-      <label for="t3">Yến tinh chế cao cấp</label>
-      <label for="t4">Set quà biếu</label>
+    <div class="muc-nav">
+      <label class="muc-the" for="t1">
+        <span class="muc-anh"><img src="muc-yen-hu.jpg" alt="Y&#7871;n ch&#432;ng s&#7861;n 7g y&#7871;n t&#432;&#417;i Lanest, 14 h&#432;&#417;ng v&#7883;" loading="lazy"></span>
+        <span class="muc-noi">
+          <span class="muc-ten">Y&#7871;n ch&#432;ng h&#361; &#183; 14 v&#7883;</span>
+          <span class="muc-so">7g y&#7871;n t&#432;&#417;i m&#7895;i h&#361; &#183; 40.000&#273;</span>
+        </span>
+      </label>
+      <label class="muc-the" for="t2">
+        <span class="muc-anh"><img src="muc-nguyen-chat.jpg" alt="Y&#7871;n ch&#432;ng nguy&#234;n ch&#7845;t 100% Lanest" loading="lazy"></span>
+        <span class="muc-noi">
+          <span class="muc-ten">T&#7893; y&#7871;n nguy&#234;n ch&#7845;t 100%</span>
+          <span class="muc-so">1,5g t&#7893; y&#7871;n m&#7895;i h&#361; &#183; 65.000&#273;</span>
+        </span>
+      </label>
+      <label class="muc-the" for="t3">
+        <span class="muc-anh"><img src="muc-tinh-che.jpg" alt="T&#7893; y&#7871;n tinh ch&#7871; cao c&#7845;p Lanest" loading="lazy"></span>
+        <span class="muc-noi">
+          <span class="muc-ten">Y&#7871;n tinh ch&#7871; cao c&#7845;p</span>
+          <span class="muc-so">Y&#7871;n kh&#244; &#183; 1.700.000 &#8211; 3.200.000&#273;</span>
+        </span>
+      </label>
+      <label class="muc-the" for="t4">
+        <span class="muc-anh"><img src="muc-set-qua.jpg" alt="Set qu&#224; bi&#7871;u y&#7871;n s&#224;o Lanest d&#7883;p T&#7871;t" loading="lazy"></span>
+        <span class="muc-noi">
+          <span class="muc-ten">Set qu&#224; bi&#7871;u</span>
+          <span class="muc-so">&#272;&#243;ng g&#243;i theo y&#234;u c&#7847;u</span>
+        </span>
+      </label>
     </div>
 
     <!-- PANEL 1 -->
     <div id="panel1" class="tab-panel">
-      <div class="product-grid">
+      <div class="product-grid grid-3">
         <a class="product-card" href="#sp-duong-phen">
           <div class="product-art"><span class="product-tag ruby">Vị truyền thống</span><span class="product-hot">Bán chạy</span><img src="vi-duong-phen.jpg" alt="Yến Chưng Đường Phèn Lanest"></div>
           <div class="product-body">
@@ -933,6 +1011,109 @@
           <div class="product-body">
             <div class="product-name">Yến Chưng Nhân Sâm</div>
             <p class="product-desc">Yến tươi 7g cùng nhân sâm 0.6g, hương vị ấm và sâu.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+      </div>
+      <p class="sp-tieu">C&#225;c s&#7843;n ph&#7849;m kh&#225;c trong m&#7909;c</p>
+      <div class="cn-bang sp-bang">
+        <div class="cn-chay">
+        <a class="product-card" href="#sp-hat-sen">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><span class="product-hot">Bán chạy</span><img src="vi-hat-sen.jpg" alt="Yến Chưng Hạt Sen Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Hạt Sen</div>
+            <p class="product-desc">Yến tươi 7g kết hợp hạt sen thanh mát, thích hợp dùng vào buổi tối.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tu-vi">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Tứ Vị</div>
+            <p class="product-desc">Yến tươi 7g cùng táo đỏ, hạt sen, long nhãn và kỷ tử — bốn nguyên liệu bồi bổ cổ truyền.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tao-do">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Táo Đỏ</div>
+            <p class="product-desc">Yến tươi 7g cùng táo đỏ 2.7g, vị ngọt dịu tự nhiên, thơm nhẹ.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-long-nhan">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-long-nhan.jpg" alt="Yến Chưng Long Nhãn Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Long Nhãn</div>
+            <p class="product-desc">Yến tươi 7g cùng long nhãn 2.9g, hương vị đậm đà truyền thống.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-saffron">
+          <div class="product-art"><span class="product-tag">Cao cấp</span><img src="vi-saffron.jpg" alt="Yến Chưng Saffron Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Saffron</div>
+            <p class="product-desc">Yến tươi 7g cùng Saffron 2mg và collagen thủy phân — dòng dưỡng nhan.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-hat-chia">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-hat-chia.jpg" alt="Yến Chưng Hạt Chia Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Hạt Chia</div>
+            <p class="product-desc">Yến tươi 7g cùng hạt chia 0.12g, không chất bảo quản, không màu nhân tạo.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-dong-trung-kieng">
+          <div class="product-art"><span class="product-tag">Ăn kiêng</span><img src="vi-dong-trung-kieng.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo Đường Ăn Kiêng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đông Trùng Ăn Kiêng</div>
+            <p class="product-desc">Yến tươi 7g, đông trùng hạ thảo 1.9g và đường Isomalt 2.4g dành cho người ăn kiêng.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-duong-an-kieng">
+          <div class="product-art"><span class="product-tag">Ăn kiêng</span><img src="vi-duong-an-kieng.jpg" alt="Yến Chưng Đường Ăn Kiêng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đường Ăn Kiêng</div>
+            <p class="product-desc">Yến tươi 7g cùng đường Isomalt 2.4g — phù hợp người kiêng đường.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tre-em">
+          <div class="product-art"><span class="product-tag">Cho bé</span><img src="vi-tre-em.jpg" alt="Yến Chưng Dành Cho Trẻ Em Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Cho Trẻ Em</div>
+            <p class="product-desc">Công thức riêng cho bé — đường tổng thấp nhất trong các vị dùng đường phèn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tre-em-dau">
+          <div class="product-art"><span class="product-tag">Cho bé</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Dành Cho Trẻ Em Vị Dâu Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Trẻ Em Vị Dâu</div>
+            <p class="product-desc">Yến tươi 7g với hương dâu dịu nhẹ, giúp bé dễ uống hơn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-gung">
+          <div class="product-art"><span class="product-tag ruby">Vị mới</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Gừng</div>
+            <p class="product-desc">Yến tươi 7g chưng cùng gừng 0.5g — vị ấm nhẹ, hợp ngày se lạnh.</p>
             <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
             <span class="product-more">Xem chi tiết</span>
           </div>
@@ -1036,13 +1217,14 @@
             <span class="product-more">Xem chi tiết</span>
           </div>
         </a>
+        </div>
       </div>
       <p class="product-note">Trọn bộ 14 hương vị yến chưng hũ 7g — đồng giá 40.000đ/hũ. Bấm vào từng vị để xem thành phần ghi trên nhãn, kết quả kiểm nghiệm và hướng dẫn dùng. Đặt theo lốc hoặc theo thùng, liên hệ hotline <strong style="font-weight:600;color:var(--ink);">025.8627.8627</strong> để nhận giá sỉ và chính sách đại lý.</p>
     </div>
 
     <!-- PANEL 2 -->
     <div id="panel2" class="tab-panel">
-      <div class="product-grid">
+      <div class="product-grid grid-3">
         <div class="product-card">
           <div class="product-art"><span class="product-tag ruby">Nguyên chất 100%</span><img src="nguyen-to-1.png" alt="Tổ Yến Chưng Đường Phèn Nguyên Chất 100%"></div>
           <div class="product-body">
@@ -1065,7 +1247,7 @@
 
     <!-- PANEL 3 -->
     <div id="panel3" class="tab-panel">
-      <div class="product-grid">
+      <div class="product-grid grid-3">
         <div class="product-card">
           <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
           <div class="product-body">
@@ -1090,6 +1272,10 @@
             <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
           </div>
         </div>
+      </div>
+      <p class="sp-tieu">C&#225;c s&#7843;n ph&#7849;m kh&#225;c trong m&#7909;c</p>
+      <div class="cn-bang sp-bang">
+        <div class="cn-chay">
         <div class="product-card">
           <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
           <div class="product-body">
@@ -1106,13 +1292,126 @@
             <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
           </div>
         </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+        </div>
       </div>
       <p class="product-note">Dòng tinh chế đã làm sạch lông, chỉ cần ngâm nở và chưng cách thủy tại nhà theo khẩu vị riêng. Liên hệ để được tư vấn định lượng phù hợp từng đối tượng sử dụng.</p>
     </div>
 
     <!-- PANEL 4 -->
     <div id="panel4" class="tab-panel">
-      <div class="product-grid">
+      <div class="product-grid grid-3">
         <div class="product-card">
           <div class="product-art"><span class="product-tag ruby">Quà Tết</span><img src="set-qua-2.jpg" alt="Set quà Tết 6 hũ yến chưng Lanest"></div>
           <div class="product-body">
@@ -1137,6 +1436,10 @@
             <div class="product-foot"><span class="product-spec">Tùy chọn quy cách</span><span class="product-price">Liên hệ</span></div>
           </div>
         </div>
+      </div>
+      <p class="sp-tieu">C&#225;c s&#7843;n ph&#7849;m kh&#225;c trong m&#7909;c</p>
+      <div class="cn-bang sp-bang">
+        <div class="cn-chay">
         <div class="product-card">
           <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
           <div class="product-body">
@@ -1144,6 +1447,127 @@
             <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
             <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
           </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
         </div>
       </div>
       <p class="product-note">Set quà biếu được đóng gói theo yêu cầu — liên hệ hotline <strong style="font-weight:600;color:var(--ink);">025.8627.8627</strong> hoặc Zalo <strong style="font-weight:600;color:var(--ink);">0962 227 862</strong> để nhận mẫu hộp và báo giá chi tiết.</p>
