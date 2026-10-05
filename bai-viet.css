@@ -1,0 +1,122 @@
+:root{
+  --bg:#FBF7ED; --surface:#FFFFFF; --surface-2:#F5EEDD;
+  --ink:#1C2119; --ink-soft:#5E6455; --ink-faint:#8C9082;
+  --line:#E6DAC0; --line-soft:#F0E7D3;
+  --gold:#A3762A; --gold-bright:#C9A14A; --gold-pale:#E8D5A8;
+  --forest:#0C3427; --forest-2:#164536; --forest-ink:#F4EBD6; --forest-ink-soft:#BDB197;
+  --forest-line:rgba(201,161,74,0.28);
+  --shadow:0 24px 60px -32px rgba(12,52,39,.45);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1410; --surface:#141D17; --surface-2:#1A251E;
+    --ink:#EFE7D2; --ink-soft:#B3AC96; --ink-faint:#8A8878;
+    --line:#2A3830; --line-soft:#223029;
+    --gold:#D8B061; --gold-bright:#EDCB80; --gold-pale:#4A3D20;
+    --forest:#0A2B21; --forest-2:#14402F;
+    --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1410; --surface:#141D17; --surface-2:#1A251E;
+  --ink:#EFE7D2; --ink-soft:#B3AC96; --ink-faint:#8A8878;
+  --line:#2A3830; --line-soft:#223029;
+  --gold:#D8B061; --gold-bright:#EDCB80; --gold-pale:#4A3D20;
+  --forest:#0A2B21; --forest-2:#14402F;
+  --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Be Vietnam Pro",-apple-system,"Segoe UI",sans-serif;
+  font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:var(--gold);}
+h1,h2,h3,h4{font-family:"Cormorant Garamond","Times New Roman",serif;font-weight:600;line-height:1.2;margin:0;color:var(--ink);}
+p{margin:0;}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+
+/* thanh dau trang */
+.bv-top{background:var(--surface);border-bottom:1px solid var(--line-soft);position:sticky;top:0;z-index:20;}
+.bv-top .wrap{max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:12px;padding-bottom:12px;}
+.bv-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.bv-brand img{height:38px;width:auto;}
+.bv-brand span{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;color:var(--ink);}
+.bv-top nav{display:flex;gap:4px;flex-wrap:wrap;}
+.bv-top nav a{
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-soft);text-decoration:none;padding:9px 12px;
+}
+.bv-top nav a:hover{color:var(--gold);}
+.bv-goi{background:var(--gold);color:#FFF8E8 !important;}
+.bv-goi:hover{background:var(--gold-bright);color:#241A05 !important;}
+
+/* dau bai */
+.bv-head{padding:46px 0 0;}
+.bv-crumb{font-size:12.5px;color:var(--ink-faint);margin-bottom:18px;}
+.bv-crumb a{color:var(--ink-faint);text-decoration:none;}
+.bv-crumb a:hover{color:var(--gold);}
+.bv-nhan{
+  display:inline-block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.bv-head h1{font-size:clamp(28px,4.4vw,46px);font-weight:500;line-height:1.16;}
+.bv-ngay{margin-top:16px;font-size:13px;color:var(--ink-faint);letter-spacing:.04em;}
+.bv-anh{margin:34px 0 0;position:relative;}
+.bv-anh img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.bv-anh figcaption{margin-top:10px;font-size:12.5px;font-style:italic;color:var(--ink-faint);}
+
+/* than bai */
+.bv-than{padding:14px 0 70px;font-size:16.5px;color:var(--ink-soft);font-weight:300;}
+.bv-than h2{font-size:clamp(23px,3vw,31px);margin:44px 0 14px;color:var(--ink);}
+.bv-than h3{font-size:clamp(19px,2.3vw,23px);margin:32px 0 10px;color:var(--ink);}
+.bv-than h4{font-size:17px;margin:26px 0 8px;color:var(--ink);}
+.bv-than p{margin:0 0 16px;}
+.bv-than strong{font-weight:600;color:var(--ink);}
+.bv-than ul,.bv-than ol{margin:0 0 18px;padding-left:22px;}
+.bv-than li{margin-bottom:9px;}
+.bv-than li::marker{color:var(--gold);}
+.bv-than hr{border:0;border-top:1px solid var(--line);margin:34px 0;}
+.bv-than table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:15px;}
+.bv-than th,.bv-than td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top;}
+.bv-than th{background:var(--surface-2);font-weight:600;color:var(--ink);}
+.bv-than blockquote{
+  margin:0 0 20px;padding:16px 22px;background:var(--surface-2);
+  border-left:3px solid var(--gold);font-style:italic;
+}
+
+/* khoi lien he cuoi bai */
+.bv-cta{background:var(--forest);color:var(--forest-ink);padding:44px 0;margin-bottom:60px;}
+.bv-cta .wrap{text-align:center;}
+.bv-cta h3{color:#fff;font-size:clamp(23px,3vw,30px);}
+.bv-cta p{margin-top:12px;color:var(--forest-ink-soft);font-size:15px;font-weight:300;}
+.bv-nut{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.bv-nut a{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 28px;text-decoration:none;border:1px solid transparent;
+}
+.bv-nut .chinh{background:var(--gold);color:#FFF8E8;}
+.bv-nut .chinh:hover{background:var(--gold-bright);color:#241A05;}
+.bv-nut .phu{border-color:var(--forest-line);color:var(--forest-ink);}
+.bv-nut .phu:hover{background:var(--gold);color:#FFF8E8;border-color:var(--gold);}
+
+/* bai khac */
+.bv-khac{padding-bottom:70px;}
+.bv-khac h3{font-size:24px;margin-bottom:20px;}
+.bv-khac ul{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);}
+.bv-khac li{background:var(--bg);}
+.bv-khac a{display:block;padding:16px 20px;text-decoration:none;color:var(--ink);font-size:15px;font-weight:400;}
+.bv-khac a:hover{background:var(--surface-2);color:var(--gold);}
+
+/* chan trang */
+.bv-chan{background:var(--forest);color:var(--forest-ink-soft);padding:36px 0;font-size:13px;font-weight:300;}
+.bv-chan .wrap{max-width:1200px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.bv-chan a{color:var(--forest-ink);text-decoration:none;}
+.bv-chan a:hover{color:var(--gold-bright);}

@@ -535,7 +535,8 @@
 
   /* ============ GUIDES ============ */
   .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr;} }
+  @media (max-width:980px){ .guide-grid{grid-template-columns:repeat(2,1fr);gap:20px;} }
+  @media (max-width:620px){ .guide-grid{grid-template-columns:1fr;} }
   .guide-card{
     background:var(--surface);border:1px solid var(--line-soft);padding:34px 30px;
     display:flex;flex-direction:column;gap:14px;transition:border-color .3s ease, transform .3s ease;
@@ -544,6 +545,26 @@
   .guide-date{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;}
   .guide-card h3{font-size:22px;}
   .guide-card p{font-size:14px;color:var(--ink-soft);font-weight:300;flex:1;}
+
+  /* the bai cam nang co anh, bam duoc */
+  a.guide-card{padding:0;overflow:hidden;text-decoration:none;color:inherit;gap:0;}
+  a.guide-card:hover{box-shadow:var(--shadow);}
+  .guide-anh{aspect-ratio:16/10;overflow:hidden;background:var(--surface-2);position:relative;}
+  .guide-anh img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  a.guide-card:hover .guide-anh img{transform:scale(1.06);}
+  .guide-nhan{
+    position:absolute;top:0;left:0;z-index:2;background:var(--forest);color:var(--gold-bright);
+    font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;
+  }
+  .guide-noi{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .guide-ten{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;line-height:1.28;color:var(--ink);}
+  .guide-mota{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.65;flex:1;}
+  .guide-more{
+    font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+    display:flex;align-items:center;gap:7px;margin-top:2px;transition:gap .25s ease;
+  }
+  .guide-more::after{content:"→";font-size:13px;}
+  a.guide-card:hover .guide-more{gap:11px;}
 
   /* ============ TESTIMONIALS ============ */
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
@@ -1798,37 +1819,184 @@
       <p>Những bài viết Lanest biên soạn để anh chị dùng yến hiệu quả và an tâm hơn mỗi ngày.</p>
     </div>
     <div class="guide-grid">
-      <article class="guide-card">
-        <span class="guide-date">29 · 12 · 2025</span>
-        <h3>Hướng dẫn dùng yến đúng cách</h3>
-        <p>Yến sào không phải “thần dược tức thì”. Bài viết hướng dẫn liều lượng phù hợp theo từng đối tượng, thời điểm dùng trong ngày và những lưu ý quan trọng khi bắt đầu.</p>
-      </article>
-      <article class="guide-card">
-        <span class="guide-date">29 · 12 · 2025</span>
-        <h3>Quy trình khép kín — nền tảng cho sự tận tâm</h3>
-        <p>Toàn bộ hành trình của tổ yến tại Lanest: từ thu hoạch, nhặt lông thủ công, chưng cách thủy đến sấy khô và đóng gói vô trùng.</p>
-      </article>
-      <article class="guide-card">
-        <span class="guide-date">24 · 10 · 2025</span>
-        <h3>Cẩm nang hướng dẫn chưng yến đúng cách</h3>
-        <p>Chưng yến bằng phương pháp cách thủy lửa nhỏ, thời gian ngâm nở và cách bảo quản trong ngăn mát để giữ trọn giá trị dinh dưỡng.</p>
-      </article>
-      <article class="guide-card">
-        <span class="guide-date">24 · 10 · 2025</span>
-        <h3>Yến chưng táo đỏ</h3>
-        <p>Vì sao táo đỏ là nguyên liệu được kết hợp nhiều nhất với yến sào, và cách chưng để vị ngọt thanh tự nhiên không bị gắt.</p>
-      </article>
-      <article class="guide-card">
-        <span class="guide-date">14 · 10 · 2025</span>
-        <h3>Cẩm nang tổng quan về yến sào</h3>
-        <p>Yến sào là thực phẩm quý từ thiên nhiên, giàu protein và axit amin. Bài viết tổng hợp các loại yến, cách phân biệt và tiêu chí chọn yến sạch.</p>
-      </article>
-      <article class="guide-card" style="background:var(--forest);border-color:var(--forest);">
-        <span class="guide-date" style="color:var(--gold-bright);">Tư vấn 1:1</span>
-        <h3 style="color:#fff;">Chưa biết chọn loại nào?</h3>
-        <p style="color:var(--forest-ink-soft);">Nhắn Zalo 0962 227 862 hoặc gọi hotline — Lanest tư vấn theo độ tuổi, tình trạng sức khỏe và ngân sách của gia đình anh chị.</p>
-        <a class="btn btn-outline-band" href="tel:02586278627" style="align-self:flex-start;">Gọi tư vấn</a>
-      </article>
+        <a class="guide-card" href="quy-trinh-lam-yen-xuong-lanest.html">
+          <div class="guide-anh"><span class="guide-nhan">Tin t&#7913;c</span><img src="xuong-nhat-yen-toan-canh.jpg" alt="Nội dung HTML (dán vào CKEditor bằng chế độ Source)" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">29 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Nội dung HTML (dán vào CKEditor bằng chế độ Source)</span>
+            <span class="guide-mota">Quy trình sản xuất yến sào tại Lanest: đội thợ riêng, 4 chốt kiểm từ nhặt lông đến đóng hộp, không tẩy trắng, không độn, k...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-cach-bao-quan-to-yen.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="soi-100b.jpg" alt="" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">28 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten"></span>
+            <span class="guide-mota">Đã đăng LIVE: https://lanest.com.vn/cam-nang-cach-bao-quan-to-yen (id 171, 28/9/2026) Đăng thủ công trong phiên trò chuyện...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-chung-tu-vi-ky-tu.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tu-vi.jpg" alt="Nội dung HTML đã đăng" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">27 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Nội dung HTML đã đăng</span>
+            <span class="guide-mota">Cách làm yến chưng kỷ tử tứ vị với táo đỏ, long nhãn, hạt sen tại nhà: nguyên liệu, từng bước chưng, lỗi hay gặp và cách b...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-to-yen-tho-va-yen-tinh-che.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="soi-100.jpg" alt="Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">26 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?</span>
+            <span class="guide-mota">Tổ yến thô và yến tinh chế khác nhau ra sao, các loại tinh chế 100% sợi, 70/30, chân yến, sợi non, vụn. Cách chọn đúng nhu...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-sao-cho-nguoi-cao-tuoi.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-1.png" alt="Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">25 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng</span>
+            <span class="guide-mota">Người cao tuổi nên ăn yến sào mấy lần một tuần, vào lúc nào, chọn vị gì khi cần hạn chế đường. Cẩm nang dùng yến đúng cách...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="yen-sao-cam-ranh-khanh-hoa.html">
+          <div class="guide-anh"><span class="guide-nhan">Tin t&#7913;c</span><img src="xuong-moi.jpg" alt="Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">24 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?</span>
+            <span class="guide-mota">Yến sào Cam Ranh – Khánh Hòa: nguồn yến ven biển miền Trung, cách nhận biết yến thật, 4 chốt kiểm tay nghề và kiểm nghiệm...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-chung-dong-trung-ha-thao.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">23 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng</span>
+            <span class="guide-mota">Cách chưng yến với đông trùng hạ thảo tại nhà, liều lượng đúng, lợi ích cho người mới ốm dậy, người lớn tuổi. Cẩm nang từ...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-sao-cho-tre-em.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em.jpg" alt="Yến Sào Cho Trẻ Em: Mấy Tuổi Ăn Được, Liều Lượng, Cách Chưng Dễ Ăn" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">22 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Sào Cho Trẻ Em: Mấy Tuổi Ăn Được, Liều Lượng, Cách Chưng Dễ Ăn</span>
+            <span class="guide-mota">Trẻ mấy tuổi ăn được yến sào, liều lượng theo từng độ tuổi, cách chưng dễ ăn cho bé. Cẩm nang từ Yến Sào Lanest.</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="yen-chung-cho-tre-em-vi-dau.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">21 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé</span>
+            <span class="guide-mota">yến chưng cho trẻ em vị dâu</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-phan-biet-yen-sao-that-gia.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tinh-che-vun.jpg" alt="Cách Phân Biệt Yến Sào Thật – Giả, Tránh Mua Nhầm Hàng Kém Chất Lượng" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">21 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Cách Phân Biệt Yến Sào Thật – Giả, Tránh Mua Nhầm Hàng Kém Chất Lượng</span>
+            <span class="guide-mota">Hướng dẫn phân biệt yến sào thật – giả qua mùi, kết cấu sợi, cách ngâm và chưng. Mẹo chọn mua yến sào uy tín từ Yến Sào La...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="yen-chung-gung-7g-yen-tuoi-am-bung-tieu-hoa.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">21 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest</span>
+            <span class="guide-mota">yến chưng gừng</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">20 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+            <span class="guide-mota">yến chưng tứ vị</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-sao-cho-ba-bau.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">20 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng</span>
+            <span class="guide-mota">Bà bầu ăn yến sào có tốt không, dùng liều lượng bao nhiêu, thời điểm nào hợp lý? Cẩm nang từ Yến Sào Lanest.</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-chung-tao-do-hat-chia.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">19 &#183; 09 &#183; 2026</span>
+            <span class="guide-ten">Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da</span>
+            <span class="guide-mota">Cách chưng yến táo đỏ kết hợp hạt chia tại nhà: nguyên liệu, các bước thực hiện, lợi ích và lưu ý khi dùng. Cẩm nang từ Yế...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="quy-trinh-khep-kin-nen-tang-cho-su-tan-tam.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="xuong-nhat-yen-can-canh.jpg" alt="Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">29 &#183; 12 &#183; 2025</span>
+            <span class="guide-ten">Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm</span>
+            <span class="guide-mota">Quy trình làm yến chuẩn gồm: thu hoạch tổ yến thô, ngâm mềm và nhặt lông thủ công không hóa chất, lọc tạp chất, tạo sợi và...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="huong-dan-dung-yen-dung-cach.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-duong-phen.jpg" alt="Hướng Dẫn Dùng Yến Đúng Cách" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">29 &#183; 12 &#183; 2025</span>
+            <span class="guide-ten">Hướng Dẫn Dùng Yến Đúng Cách</span>
+            <span class="guide-mota">Hướng dẫn dùng yến không phải ai cũng biết? Càng ăn nhiều yến càng bổ? Chưng lúc nào cũng được? Trẻ nhỏ ăn bao nhiêu cũng...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-yen-chung-tao-do-mon-qua-duong-suc-vang-cho-suc-khoe.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">24 &#183; 10 &#183; 2025</span>
+            <span class="guide-ten">Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe</span>
+            <span class="guide-mota">1. Yến chưng táo đỏ là gì? Kết hợp giữa tổ yến thiên nhiên và táo đỏ (táo tàu): tổ yến cho lượng đạm tinh khiết, táo đỏ bổ...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-huong-dan-chung-yen-dung-cach.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="pro-3.jpg" alt="Hướng Dẫn Chưng Yến Đúng Cách" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">24 &#183; 10 &#183; 2025</span>
+            <span class="guide-ten">Hướng Dẫn Chưng Yến Đúng Cách</span>
+            <span class="guide-mota">Bước 1 — Ngâm tổ yến: ngâm 30–40 phút trong nước lạnh đến khi yến nở đều và mềm. Có thể dùng nước ngâm này để chưng (giữ d...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <a class="guide-card" href="cam-nang-tong-quan-ve-yen-sao.html">
+          <div class="guide-anh"><span class="guide-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="pro-2.jpg" alt="Tổng Quan Về Yến Sào" loading="lazy"></div>
+          <div class="guide-noi">
+            <span class="guide-date">14 &#183; 10 &#183; 2025</span>
+            <span class="guide-ten">Tổng Quan Về Yến Sào</span>
+            <span class="guide-mota">1. Yến sào là gì? Tổ làm bằng nước bọt của chim yến (thường loài Aerodramus fuciphagus), hình thành trên vách đá hoặc tron...</span>
+            <span class="guide-more">&#272;&#7885;c b&#224;i</span>
+          </div>
+        </a>
+        <article class="guide-card" style="background:var(--forest);border-color:var(--forest);padding:34px 30px;gap:14px;">
+          <span class="guide-date" style="color:var(--gold-bright);">T&#432; v&#7845;n 1:1</span>
+          <h3 style="color:#fff;">Ch&#432;a bi&#7871;t ch&#7885;n lo&#7841;i n&#224;o?</h3>
+          <p style="color:var(--forest-ink-soft);">Nh&#7855;n Zalo 0962 227 862 ho&#7863;c g&#7885;i hotline &#8212; Lanest t&#432; v&#7845;n theo &#273;&#7897; tu&#7893;i, t&#236;nh tr&#7841;ng s&#7913;c kh&#7887;e v&#224; ng&#226;n s&#225;ch c&#7911;a gia &#273;&#236;nh anh ch&#7883;.</p>
+          <a class="btn btn-outline-band" href="tel:02586278627" style="align-self:flex-start;">G&#7885;i t&#432; v&#7845;n</a>
+        </article>
+      </div>
     </div>
   </div>
 </section>
