@@ -1,0 +1,2081 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Yến Sào Lanest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:#FBF7ED;
+    --surface:#FFFFFF;
+    --surface-2:#F5EEDD;
+    --ink:#1C2119;
+    --ink-soft:#5E6455;
+    --ink-faint:#8C9082;
+    --line:#E6DAC0;
+    --line-soft:#F0E7D3;
+    --gold:#A3762A;
+    --gold-bright:#C9A14A;
+    --gold-pale:#E8D5A8;
+    --forest:#0C3427;
+    --forest-2:#164536;
+    --forest-ink:#F4EBD6;
+    --forest-ink-soft:#BDB197;
+    --forest-line:rgba(201,161,74,0.28);
+    --ruby:#8E2C22;
+    --hot-bg:#FFFFFF;
+    --hot-ink:#C0241A;
+    --shadow-sm:0 2px 12px -4px rgba(12,52,39,.14);
+    --shadow:0 24px 60px -32px rgba(12,52,39,.45);
+    --plate:#FDF9F0;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0D1410; --surface:#141D17; --surface-2:#1A251E;
+      --ink:#EFE7D2; --ink-soft:#B3AC96; --ink-faint:#8A8878;
+      --line:#2A3830; --line-soft:#223029;
+      --gold:#D8B061; --gold-bright:#EDCB80; --gold-pale:#4A3D20;
+      --forest:#0A2B21; --forest-2:#14402F;
+      --hot-bg:#2C1512; --hot-ink:#FF9083;
+      --shadow-sm:0 2px 12px -4px rgba(0,0,0,.5);
+      --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D1410; --surface:#141D17; --surface-2:#1A251E;
+    --ink:#EFE7D2; --ink-soft:#B3AC96; --ink-faint:#8A8878;
+    --line:#2A3830; --line-soft:#223029;
+    --gold:#D8B061; --gold-bright:#EDCB80; --gold-pale:#4A3D20;
+    --forest:#0A2B21; --forest-2:#14402F;
+    --hot-bg:#2C1512; --hot-ink:#FF9083;
+    --shadow-sm:0 2px 12px -4px rgba(0,0,0,.5);
+    --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth;} }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Be Vietnam Pro",-apple-system,"Segoe UI",sans-serif;
+    font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:"Cormorant Garamond","Times New Roman",serif;
+    font-weight:500;line-height:1.14;margin:0;text-wrap:balance;color:var(--ink);
+    letter-spacing:.005em;
+  }
+  p{margin:0;}
+  .container{max-width:1200px;margin:0 auto;padding:0 28px;}
+  .container-narrow{max-width:920px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  @media (max-width:820px){ section{padding:68px 0;} .container,.container-narrow{padding:0 20px;} }
+
+  .eyebrow{
+    font-size:11.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow::after{content:"";height:1px;width:46px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .eyebrow.center{justify-content:center;}
+  .eyebrow.center::before{content:"";height:1px;width:46px;background:linear-gradient(270deg,var(--gold),transparent);}
+
+  .section-head{max-width:660px;margin-bottom:64px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(30px,3.9vw,46px);margin-top:18px;}
+  .section-head p{margin-top:20px;color:var(--ink-soft);font-size:16.5px;font-weight:300;}
+  :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"Be Vietnam Pro",sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:.11em;text-transform:uppercase;
+    padding:16px 34px;border:1px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;
+    transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+  }
+  .nav-cta .btn{padding:14px 22px;font-size:12px;}
+  .btn-gold{background:var(--gold);color:#FFF8E8;}
+  .btn-gold:hover{background:var(--gold-bright);color:#241A05;transform:translateY(-2px);}
+  .btn-forest{background:var(--forest);color:var(--forest-ink);}
+  .btn-forest:hover{background:var(--forest-2);transform:translateY(-2px);}
+  .btn-outline{border-color:var(--gold);color:var(--gold);background:transparent;}
+  .btn-outline:hover{background:var(--gold);color:#FFF8E8;}
+  .btn-on-photo{background:rgba(255,255,255,.95);color:var(--forest);}
+  .btn-on-photo:hover{background:#fff;transform:translateY(-2px);}
+  .btn-outline-photo{border-color:rgba(255,255,255,.5);color:#fff;}
+  .btn-outline-photo:hover{background:rgba(255,255,255,.14);border-color:#fff;}
+  .btn-outline-band{border-color:var(--forest-line);color:var(--forest-ink);}
+  .btn-outline-band:hover{background:var(--gold);color:#FFF8E8;border-color:var(--gold);}
+  .btn-block{width:100%;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{background:var(--forest);color:var(--forest-ink-soft);font-size:12.5px;letter-spacing:.02em;}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;}
+  .topbar a{color:var(--forest-ink);text-decoration:none;}
+  .topbar a:hover{color:var(--gold-bright);}
+  .topbar-left{display:flex;align-items:center;gap:10px;}
+  .topbar-left svg{color:var(--gold-bright);flex:none;}
+  .topbar-right{display:flex;gap:22px;align-items:center;}
+  @media (max-width:720px){ .topbar-left{display:none;} .topbar .container{justify-content:center;} }
+
+  /* ============ HEADER ============ */
+  header.site{position:sticky;top:0;z-index:60;background:var(--surface);border-bottom:1px solid var(--line-soft);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .brand-mark{background:var(--plate);border:1px solid var(--gold-pale);padding:6px 10px;display:flex;align-items:center;}
+  .brand-mark img{height:40px;width:auto;mix-blend-mode:multiply;}
+  .brand-word{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:23px;color:var(--ink);line-height:1.1;}
+  .brand-word small{
+    display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:9px;letter-spacing:.18em;
+    font-weight:500;color:var(--gold);text-transform:uppercase;margin-top:4px;white-space:nowrap;
+  }
+
+  nav.primary{display:flex;align-items:center;gap:0;}
+  nav.primary > a, .nav-item > .nav-trigger{
+    display:flex;align-items:center;gap:6px;position:relative;white-space:nowrap;
+    font-size:12.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+    text-decoration:none;color:var(--ink-soft);padding:12px 11px;
+    transition:color .2s ease;
+  }
+  @media (max-width:1240px){ .brand-word small{display:none;} }
+  nav.primary > a::after, .nav-item > .nav-trigger::after{
+    content:"";position:absolute;left:14px;right:14px;bottom:6px;height:1px;
+    background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+  }
+  nav.primary > a:hover, .nav-item:hover > .nav-trigger{color:var(--ink);}
+  nav.primary > a:hover::after, .nav-item:hover > .nav-trigger::after{transform:scaleX(1);}
+  .nav-item{position:relative;}
+  .nav-trigger svg{width:9px;height:9px;transition:transform .2s ease;}
+  .nav-item:hover .nav-trigger svg{transform:rotate(180deg);}
+  .submenu{
+    position:absolute;top:100%;left:0;min-width:260px;background:var(--surface);
+    border:1px solid var(--line);box-shadow:var(--shadow);padding:10px;
+    opacity:0;visibility:hidden;transform:translateY(6px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
+  }
+  .nav-item:hover .submenu, .nav-item:focus-within .submenu{opacity:1;visibility:visible;transform:translateY(0);}
+  .submenu a{
+    display:block;padding:11px 14px;font-size:13.5px;font-weight:500;color:var(--ink-soft);
+    text-decoration:none;border-left:2px solid transparent;transition:all .18s ease;
+  }
+  .submenu a:hover{background:var(--surface-2);color:var(--ink);border-left-color:var(--gold);}
+
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;}
+  .hamburger{display:none;width:42px;height:42px;border:1px solid var(--line);align-items:center;justify-content:center;cursor:pointer;}
+  .hamburger span,.hamburger span::before,.hamburger span::after{content:"";display:block;width:18px;height:1.5px;background:var(--ink);position:relative;}
+  .hamburger span::before{position:absolute;top:-6px;}
+  .hamburger span::after{position:absolute;top:6px;}
+
+  @media (max-width:1080px){
+    nav.primary{
+      position:absolute;top:100%;left:0;right:0;background:var(--surface);
+      border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    nav.primary > a, .nav-item > .nav-trigger{padding:16px 28px;width:100%;border-top:1px solid var(--line-soft);}
+    nav.primary > a::after, .nav-item > .nav-trigger::after{display:none;}
+    .nav-item .submenu{
+      position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;
+      border-top:1px solid var(--line-soft);background:var(--surface-2);display:none;padding:4px;
+    }
+    .nav-item:hover .submenu, .nav-item:focus-within .submenu{display:block;}
+    .nav-toggle:checked ~ nav.primary{max-height:680px;}
+    .hamburger{display:flex;}
+    .nav-cta .btn{display:none;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{position:relative;overflow:hidden;color:#fff;background:var(--forest);}
+  .hero-bg{position:absolute;inset:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(96deg, rgba(8,32,24,.93) 0%, rgba(8,32,24,.78) 42%, rgba(8,32,24,.34) 72%, rgba(8,32,24,.2) 100%);
+  }
+  .hero-inner{position:relative;z-index:1;padding:112px 0 104px;max-width:680px;}
+  @media (max-width:820px){ .hero-inner{padding:72px 0 68px;} }
+  .hero-award{
+    display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;
+    border:1px solid rgba(201,161,74,.5);background:rgba(12,52,39,.42);
+    padding:9px 18px 9px 14px;
+  }
+  .hero-award svg{color:var(--gold-bright);flex:none;}
+  .hero-award span{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#F4EBD6;}
+  .hero h1{font-size:clamp(38px,5.6vw,66px);color:#fff;font-weight:500;}
+  .hero h1 em{color:var(--gold-bright);font-style:italic;font-weight:500;}
+  .hero-rule{width:70px;height:1px;background:var(--gold-bright);margin:30px 0;}
+  .hero-sub{font-size:17px;color:rgba(255,255,255,.82);max-width:50ch;font-weight:300;}
+  .hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .hero-meta{
+    position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.14);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  @media (max-width:880px){ .hero-meta{grid-template-columns:repeat(2,1fr);} }
+  .hero-meta div{padding:26px 28px;border-left:1px solid rgba(255,255,255,.14);}
+  .hero-meta div:first-child{border-left:0;}
+  @media (max-width:880px){
+    .hero-meta div{padding:20px;}
+    .hero-meta div:nth-child(3){border-left:0;}
+    .hero-meta div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14);}
+  }
+  .hero-meta strong{
+    display:block;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:2px;
+  }
+  .hero-meta span{font-size:12.5px;color:rgba(255,255,255,.62);font-weight:300;}
+
+  /* ============ COMMITMENT STRIP ============ */
+  .commit-strip{background:var(--surface);border-bottom:1px solid var(--line-soft);}
+  .commit-row{display:grid;grid-template-columns:repeat(4,1fr);}
+  @media (max-width:880px){ .commit-row{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .commit-row{grid-template-columns:1fr;} }
+  .commit-cell{
+    padding:34px 30px;border-left:1px solid var(--line-soft);
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .commit-cell:first-child{border-left:0;}
+  @media (max-width:880px){
+    .commit-cell:nth-child(3){border-left:0;}
+    .commit-cell:nth-child(n+3){border-top:1px solid var(--line-soft);}
+  }
+  @media (max-width:520px){
+    .commit-cell{border-left:0;border-top:1px solid var(--line-soft);}
+    .commit-cell:first-child{border-top:0;}
+  }
+  .commit-cell svg{color:var(--gold);}
+  .commit-cell strong{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;}
+  .commit-cell span{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.6;}
+
+  /* ============ ABOUT ============ */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:76px;align-items:center;}
+  @media (max-width:960px){ .about-grid{grid-template-columns:1fr;gap:44px;} }
+  .figure-frame{position:relative;}
+  .figure-frame::before{
+    content:"";position:absolute;inset:-14px -14px 14px 14px;border:1px solid var(--gold-pale);z-index:0;
+  }
+  .figure-frame figure{position:relative;z-index:1;margin:0;overflow:hidden;}
+  .figure-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+  .figure-frame figcaption{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 24px;
+    background:linear-gradient(0deg, rgba(10,40,30,.88), transparent);
+    color:#F4EBD6;font-size:12.5px;font-weight:400;letter-spacing:.03em;
+  }
+  /* hai anh long nhau: toan canh xuong + can canh tay nghe */
+  .about-figs{position:relative;padding-bottom:84px;}
+  .figure-inset{
+    position:absolute;right:-24px;bottom:0;width:54%;margin:0;z-index:3;
+    border:8px solid var(--bg);box-shadow:var(--shadow);overflow:hidden;
+  }
+  .figure-inset img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+  @media (max-width:960px){
+    .about-figs{padding-bottom:66px;}
+    .figure-inset{right:0;width:48%;}
+  }
+  @media (max-width:520px){ .figure-inset{width:58%;border-width:6px;} }
+  .about-quote{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+    font-size:clamp(24px,2.9vw,34px);color:var(--gold);margin:28px 0;line-height:1.3;
+  }
+  .about-body p{color:var(--ink-soft);font-size:16px;font-weight:300;}
+  .about-body p + p{margin-top:18px;}
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line);}
+  @media (max-width:620px){ .values{grid-template-columns:repeat(2,1fr);} }
+  .values div{padding:22px 20px 0 0;}
+  .values strong{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--ink);font-weight:600;}
+  .values span{font-size:12.5px;color:var(--ink-faint);font-weight:300;}
+
+  /* ============ AWARD ============ */
+  .award-section{background:var(--forest);color:var(--forest-ink);position:relative;overflow:hidden;}
+  .award-section h2,.award-section h3{color:#fff;}
+  .award-section .eyebrow{color:var(--gold-bright);}
+  .award-section .eyebrow::after{background:linear-gradient(90deg,var(--gold-bright),transparent);}
+  .award-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center;}
+  @media (max-width:900px){ .award-grid{grid-template-columns:1fr;gap:40px;} }
+  .award-photo{position:relative;}
+  .award-photo::before{content:"";position:absolute;inset:-14px;border:1px solid var(--forest-line);}
+  .award-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;position:relative;z-index:1;}
+  .award-body h2{font-size:clamp(28px,3.6vw,42px);margin-top:18px;}
+  .award-body > p{color:var(--forest-ink-soft);font-size:16px;font-weight:300;margin-top:20px;}
+  .award-facts{margin-top:34px;border-top:1px solid var(--forest-line);}
+  .award-facts div{
+    display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--forest-line);
+    font-size:14.5px;align-items:baseline;
+  }
+  .award-facts dt{
+    flex:none;width:170px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-bright);font-weight:600;
+  }
+  .award-facts dd{margin:0;color:#fff;font-weight:400;}
+  @media (max-width:560px){
+    .award-facts div{flex-direction:column;gap:4px;}
+    .award-facts dt{width:auto;}
+  }
+
+  /* ============ PRODUCTS ============ */
+  .tabs-nav{display:flex;gap:0;flex-wrap:wrap;margin-bottom:52px;border-bottom:1px solid var(--line);}
+  .tabs-nav label{
+    font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    padding:16px 26px;cursor:pointer;color:var(--ink-faint);position:relative;
+    transition:color .2s ease;
+  }
+  .tabs-nav label:hover{color:var(--ink);}
+  .tabs-nav label::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);
+    transform:scaleX(0);transition:transform .25s ease;
+  }
+  input[name="ptab"]{position:absolute;opacity:0;pointer-events:none;}
+  .tab-panel{display:none;}
+  #t1:checked ~ .tabs-nav label[for="t1"],
+  #t2:checked ~ .tabs-nav label[for="t2"],
+  #t3:checked ~ .tabs-nav label[for="t3"],
+  #t4:checked ~ .tabs-nav label[for="t4"]{color:var(--ink);}
+  #t1:checked ~ .tabs-nav label[for="t1"]::after,
+  #t2:checked ~ .tabs-nav label[for="t2"]::after,
+  #t3:checked ~ .tabs-nav label[for="t3"]::after,
+  #t4:checked ~ .tabs-nav label[for="t4"]::after{transform:scaleX(1);}
+  #t1:checked ~ #panel1,#t2:checked ~ #panel2,#t3:checked ~ #panel3,#t4:checked ~ #panel4{display:block;}
+
+  .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  @media (max-width:1020px){ .product-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:820px){ .product-grid{grid-template-columns:repeat(2,1fr);gap:18px;} }
+  @media (max-width:520px){ .product-grid{grid-template-columns:1fr;} }
+  .product-card{
+    position:relative;background:var(--surface);display:flex;flex-direction:column;
+    border:1px solid var(--line-soft);
+    transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+  }
+  .product-card:hover{border-color:var(--gold-pale);box-shadow:var(--shadow);transform:translateY(-4px);}
+  .product-art{aspect-ratio:1/1;background:var(--surface-2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .product-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .product-card:hover .product-art img{transform:scale(1.05);}
+  .product-art svg{width:42%;color:var(--gold-pale);}
+  .product-tag{
+    position:absolute;top:0;left:0;z-index:2;background:var(--forest);color:var(--gold-bright);
+    font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;
+  }
+  .product-tag.ruby{background:var(--ruby);color:#FFEDE6;}
+  .product-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:9px;flex:1;}
+  .product-name{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;line-height:1.25;}
+  .product-desc{font-size:13px;color:var(--ink-soft);font-weight:300;line-height:1.65;flex:1;}
+  .product-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid var(--line-soft);margin-top:6px;}
+  .product-spec{font-size:11.5px;color:var(--ink-faint);font-weight:300;}
+  .product-price{
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:23px;color:var(--gold);
+    font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .product-note{
+    margin-top:40px;padding:24px 28px;background:var(--surface-2);border-left:2px solid var(--gold);
+    font-size:14px;color:var(--ink-soft);font-weight:300;
+  }
+
+  /* --- the "BAN CHAY" + card bam duoc --- */
+  .product-hot{
+    position:absolute;top:0;right:0;z-index:3;
+    background:var(--hot-bg);color:var(--hot-ink);
+    font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;
+    box-shadow:0 2px 10px -4px rgba(12,52,39,.4);
+  }
+  a.product-card{text-decoration:none;color:inherit;}
+  .product-more{
+    font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+    display:flex;align-items:center;gap:7px;margin-top:4px;opacity:.75;transition:opacity .25s ease,gap .25s ease;
+  }
+  .product-more::after{content:"→";font-size:13px;}
+  a.product-card:hover .product-more{opacity:1;gap:11px;}
+
+  /* --- bang chi tiet tung vi --- */
+  .sp-modal{position:fixed;inset:0;z-index:100;display:none;}
+  .sp-modal:target{display:block;}
+  .sp-overlay{position:absolute;inset:0;background:rgba(8,26,19,.74);}
+  .sp-dialog{
+    position:relative;z-index:2;max-width:1020px;width:calc(100% - 32px);
+    margin:4vh auto;max-height:92vh;overflow:auto;overscroll-behavior:contain;
+    background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);
+    display:grid;grid-template-columns:.82fr 1.18fr;
+  }
+  @media (max-width:860px){ .sp-dialog{grid-template-columns:1fr;margin:2vh auto;max-height:96vh;} }
+  .sp-photo{background:var(--surface-2);position:relative;}
+  .sp-photo img{width:100%;height:100%;object-fit:cover;min-height:260px;}
+  @media (max-width:860px){ .sp-photo img{aspect-ratio:4/3;height:auto;min-height:0;} }
+  .sp-close{
+    position:absolute;top:12px;right:12px;z-index:4;width:40px;height:40px;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+    background:var(--surface);color:var(--ink);border:1px solid var(--line);
+    font-size:22px;line-height:1;font-weight:300;
+  }
+  .sp-close:hover{background:var(--gold);color:#FFF8E8;border-color:var(--gold);}
+  .sp-info{padding:38px 40px 40px;}
+  @media (max-width:560px){ .sp-info{padding:26px 22px 30px;} }
+  .sp-info h3{font-size:clamp(25px,3.2vw,34px);margin-bottom:6px;}
+  .sp-head-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding-bottom:18px;border-bottom:1px solid var(--line-soft);margin-bottom:20px;}
+  .sp-price{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:30px;color:var(--gold);line-height:1;}
+  .sp-price small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:11px;font-weight:300;
+    letter-spacing:.06em;color:var(--ink-faint);margin-top:5px;}
+  .sp-lead{font-size:15px;color:var(--ink-soft);font-weight:300;line-height:1.75;}
+  .sp-block{margin-top:24px;}
+  .sp-block h4{
+    font-family:"Be Vietnam Pro",sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+  }
+  .sp-block p{font-size:14px;color:var(--ink-soft);font-weight:300;line-height:1.72;}
+  .sp-nutri{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);}
+  @media (max-width:420px){ .sp-nutri{grid-template-columns:repeat(2,1fr);} }
+  .sp-nutri div{background:var(--surface);padding:12px 14px;}
+  .sp-nutri dt{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;}
+  .sp-nutri dd{margin:3px 0 0;font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;color:var(--ink);}
+  .sp-facts{list-style:none;margin:0;padding:0;}
+  .sp-facts li{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.6;padding:7px 0 7px 18px;position:relative;}
+  .sp-facts li::before{content:"";position:absolute;left:0;top:15px;width:5px;height:5px;background:var(--gold);border-radius:50%;}
+  .sp-facts strong{font-weight:500;color:var(--ink);}
+  .sp-warn{
+    margin-top:22px;padding:14px 18px;background:var(--surface-2);border-left:2px solid var(--gold);
+    font-size:13px;color:var(--ink-soft);font-weight:300;line-height:1.65;
+  }
+  .sp-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+  .sp-actions .btn{padding:14px 26px;font-size:12px;}
+
+  /* ============ PROCESS ============ */
+  .process-band{
+    position:relative;color:var(--forest-ink);
+    background:linear-gradient(rgba(8,32,24,.93), rgba(8,32,24,.93)), url("xuong-moi.jpg") center 40%/cover;
+  }
+  .process-band h2{color:#fff;}
+  .process-band .eyebrow{color:var(--gold-bright);}
+  .process-band .eyebrow::after{background:linear-gradient(90deg,var(--gold-bright),transparent);}
+  .process-band .eyebrow.center::before{background:linear-gradient(270deg,var(--gold-bright),transparent);}
+  .process-band .section-head p{color:var(--forest-ink-soft);}
+  .process-list{display:grid;grid-template-columns:repeat(5,1fr);counter-reset:step;}
+  @media (max-width:980px){ .process-list{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .process-list{grid-template-columns:1fr;} }
+  .process-step{
+    padding:0 26px;border-left:1px solid var(--forest-line);counter-increment:step;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .process-step:first-child{border-left:0;padding-left:0;}
+  @media (max-width:980px){
+    .process-step{padding:26px 20px;border-left:1px solid var(--forest-line);border-top:1px solid var(--forest-line);}
+    .process-step:first-child,.process-step:nth-child(3),.process-step:nth-child(5){border-left:0;padding-left:0;}
+    .process-step:nth-child(1),.process-step:nth-child(2){border-top:0;padding-top:0;}
+  }
+  @media (max-width:600px){
+    .process-step{border-left:0;padding:24px 0;}
+    .process-step:nth-child(2){border-top:1px solid var(--forest-line);}
+  }
+  .process-step::before{
+    content:"0" counter(step);
+    font-family:"Cormorant Garamond",serif;font-weight:400;font-size:44px;color:var(--gold-bright);line-height:1;
+  }
+  .process-step h4{font-size:19px;color:#fff;}
+  .process-step p{font-size:13.5px;color:var(--forest-ink-soft);font-weight:300;line-height:1.65;}
+
+  /* ============ GALLERY ============ */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px;}
+  @media (max-width:900px){ .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;} }
+  .gallery figure{margin:0;overflow:hidden;position:relative;background:var(--surface-2);}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+  .gallery figure:hover img{transform:scale(1.06);}
+  .gallery .tall{grid-row:span 2;}
+  .gallery .wide{grid-column:span 2;}
+  @media (max-width:900px){ .gallery .wide{grid-column:span 2;} }
+  .gallery figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+    background:linear-gradient(0deg, rgba(10,40,30,.85), transparent);
+    color:#F4EBD6;font-size:12px;font-weight:400;letter-spacing:.03em;
+    opacity:0;transition:opacity .3s ease;
+  }
+  .gallery figure:hover figcaption{opacity:1;}
+
+  /* ============ GUIDES ============ */
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr;} }
+  .guide-card{
+    background:var(--surface);border:1px solid var(--line-soft);padding:34px 30px;
+    display:flex;flex-direction:column;gap:14px;transition:border-color .3s ease, transform .3s ease;
+  }
+  .guide-card:hover{border-color:var(--gold-pale);transform:translateY(-3px);}
+  .guide-date{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .guide-card h3{font-size:22px;}
+  .guide-card p{font-size:14px;color:var(--ink-soft);font-weight:300;flex:1;}
+
+  /* ============ TESTIMONIALS ============ */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:900px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card{
+    background:var(--surface);border:1px solid var(--line-soft);padding:38px 32px;
+    display:flex;flex-direction:column;gap:20px;position:relative;
+  }
+  .testi-card::before{
+    content:"\201C";position:absolute;top:14px;right:26px;
+    font-family:"Cormorant Garamond",serif;font-size:80px;color:var(--gold-pale);line-height:1;
+  }
+  .testi-stars{color:var(--gold);font-size:13px;letter-spacing:4px;}
+  .testi-card p{font-size:15px;color:var(--ink);font-weight:300;font-style:italic;line-height:1.75;flex:1;position:relative;}
+  .testi-name{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid var(--line-soft);}
+  .testi-avatar{
+    width:42px;height:42px;border-radius:50%;background:var(--forest);color:var(--gold-bright);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:18px;flex:none;
+  }
+  .testi-name strong{font-size:14.5px;font-weight:600;display:block;}
+  .testi-name span{font-size:12px;color:var(--ink-faint);font-weight:300;}
+
+  /* ============ BRANCHES ============ */
+  .branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:900px){ .branch-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .branch-grid{grid-template-columns:1fr;} }
+  .branch-card{background:var(--surface);padding:30px 28px;display:flex;flex-direction:column;gap:8px;}
+  .branch-card.hq{background:var(--forest);color:var(--forest-ink);}
+  .branch-card.hq h4{color:#fff;}
+  .branch-card.hq .branch-label{color:var(--gold-bright);}
+  .branch-card.hq p{color:var(--forest-ink-soft);}
+  .branch-label{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .branch-card h4{font-size:21px;}
+  .branch-card p{font-size:13.5px;color:var(--ink-soft);font-weight:300;line-height:1.6;}
+
+  .province-cloud{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .province-chip{
+    font-size:13px;font-weight:400;padding:9px 18px;border:1px solid var(--line);color:var(--ink-soft);
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .province-chip::before{content:"";width:4px;height:4px;background:var(--gold);border-radius:50%;flex:none;}
+
+  /* ============ FAQ ============ */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:26px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .plus{flex:none;position:relative;width:16px;height:16px;color:var(--gold);}
+  .faq-item summary .plus::before,.faq-item summary .plus::after{content:"";position:absolute;background:currentColor;}
+  .faq-item summary .plus::before{left:0;top:7.5px;width:16px;height:1.5px;}
+  .faq-item summary .plus::after{left:7.5px;top:0;width:1.5px;height:16px;transition:transform .25s ease;}
+  .faq-item[open] summary .plus::after{transform:scaleY(0);}
+  .faq-item p{padding:0 4px 28px;color:var(--ink-soft);font-size:15.5px;font-weight:300;max-width:74ch;}
+
+  /* ============ CTA ============ */
+  .cta-band{
+    position:relative;color:#fff;text-align:center;
+    background:linear-gradient(rgba(8,32,24,.9), rgba(8,32,24,.9)), url("pro-3.jpg") center 30%/cover;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(30px,4vw,48px);}
+  .cta-band p{color:rgba(255,255,255,.78);font-size:16.5px;font-weight:300;margin-top:20px;max-width:54ch;margin-left:auto;margin-right:auto;}
+  .cta-actions{display:flex;gap:16px;justify-content:center;margin-top:38px;flex-wrap:wrap;}
+
+  /* ============ CONTACT ============ */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;gap:44px;} }
+  .contact-list{display:flex;flex-direction:column;gap:26px;margin-top:34px;}
+  .contact-row{display:flex;gap:18px;align-items:flex-start;}
+  .contact-row svg{flex:none;color:var(--gold);margin-top:3px;}
+  .contact-row strong{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:3px;}
+  .contact-row span,.contact-row a{font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:300;}
+  .contact-row a:hover{color:var(--gold);}
+  .social-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+  .social-link{
+    display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid var(--line);
+    font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:all .2s ease;
+  }
+  .social-link:hover{border-color:var(--gold);color:var(--gold);}
+  .social-link svg{flex:none;}
+
+  .form{background:var(--surface);border:1px solid var(--line);padding:40px;}
+  .form h3{font-size:26px;margin-bottom:8px;}
+  .form > p{font-size:14px;color:var(--ink-soft);font-weight:300;margin-bottom:26px;}
+  .field{display:flex;flex-direction:column;gap:9px;margin-bottom:20px;}
+  .field label{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);}
+  .field input,.field textarea{
+    font:inherit;font-weight:300;padding:14px 16px;border:1px solid var(--line);
+    background:var(--bg);color:var(--ink);transition:border-color .2s ease;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);}
+  .field textarea{resize:vertical;min-height:110px;}
+
+  /* ============ FOOTER ============ */
+  footer.site{background:var(--forest);color:var(--forest-ink-soft);padding:80px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:52px;padding-bottom:56px;border-bottom:1px solid var(--forest-line);}
+  @media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr;gap:40px;} }
+  @media (max-width:560px){ .footer-grid{grid-template-columns:1fr;gap:34px;} }
+  .footer-logo img{height:60px;width:auto;}
+  .footer-tagline{margin-top:20px;font-style:italic;font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--gold-bright);}
+  .footer-about{margin-top:14px;font-size:13.5px;font-weight:300;line-height:1.7;max-width:36ch;}
+  .footer-col h5{
+    color:#fff;font-family:"Be Vietnam Pro",sans-serif;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;font-weight:600;margin-bottom:22px;
+  }
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+  .footer-col li{font-size:13.5px;font-weight:300;line-height:1.5;}
+  .footer-col a{text-decoration:none;color:var(--forest-ink-soft);transition:color .2s ease;}
+  .footer-col a:hover{color:var(--gold-bright);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:28px 0;font-size:12px;font-weight:300;}
+
+  /* floating buttons */
+  .float-stack{position:fixed;bottom:26px;right:26px;z-index:55;display:flex;flex-direction:column;gap:12px;}
+  .float-btn{
+    width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);position:relative;
+  }
+  .float-btn.call{background:var(--gold);color:#241A05;}
+  .float-btn.zalo{background:var(--forest);color:var(--gold-bright);font-family:"Be Vietnam Pro",sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em;}
+  .float-btn.call::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--gold);opacity:.55;}
+  @media (prefers-reduced-motion: no-preference){ .float-btn.call::before{animation:pulse-ring 2.4s ease-out infinite;} }
+  @keyframes pulse-ring{0%{transform:scale(.85);opacity:.6;}100%{transform:scale(1.5);opacity:0;}}
+</style>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6L7.9 13.8 2 9.4h7.6z"/></svg>
+      <span>Thương hiệu đạt chứng nhận <strong style="color:var(--gold-bright);font-weight:600;">Sản phẩm – Dịch vụ tốt nhất vì người tiêu dùng 2024</strong></span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:Yensaolanest79@gmail.com">Yensaolanest79@gmail.com</a>
+      <a href="tel:02586278627"><strong style="color:var(--gold-bright);font-weight:600;">Hotline: 025.8627.8627</strong></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="container nav-row">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><img src="logo-header.jpg" alt="Logo Yến Sào Lanest"></span>
+      <span class="brand-word">Yến Sào Lanest<small>Trao sức khỏe · Trao yêu thương</small></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav class="primary">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <div class="nav-item">
+        <a class="nav-trigger" href="#san-pham">Sản phẩm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="submenu">
+          <a href="#san-pham">Yến chưng hũ 7g yến tươi · 14 vị</a>
+          <a href="#san-pham">Tổ yến chưng nguyên chất 100%</a>
+          <a href="#san-pham">Yến tinh chế cao cấp</a>
+          <a href="#san-pham">Set quà biếu</a>
+        </div>
+      </div>
+      <a href="#chung-nhan">Chứng nhận</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#cam-nang">Cẩm nang</a>
+      <a href="#chi-nhanh">Chi nhánh</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-gold" href="tel:02586278627">Gọi 025.8627.8627</a>
+      <label class="hamburger" for="nav-toggle" aria-label="Mở menu"><span></span></label>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div id="top"></div>
+<section class="hero" style="padding:0;">
+  <div class="hero-bg"><img src="pro-2.jpg" alt="Tổ yến thô nguyên chất trên tay"></div>
+  <div class="container hero-inner">
+    <span class="hero-award">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-2.5L17 22l-1.5-8"/></svg>
+      <span>Vietnam No.1 Brand Awards 2024</span>
+    </span>
+    <h1>Tinh hoa tổ yến Khánh Hòa, <em>nguyên vẹn</em> đến từng sợi</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Công Ty TNHH Yến Sào Lanest tuyển chọn tổ yến từ vùng nguyên liệu Cam Ranh, làm sạch hoàn toàn thủ công và chưng cách thủy theo quy trình khép kín — cam kết không pha trộn, không chất bảo quản.</p>
+    <div class="hero-cta">
+      <a class="btn btn-on-photo" href="#san-pham">Khám phá sản phẩm</a>
+      <a class="btn btn-outline-photo" href="tel:02586278627">Gọi tư vấn</a>
+    </div>
+  </div>
+  <div class="container hero-meta">
+    <div><strong>100%</strong><span>Yến nguyên chất, không pha trộn</span></div>
+    <div><strong>Cam Ranh</strong><span>Vùng nguyên liệu Khánh Hòa</span></div>
+    <div><strong>07 điểm</strong><span>Trụ sở &amp; chi nhánh toàn quốc</span></div>
+    <div><strong>COD</strong><span>Giao toàn quốc, kiểm tra trước khi nhận</span></div>
+  </div>
+</section>
+
+<!-- ============ COMMITMENT STRIP ============ -->
+<div class="commit-strip">
+  <div class="container">
+    <div class="commit-row">
+      <div class="commit-cell">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <strong>Cam kết chất lượng</strong>
+        <span>Bồi hoàn gấp 10 lần nếu phát hiện hàng giả.</span>
+      </div>
+      <div class="commit-cell">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 12h8M12 8v8"/></svg>
+        <strong>Đảm bảo an toàn</strong>
+        <span>Sản xuất khép kín theo chuẩn vệ sinh an toàn thực phẩm.</span>
+      </div>
+      <div class="commit-cell">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+        <strong>Đổi trả linh hoạt</strong>
+        <span>Đổi trả trong vòng 15 ngày kể từ khi nhận hàng.</span>
+      </div>
+      <div class="commit-cell">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 16V7h11v9M14 10h4l3 3v3h-7M3 16h1a2 2 0 104 0h6a2 2 0 104 0h1"/></svg>
+        <strong>Giao hàng toàn quốc</strong>
+        <span>Giao COD, khách kiểm tra sản phẩm trước khi nhận.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="gioi-thieu">
+  <div class="container about-grid">
+    <div class="about-figs">
+      <div class="figure-frame">
+        <figure>
+          <img src="xuong-nhat-yen-toan-canh.jpg" alt="Tổ thợ nhặt yến Lanest làm việc trong phòng sơ chế tại Cam Ranh">
+          <figcaption>Xưởng sơ chế Lanest — nhặt lông và làm sạch tổ yến hoàn toàn bằng tay</figcaption>
+        </figure>
+      </div>
+      <figure class="figure-inset">
+        <img src="xuong-nhat-yen-can-canh.jpg" alt="Thợ nhặt yến dùng nhíp gắp từng sợi lông ra khỏi tổ yến">
+      </figure>
+    </div>
+    <div class="about-body">
+      <p class="eyebrow">Về Lanest</p>
+      <h2 style="margin-top:20px;font-size:clamp(28px,3.6vw,44px);">Gìn giữ giá trị của tổ yến tự nhiên, nguyên vẹn đến tay người dùng</h2>
+      <p class="about-quote">“Trao sức khỏe — Trao yêu thương.”</p>
+      <p>Công Ty TNHH Yến Sào Lanest chuyên sản xuất và phân phối các sản phẩm yến sào 100% từ thiên nhiên, cam kết <strong style="font-weight:500;color:var(--ink);">không pha trộn – không chất bảo quản – không phụ gia</strong>. Tổ yến được tuyển chọn từ vùng nguyên liệu Cam Ranh, Khánh Hòa — nơi có điều kiện tự nhiên thuận lợi cho nghề nuôi yến lâu đời.</p>
+      <p>Lanest kết hợp phương pháp làm sạch thủ công cùng công nghệ sấy hiện đại để giữ trọn hàm lượng dinh dưỡng. Sản phẩm được kiểm tra chất lượng nghiêm ngặt, đóng gói vô trùng và dán tem chống hàng giả trước khi đến tay khách hàng.</p>
+      <div class="values">
+        <div><strong>Chất lượng</strong><span>Nguyên chất 100%</span></div>
+        <div><strong>Uy tín</strong><span>Cam kết rõ ràng</span></div>
+        <div><strong>Tận tâm</strong><span>Tư vấn tận nơi</span></div>
+        <div><strong>Bền vững</strong><span>Đồng hành lâu dài</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARD / CERTIFICATION ============ -->
+<section class="award-section" id="chung-nhan">
+  <div class="container award-grid">
+    <div class="award-photo">
+      <img src="le-trao-giai.jpg" alt="Chứng nhận và cúp Vietnam No.1 Brand Awards 2024 của Công ty TNHH Yến Sào Lanest">
+    </div>
+    <div class="award-body">
+      <p class="eyebrow">Chứng nhận thương hiệu</p>
+      <h2>Sản phẩm – Dịch vụ tốt nhất vì người tiêu dùng 2024</h2>
+      <p>Công Ty TNHH Yến Sào Lanest được vinh danh trong chương trình bình chọn <strong style="color:#fff;font-weight:500;">Thương hiệu số 1 Việt Nam 2024 — Vietnam No.1 Brand Awards</strong>, ghi nhận nỗ lực của Lanest trong việc mang tới sản phẩm yến sào nguyên chất và dịch vụ tận tâm cho người tiêu dùng.</p>
+      <dl class="award-facts">
+        <div><dt>Danh hiệu</dt><dd>Sản phẩm – Dịch vụ tốt nhất vì người tiêu dùng 2024</dd></div>
+        <div><dt>Chương trình</dt><dd>Vietnam No.1 Brand Awards 2024</dd></div>
+        <div><dt>Số chứng nhận</dt><dd>68 – 2024 / SO1VIETNAM – DNCA</dd></div>
+        <div><dt>Ngày chứng nhận</dt><dd>25 / 08 / 2024</dd></div>
+        <div><dt>Đơn vị được vinh danh</dt><dd>Công Ty TNHH Yến Sào Lanest</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="san-pham">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow center">Bộ sưu tập sản phẩm</p>
+      <h2>Danh mục &amp; bảng giá Yến Sào Lanest</h2>
+      <p>Toàn bộ sản phẩm ghi rõ trọng lượng yến tươi, thành phần và giá niêm yết. Liên hệ hotline để được tư vấn quy cách phù hợp cho gia đình hoặc làm quà biếu.</p>
+    </div>
+
+    <input type="radio" name="ptab" id="t1" checked>
+    <input type="radio" name="ptab" id="t2">
+    <input type="radio" name="ptab" id="t3">
+    <input type="radio" name="ptab" id="t4">
+    <div class="tabs-nav">
+      <label for="t1">Yến chưng hũ · 14 vị</label>
+      <label for="t2">Tổ yến nguyên chất 100%</label>
+      <label for="t3">Yến tinh chế cao cấp</label>
+      <label for="t4">Set quà biếu</label>
+    </div>
+
+    <!-- PANEL 1 -->
+    <div id="panel1" class="tab-panel">
+      <div class="product-grid">
+        <a class="product-card" href="#sp-duong-phen">
+          <div class="product-art"><span class="product-tag ruby">Vị truyền thống</span><span class="product-hot">Bán chạy</span><img src="vi-duong-phen.jpg" alt="Yến Chưng Đường Phèn Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đường Phèn</div>
+            <p class="product-desc">Yến tươi 7g chưng cùng đường phèn tự nhiên — vị nguyên bản, dễ dùng mỗi ngày.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-dong-trung">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><span class="product-hot">Bán chạy</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đông Trùng Hạ Thảo</div>
+            <p class="product-desc">Yến tươi 7g kết hợp đông trùng hạ thảo 1.9g và đường phèn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-nhan-sam">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><span class="product-hot">Bán chạy</span><img src="vi-nhan-sam.jpg" alt="Yến Chưng Nhân Sâm Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Nhân Sâm</div>
+            <p class="product-desc">Yến tươi 7g cùng nhân sâm 0.6g, hương vị ấm và sâu.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-hat-sen">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><span class="product-hot">Bán chạy</span><img src="vi-hat-sen.jpg" alt="Yến Chưng Hạt Sen Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Hạt Sen</div>
+            <p class="product-desc">Yến tươi 7g kết hợp hạt sen thanh mát, thích hợp dùng vào buổi tối.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tu-vi">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Tứ Vị</div>
+            <p class="product-desc">Yến tươi 7g cùng táo đỏ, hạt sen, long nhãn và kỷ tử — bốn nguyên liệu bồi bổ cổ truyền.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tao-do">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Táo Đỏ</div>
+            <p class="product-desc">Yến tươi 7g cùng táo đỏ 2.7g, vị ngọt dịu tự nhiên, thơm nhẹ.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-long-nhan">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-long-nhan.jpg" alt="Yến Chưng Long Nhãn Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Long Nhãn</div>
+            <p class="product-desc">Yến tươi 7g cùng long nhãn 2.9g, hương vị đậm đà truyền thống.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-saffron">
+          <div class="product-art"><span class="product-tag">Cao cấp</span><img src="vi-saffron.jpg" alt="Yến Chưng Saffron Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Saffron</div>
+            <p class="product-desc">Yến tươi 7g cùng Saffron 2mg và collagen thủy phân — dòng dưỡng nhan.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-hat-chia">
+          <div class="product-art"><span class="product-tag">7g yến tươi</span><img src="vi-hat-chia.jpg" alt="Yến Chưng Hạt Chia Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Hạt Chia</div>
+            <p class="product-desc">Yến tươi 7g cùng hạt chia 0.12g, không chất bảo quản, không màu nhân tạo.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-dong-trung-kieng">
+          <div class="product-art"><span class="product-tag">Ăn kiêng</span><img src="vi-dong-trung-kieng.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo Đường Ăn Kiêng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đông Trùng Ăn Kiêng</div>
+            <p class="product-desc">Yến tươi 7g, đông trùng hạ thảo 1.9g và đường Isomalt 2.4g dành cho người ăn kiêng.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-duong-an-kieng">
+          <div class="product-art"><span class="product-tag">Ăn kiêng</span><img src="vi-duong-an-kieng.jpg" alt="Yến Chưng Đường Ăn Kiêng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Đường Ăn Kiêng</div>
+            <p class="product-desc">Yến tươi 7g cùng đường Isomalt 2.4g — phù hợp người kiêng đường.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tre-em">
+          <div class="product-art"><span class="product-tag">Cho bé</span><img src="vi-tre-em.jpg" alt="Yến Chưng Dành Cho Trẻ Em Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Cho Trẻ Em</div>
+            <p class="product-desc">Công thức riêng cho bé — đường tổng thấp nhất trong các vị dùng đường phèn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-tre-em-dau">
+          <div class="product-art"><span class="product-tag">Cho bé</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Dành Cho Trẻ Em Vị Dâu Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Trẻ Em Vị Dâu</div>
+            <p class="product-desc">Yến tươi 7g với hương dâu dịu nhẹ, giúp bé dễ uống hơn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+        <a class="product-card" href="#sp-gung">
+          <div class="product-art"><span class="product-tag ruby">Vị mới</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Chưng Gừng</div>
+            <p class="product-desc">Yến tươi 7g chưng cùng gừng 0.5g — vị ấm nhẹ, hợp ngày se lạnh.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 7g yến tươi</span><span class="product-price">40.000đ</span></div>
+            <span class="product-more">Xem chi tiết</span>
+          </div>
+        </a>
+      </div>
+      <p class="product-note">Trọn bộ 14 hương vị yến chưng hũ 7g — đồng giá 40.000đ/hũ. Bấm vào từng vị để xem thành phần ghi trên nhãn, kết quả kiểm nghiệm và hướng dẫn dùng. Đặt theo lốc hoặc theo thùng, liên hệ hotline <strong style="font-weight:600;color:var(--ink);">025.8627.8627</strong> để nhận giá sỉ và chính sách đại lý.</p>
+    </div>
+
+    <!-- PANEL 2 -->
+    <div id="panel2" class="tab-panel">
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Nguyên chất 100%</span><img src="nguyen-to-1.png" alt="Tổ Yến Chưng Đường Phèn Nguyên Chất 100%"></div>
+          <div class="product-body">
+            <div class="product-name">Tổ Yến Chưng Đường Phèn Nguyên Chất 100%</div>
+            <p class="product-desc">1,5g tổ yến (tương đương 15g yến tươi) chưng cùng đường phèn — giữ trọn sợi yến nguyên bản.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 15g yến tươi</span><span class="product-price">65.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Nguyên chất 100%</span><img src="nguyen-to-2.jpg" alt="Tổ Yến Chưng Đông Trùng Hạ Thảo Nguyên Chất 100%"></div>
+          <div class="product-body">
+            <div class="product-name">Tổ Yến Chưng Đông Trùng Hạ Thảo 100%</div>
+            <p class="product-desc">1,5g tổ yến (15g yến tươi) cùng đông trùng hạ thảo 8% và đường phèn.</p>
+            <div class="product-foot"><span class="product-spec">Hũ 70ml · 15g yến tươi</span><span class="product-price">65.000đ</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="product-note">Dòng nguyên chất 100% giữ nguyên cấu trúc sợi yến, thích hợp làm quà biếu sức khỏe cho người thân và đối tác.</p>
+    </div>
+
+    <!-- PANEL 3 -->
+    <div id="panel3" class="tab-panel">
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="tinh-che-vun.jpg" alt="Yến Tinh Chế Vụn Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Vụn</div>
+            <p class="product-desc">Yến vụn tinh chế 100% nguyên chất, không pha trộn, không hóa chất.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">1.700.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="soi-non.jpg" alt="Yến Tinh Chế Sợi Non Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Sợi Non</div>
+            <p class="product-desc">Xơ mướp bụng 100% nguyên chất, sợi mảnh, cung cấp 18+ axit amin.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.300.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Tinh chế</span><img src="chan-yen.jpg" alt="Chân Yến Tinh Chế Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Chân Yến Tinh Chế</div>
+            <p class="product-desc">Chân yến sạch lông 100%, tinh chế thủ công, không tạp chất — phần dai và giàu dưỡng chất nhất của tổ.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">2.600.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Thượng hạng</span><img src="soi-100.jpg" alt="Yến Tinh Chế Thượng Hạng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế Thượng Hạng</div>
+            <p class="product-desc">70% sợi yến kết hợp 30% xơ mướp bụng tự nhiên, tạo hình cánh hoa thủ công.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.000.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Cao cấp nhất</span><img src="soi-100b.jpg" alt="Yến Tinh Chế 100% Sợi Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Yến Tinh Chế 100% Sợi</div>
+            <p class="product-desc">100% sợi yến thật, nguyên bản tự nhiên, làm sạch hoàn toàn bằng tay.</p>
+            <div class="product-foot"><span class="product-spec">Yến khô · 100g</span><span class="product-price">3.200.000đ</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="product-note">Dòng tinh chế đã làm sạch lông, chỉ cần ngâm nở và chưng cách thủy tại nhà theo khẩu vị riêng. Liên hệ để được tư vấn định lượng phù hợp từng đối tượng sử dụng.</p>
+    </div>
+
+    <!-- PANEL 4 -->
+    <div id="panel4" class="tab-panel">
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag ruby">Quà Tết</span><img src="set-qua-2.jpg" alt="Set quà Tết 6 hũ yến chưng Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà 6 Hũ Yến Chưng</div>
+            <p class="product-desc">Hộp quà 6 hũ yến chưng tuyển chọn hương vị, thiết kế đỏ – vàng sang trọng cho dịp lễ Tết.</p>
+            <div class="product-foot"><span class="product-spec">6 hũ × 7g yến tươi</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Quà biếu</span><img src="set-qua-1.jpg" alt="Set quà cao cấp Yến Sào Khánh Hòa Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Yến Sào Khánh Hòa</div>
+            <p class="product-desc">Hộp quà cao cấp nền vàng kim, phù hợp biếu tặng đối tác và thăm hỏi sức khỏe.</p>
+            <div class="product-foot"><span class="product-spec">6 – 10 hũ tùy chọn</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Cao cấp</span><img src="su-kien.jpg" alt="Bộ sưu tập quà tặng tổ yến cao cấp Lanest"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Tổ Yến Cao Cấp</div>
+            <p class="product-desc">Tổ yến nguyên chất 100% trong hộp bát giác, kèm đường phèn và táo đỏ cao cấp.</p>
+            <div class="product-foot"><span class="product-spec">Tùy chọn quy cách</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-art"><span class="product-tag">Theo yêu cầu</span><img src="pro-3.jpg" alt="Hộp yến sào Nha Trang kèm táo đỏ, đường phèn"></div>
+          <div class="product-body">
+            <div class="product-name">Set Quà Thiết Kế Riêng</div>
+            <p class="product-desc">Đóng gói theo yêu cầu doanh nghiệp: in logo, thiệp chúc và số lượng tùy chỉnh.</p>
+            <div class="product-foot"><span class="product-spec">Đặt theo số lượng</span><span class="product-price">Liên hệ</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="product-note">Set quà biếu được đóng gói theo yêu cầu — liên hệ hotline <strong style="font-weight:600;color:var(--ink);">025.8627.8627</strong> hoặc Zalo <strong style="font-weight:600;color:var(--ink);">0962 227 862</strong> để nhận mẫu hộp và báo giá chi tiết.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHI TIET TUNG VI YEN HU 7G ============ -->
+<div class="sp-modal" id="sp-duong-phen">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-duong-phen.jpg" alt="Yến Chưng Đường Phèn Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Đường Phèn</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">Đây là vị truyền thống nhất của dòng yến hũ Lanest: 7g yến tươi chưng cùng đường phèn, vị ngọt thanh, dễ uống, hợp cả người lớn tuổi lẫn người lần đầu dùng yến.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, đường phèn 8g, yến tươi 7g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>60 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>14,4 g</dd></div>
+          <div><dt>Protein</dt><dd>0,66 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>8,24 g</dd></div>
+          <div><dt>Natri</dt><dd>9,82 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 8,0×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị yến nguyên bản, ít mùi thảo mộc; dùng hằng ngày hoặc làm quà biếu.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 23/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-dong-trung">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Đông Trùng Hạ Thảo</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">Mỗi hũ có 7g yến tươi và 1,9g đông trùng hạ thảo chưng cùng đường phèn. Đông trùng hạ thảo cho hũ yến màu vàng cam nhẹ và mùi thơm đặc trưng.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, đông trùng hạ thảo 1.9g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>47,9 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>11,7 g</dd></div>
+          <div><dt>Protein</dt><dd>0,30 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>11,0 g</dd></div>
+          <div><dt>Natri</dt><dd>7,60 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 5,6×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người đã quen vị yến và muốn đổi vị; người mua làm quà biếu ông bà, cha mẹ.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 19/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-nhan-sam">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-nhan-sam.jpg" alt="Yến Chưng Nhân Sâm Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Nhân Sâm</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng 0,6g nhân sâm và đường phèn. Vị ngọt thanh của yến hòa với chút đắng nhẹ, hậu ngọt đặc trưng của sâm.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, nhân sâm 0.6g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>43 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>10,4 g</dd></div>
+          <div><dt>Protein</dt><dd>0,45 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>7,86 g</dd></div>
+          <div><dt>Natri</dt><dd>5,15 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 7,2×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người lớn thích vị sâm; quà biếu cho người lớn tuổi, đối tác.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 25/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-hat-sen">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-hat-sen.jpg" alt="Yến Chưng Hạt Sen Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Hạt Sen</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng hạt sen và đường phèn. Hạt sen cho vị bùi nhẹ, thơm dịu, là cách kết hợp quen thuộc trong các món chè, món chưng của người Việt.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, hạt sen 0.6g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>52,3 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>12,5 g</dd></div>
+          <div><dt>Protein</dt><dd>0,54 g</dd></div>
+          <div><dt>Chất béo</dt><dd>&lt; 0,3 g</dd></div>
+          <div><dt>Đường tổng</dt><dd>10,5 g</dd></div>
+          <div><dt>Natri</dt><dd>7,51 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 8,5×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị thanh, nhẹ; phù hợp dùng buổi tối sau bữa ăn.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 15/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-tu-vi">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Tứ Vị</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">“Tứ vị” là bốn nguyên liệu quen thuộc chưng cùng 7g yến tươi: táo đỏ 2,7g, long nhãn 1,5g, hạt sen 0,55g và kỷ tử 0,17g. Vị ngọt thanh, có nhiều lớp mùi hơn các vị đơn.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, táo đỏ 2.7g, long nhãn 1.5g, hạt sen 0.55g, kỷ tử 0.17g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>54,6 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>13,1 g</dd></div>
+          <div><dt>Protein</dt><dd>0,59 g</dd></div>
+          <div><dt>Chất béo</dt><dd>&lt; 0,3 g</dd></div>
+          <div><dt>Đường tổng</dt><dd>10,2 g</dd></div>
+          <div><dt>Natri</dt><dd>9,22 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 6,2×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích hũ yến “có cái để ăn”, nhiều nguyên liệu; quà biếu gia đình.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 18/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-tao-do">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Táo Đỏ</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng 2,7g táo đỏ và đường phèn. Táo đỏ cho vị ngọt tự nhiên và màu nước hơi nâu đỏ.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, táo đỏ 2.7g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>56,2 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>13,6 g</dd></div>
+          <div><dt>Protein</dt><dd>0,47 g</dd></div>
+          <div><dt>Chất béo</dt><dd>&lt; 0,3 g</dd></div>
+          <div><dt>Đường tổng</dt><dd>11,7 g</dd></div>
+          <div><dt>Natri</dt><dd>6,82 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 6,9×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị ngọt trái cây; phụ nữ, người lớn tuổi thường chọn vị này.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 17/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-long-nhan">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-long-nhan.jpg" alt="Yến Chưng Long Nhãn Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Long Nhãn</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng 2,9g long nhãn (nhãn nhục) và đường phèn. Long nhãn cho vị ngọt đậm và mùi thơm của nhãn sấy.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, long nhãn 2.9g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>48,3 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>11,7 g</dd></div>
+          <div><dt>Protein</dt><dd>0,35 g</dd></div>
+          <div><dt>Chất béo</dt><dd>&lt; 0,3 g</dd></div>
+          <div><dt>Đường tổng</dt><dd>11,4 g</dd></div>
+          <div><dt>Natri</dt><dd>8,82 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 5,4×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị ngọt đậm, thơm mùi trái cây sấy.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 16/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-saffron">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-saffron.jpg" alt="Yến Chưng Saffron Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Saffron</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng đường phèn và 2mg saffron (nhụy hoa nghệ tây). Saffron cho nước yến màu vàng óng và mùi thơm rất riêng.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, saffron 2mg, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>45 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>10,9 g</dd></div>
+          <div><dt>Protein</dt><dd>0,41 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>10,7 g</dd></div>
+          <div><dt>Natri</dt><dd>4,98 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 6,5×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích hương vị lạ, sang; quà tặng phụ nữ.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 26/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-hat-chia">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-hat-chia.jpg" alt="Yến Chưng Hạt Chia Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Hạt Chia</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng đường phèn và một lượng nhỏ hạt chia (0,12g). Hạt chia nở mềm, tạo cảm giác lấm tấm vui miệng khi uống.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, hạt chia 0.12g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>41 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>9,85 g</dd></div>
+          <div><dt>Protein</dt><dd>0,32 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>9,76 g</dd></div>
+          <div><dt>Natri</dt><dd>3,31 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 7,0×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người trẻ, dân văn phòng thích kiểu đồ uống hiện đại.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 24/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-dong-trung-kieng">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-dong-trung-kieng.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo Đường Ăn Kiêng Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Đông Trùng Ăn Kiêng</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">Kết hợp 1,9g đông trùng hạ thảo với 7g yến tươi, dùng 2,4g đường isomalt thay cho đường phèn. Theo phiếu kiểm nghiệm, đường tổng không phát hiện, năng lượng 38,5 kcal/100g.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường isomalt 2.4g, đông trùng hạ thảo 1.9g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>38,5 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>9,23 g</dd></div>
+          <div><dt>Protein</dt><dd>0,39 g</dd></div>
+          <div><dt>Chất béo</dt><dd>&lt; 0,3 g</dd></div>
+          <div><dt>Đường tổng</dt><dd>KPH</dd></div>
+          <div><dt>Natri</dt><dd>11,1 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 6,7×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị đông trùng nhưng muốn hạn chế đường. Người đang điều trị tiểu đường hoặc bệnh chuyển hóa nên hỏi ý kiến bác sĩ về lượng dùng phù hợp.</li>
+          <li>Isomalt là một loại đường đa (polyol) — người nhạy cảm có thể thấy đầy bụng nếu dùng nhiều trong ngày.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Hạn dùng 12 tháng kể từ ngày sản xuất.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 14/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-duong-an-kieng">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-duong-an-kieng.jpg" alt="Yến Chưng Đường Ăn Kiêng Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Đường Ăn Kiêng</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">Vị này không dùng đường phèn mà dùng 2,4g đường isomalt cho mỗi hũ. Theo phiếu kiểm nghiệm, chỉ tiêu đường tổng không phát hiện và năng lượng chỉ 35,1 kcal/100g — thấp nhất trong dòng yến hũ 7g của Lanest.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường isomalt 2.4g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>35,1 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>8,48 g</dd></div>
+          <div><dt>Protein</dt><dd>0,30 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>KPH</dd></div>
+          <div><dt>Natri</dt><dd>9,89 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> dưới 0,03 mg/kg — dưới giới hạn định lượng.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 7,0×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người muốn hạn chế đường trong khẩu phần. Người đang điều trị tiểu đường hoặc bệnh chuyển hóa nên hỏi ý kiến bác sĩ về lượng dùng phù hợp.</li>
+          <li>Isomalt là một loại đường đa (polyol) — người nhạy cảm có thể thấy đầy bụng nếu dùng nhiều trong ngày.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Hạn dùng 12 tháng kể từ ngày sản xuất.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 20/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-tre-em">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-tre-em.jpg" alt="Yến Chưng Dành Cho Trẻ Em Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Dành Cho Trẻ Em</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">Công thức riêng cho bé: 7g yến tươi chưng cùng đường phèn, không có collagen như các vị dành cho người lớn. Đường tổng 6,05g/100g — thấp nhất trong các vị dùng đường phèn của dòng 7g.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến, hương dâu tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>44 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>10,4 g</dd></div>
+          <div><dt>Protein</dt><dd>0,67 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>6,05 g</dd></div>
+          <div><dt>Natri</dt><dd>5,04 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 6,1×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Trẻ nhỏ đã ăn được đồ ngọt nhẹ. Bố mẹ nên cho bé dùng thử lượng nhỏ trước; với trẻ dưới 1 tuổi hoặc trẻ có cơ địa dị ứng, nên hỏi ý kiến bác sĩ.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 22/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-tre-em-dau">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Dành Cho Trẻ Em Vị Dâu Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Trẻ Em Vị Dâu</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng đường phèn, thêm hương dâu để bé dễ uống hơn. Mùi dâu đến từ hương dâu tổng hợp (ghi rõ trên nhãn), không phải từ dâu tây tươi.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến, hương dâu tổng hợp.</p></div>
+      <div class="sp-block"><h4>Giá trị dinh dưỡng · trên 100g</h4>
+        <dl class="sp-nutri">
+          <div><dt>Năng lượng</dt><dd>40 kcal</dd></div>
+          <div><dt>Carbohydrate</dt><dd>9,68 g</dd></div>
+          <div><dt>Protein</dt><dd>0,39 g</dd></div>
+          <div><dt>Chất béo</dt><dd>KPH</dd></div>
+          <div><dt>Đường tổng</dt><dd>9,60 g</dd></div>
+          <div><dt>Natri</dt><dd>5,77 mg</dd></div>
+        </dl>
+        <p style="margin-top:10px;font-size:12px;color:var(--ink-faint);">Phiếu kết quả thử nghiệm Newcenlab năm 2025. Một hũ 70ml tương ứng khoảng 70% các giá trị trên.</p>
+      </div>
+      <div class="sp-block"><h4>Kiểm nghiệm an toàn</h4>
+        <ul class="sp-facts">
+          <li><strong>Chì (Pb):</strong> không phát hiện.</li>
+          <li><strong>Vi sinh gây hại, nấm men – nấm mốc:</strong> đều dưới 1 CFU/ml, tức không phát hiện.</li>
+          <li><strong>Tổng vi sinh hiếu khí:</strong> 5,7×10¹ CFU/ml — trong mức công bố (không quá 100) theo QCVN 6-2:2010/BYT.</li>
+        </ul>
+      </div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Bé kén ăn, không quen mùi yến. Bố mẹ nên cho bé dùng thử lượng nhỏ trước; với trẻ dưới 1 tuổi hoặc trẻ có cơ địa dị ứng, nên hỏi ý kiến bác sĩ.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát.</li>
+          <li>Hạn dùng 12 tháng kể từ ngày sản xuất, in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Số tự công bố 21/CÔNG TY TNHH YẾN SÀO LANEST/2025 · sản xuất tại cơ sở đạt ISO 22000:2018. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sp-modal" id="sp-gung">
+  <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
+  <div class="sp-dialog">
+    <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
+    <div class="sp-photo"><img src="vi-gung.jpg" alt="Yến Chưng Gừng Lanest, hũ thủy tinh 70ml"></div>
+    <div class="sp-info">
+      <div class="sp-head-row">
+        <div><h3>Yến Chưng Gừng</h3><span class="product-spec">Hũ thủy tinh 70ml · 7g yến tươi</span></div>
+        <div class="sp-price">40.000đ<small>mỗi hũ</small></div>
+      </div>
+      <p class="sp-lead">7g yến tươi chưng cùng đường phèn và 0,5g gừng. Vị ngọt thanh của yến có thêm chút cay ấm nhẹ của gừng, hợp những ngày se lạnh hoặc người thích vị ấm.</p>
+      <div class="sp-block"><h4>Thành phần ghi trên nhãn</h4><p>Nước, yến tươi 7g, đường phèn, gừng 0.5g, collagen thủy phân, chất xơ inulin orafti gr, chất điều chỉnh độ acid INS (327, 331(iii)), chất ổn định INS (401, 407, 415, 466), hương yến tổng hợp.</p></div>
+      <div class="sp-block"><h4>Hợp với ai · dùng thế nào</h4>
+        <ul class="sp-facts">
+          <li>Người thích vị cay ấm nhẹ của gừng, muốn đổi vị so với yến đường phèn truyền thống.</li>
+          <li>Vị gừng khá rõ — người không quen vị cay nên dùng thử trước.</li>
+          <li>Lắc nhẹ trước khi uống, ngon hơn khi uống lạnh. Bảo quản nơi khô ráo, thoáng mát. NSX/HSD in trên bao bì.</li>
+        </ul>
+      </div>
+      <p class="sp-warn">Vị mới, số tự công bố 01/CÔNG TY TNHH YẾN SÀO LANEST/2026. Phiếu kiểm nghiệm Newcenlab của vị này chưa có trong hồ sơ công bố 2025 nên trang chưa đăng số liệu dinh dưỡng — sẽ bổ sung khi có kết quả. Đây là thực phẩm thông thường, không phải thuốc và không thay thế thuốc chữa bệnh.</p>
+      <div class="sp-actions">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi đặt hàng</a>
+        <a class="btn btn-outline" href="https://zalo.me/0962227862" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROCESS ============ -->
+<section class="process-band" id="quy-trinh">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow center">Quy trình khép kín</p>
+      <h2>Từ tổ yến thô đến thành phẩm</h2>
+      <p>Năm công đoạn được kiểm soát chặt chẽ, kết hợp làm sạch thủ công và công nghệ hiện đại để giữ trọn dưỡng chất.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-step">
+        <h4>Tuyển chọn</h4>
+        <p>Chọn tổ yến nguyên chất từ vùng nguyên liệu Cam Ranh, loại bỏ tổ không đạt chuẩn.</p>
+      </div>
+      <div class="process-step">
+        <h4>Làm sạch thủ công</h4>
+        <p>Nhặt lông và sơ chế hoàn toàn bằng tay, không dùng hóa chất tẩy trắng hay chất tạo sợi.</p>
+      </div>
+      <div class="process-step">
+        <h4>Chưng cách thủy</h4>
+        <p>Chưng cùng nguyên liệu tự nhiên như đường phèn, hạt sen, táo đỏ theo thời gian chuẩn.</p>
+      </div>
+      <div class="process-step">
+        <h4>Đóng gói vô trùng</h4>
+        <p>Đóng lọ khép kín, không chất bảo quản, dán tem chống hàng giả trên từng sản phẩm.</p>
+      </div>
+      <div class="process-step">
+        <h4>Kiểm định &amp; giao hàng</h4>
+        <p>Kiểm tra chất lượng từng lô trước khi giao đến khách hàng và hệ thống đại lý.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section>
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow center">Hình ảnh thực tế</p>
+      <h2>Sản phẩm &amp; không gian Lanest</h2>
+    </div>
+    <div class="gallery">
+      <figure class="tall">
+        <img src="pro-3.jpg" alt="Hộp yến sào Nha Trang cùng táo đỏ và đường phèn">
+        <figcaption>Hộp tổ yến kèm táo đỏ, đường phèn</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="su-kien.jpg" alt="Bộ sưu tập sản phẩm Yến Sào Lanest trưng bày">
+        <figcaption>Bộ sưu tập tổ yến &amp; set quà cao cấp</figcaption>
+      </figure>
+      <figure>
+        <img src="soi-100.jpg" alt="Tổ yến tinh chế nguyên chất 100% đóng hộp bát giác">
+        <figcaption>Tổ yến nguyên chất 100%</figcaption>
+      </figure>
+      <figure>
+        <img src="xuong-moi.jpg" alt="Xưởng sơ chế yến sào Lanest" style="object-position:78% 50%;">
+        <figcaption>Xưởng sơ chế tại Cam Ranh</figcaption>
+      </figure>
+      <figure>
+        <img src="tinh-che-vun.jpg" alt="Cận cảnh sợi yến tinh chế">
+        <figcaption>Cận cảnh sợi yến sau tinh chế</figcaption>
+      </figure>
+      <figure>
+        <img src="set-qua-1.jpg" alt="Set quà yến sào Khánh Hòa cao cấp">
+        <figcaption>Set quà biếu Yến Sào Khánh Hòa</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDES ============ -->
+<section id="cam-nang" style="background:var(--surface-2);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Cẩm nang yến sào</p>
+      <h2>Kiến thức dùng yến đúng cách</h2>
+      <p>Những bài viết Lanest biên soạn để anh chị dùng yến hiệu quả và an tâm hơn mỗi ngày.</p>
+    </div>
+    <div class="guide-grid">
+      <article class="guide-card">
+        <span class="guide-date">29 · 12 · 2025</span>
+        <h3>Hướng dẫn dùng yến đúng cách</h3>
+        <p>Yến sào không phải “thần dược tức thì”. Bài viết hướng dẫn liều lượng phù hợp theo từng đối tượng, thời điểm dùng trong ngày và những lưu ý quan trọng khi bắt đầu.</p>
+      </article>
+      <article class="guide-card">
+        <span class="guide-date">29 · 12 · 2025</span>
+        <h3>Quy trình khép kín — nền tảng cho sự tận tâm</h3>
+        <p>Toàn bộ hành trình của tổ yến tại Lanest: từ thu hoạch, nhặt lông thủ công, chưng cách thủy đến sấy khô và đóng gói vô trùng.</p>
+      </article>
+      <article class="guide-card">
+        <span class="guide-date">24 · 10 · 2025</span>
+        <h3>Cẩm nang hướng dẫn chưng yến đúng cách</h3>
+        <p>Chưng yến bằng phương pháp cách thủy lửa nhỏ, thời gian ngâm nở và cách bảo quản trong ngăn mát để giữ trọn giá trị dinh dưỡng.</p>
+      </article>
+      <article class="guide-card">
+        <span class="guide-date">24 · 10 · 2025</span>
+        <h3>Yến chưng táo đỏ</h3>
+        <p>Vì sao táo đỏ là nguyên liệu được kết hợp nhiều nhất với yến sào, và cách chưng để vị ngọt thanh tự nhiên không bị gắt.</p>
+      </article>
+      <article class="guide-card">
+        <span class="guide-date">14 · 10 · 2025</span>
+        <h3>Cẩm nang tổng quan về yến sào</h3>
+        <p>Yến sào là thực phẩm quý từ thiên nhiên, giàu protein và axit amin. Bài viết tổng hợp các loại yến, cách phân biệt và tiêu chí chọn yến sạch.</p>
+      </article>
+      <article class="guide-card" style="background:var(--forest);border-color:var(--forest);">
+        <span class="guide-date" style="color:var(--gold-bright);">Tư vấn 1:1</span>
+        <h3 style="color:#fff;">Chưa biết chọn loại nào?</h3>
+        <p style="color:var(--forest-ink-soft);">Nhắn Zalo 0962 227 862 hoặc gọi hotline — Lanest tư vấn theo độ tuổi, tình trạng sức khỏe và ngân sách của gia đình anh chị.</p>
+        <a class="btn btn-outline-band" href="tel:02586278627" style="align-self:flex-start;">Gọi tư vấn</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="danh-gia">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow center">Khách hàng nói gì</p>
+      <h2>Cảm nhận từ khách hàng Lanest</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p>Mua quà tặng mẹ chồng mà mẹ chồng khen ưng quá chừng. Ngoài mùi vị thì còn đánh giá 5 sao cho dịch vụ nhà mình nha. Giao hàng nhanh, tư vấn nhiệt tình.</p>
+        <div class="testi-name">
+          <span class="testi-avatar">T</span>
+          <div><strong>Thiên Trang</strong><span>Khách hàng mua quà biếu</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p>Yến sào nhà mình xứng đáng với giá tiền luôn. Yến hủ rất đặc, không bị loãng. Vị rất ngon, dễ uống, mình đang mệt mà uống vào thấy khỏe hẳn luôn.</p>
+        <div class="testi-name">
+          <span class="testi-avatar">N</span>
+          <div><strong>Nguyễn Nga</strong><span>Khách hàng dùng yến hũ</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-stars">★★★★★</span>
+        <p>Tổ yến dai ngon, hầm chung với kỷ tử ăn hợp dã man. Ông chồng mất ngủ nhiều hôm mà thấy uống vào ngủ ngon hẳn. Cảm ơn công thức chưng yến của shop nha.</p>
+        <div class="testi-name">
+          <span class="testi-avatar">H</span>
+          <div><strong>Thu Hiền</strong><span>Khách hàng dùng tổ yến</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANCHES ============ -->
+<section id="chi-nhanh" style="background:var(--surface-2);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Hệ thống Lanest</p>
+      <h2>Trụ sở &amp; chi nhánh trên toàn quốc</h2>
+      <p>Lanest hiện có trụ sở tại Cam Ranh cùng sáu chi nhánh trải dài từ Bắc vào Nam, sẵn sàng phục vụ khách lẻ và đại lý.</p>
+    </div>
+    <div class="branch-grid">
+      <div class="branch-card hq">
+        <span class="branch-label">Trụ sở chính</span>
+        <h4>Cam Ranh, Khánh Hòa</h4>
+        <p>Kios 2 N3A, KĐT Căn Cứ Cam Ranh, P. Bắc Cam Ranh, Khánh Hòa</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Nha Trang</h4>
+        <p>Đường Trần Nam Trung, Xã Phước Đồng, Khánh Hòa</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Hồ Chí Minh</h4>
+        <p>Chung cư Mizuki, Đường số 1, Xã Bình Hưng, TP. Hồ Chí Minh</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Thanh Hóa</h4>
+        <p>Số 57, Ngõ 4, Thôn Cung Điền, Xã Nông Cống, Thanh Hóa</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Nghệ An</h4>
+        <p>277B Nguyễn Văn Cừ, Phường Thành Vinh, Nghệ An</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Vĩnh Long</h4>
+        <p>Khu 2, Xã Trà Ôn, Tỉnh Vĩnh Long</p>
+      </div>
+      <div class="branch-card">
+        <span class="branch-label">Chi nhánh</span>
+        <h4>Quảng Ngãi</h4>
+        <p>Sơn Mai, Minh Long, Quảng Ngãi</p>
+      </div>
+      <div class="branch-card" style="grid-column:span 2;">
+        <span class="branch-label">Mạng lưới phân phối Miền Bắc</span>
+        <h4>Giao hàng &amp; hợp tác đại lý khu vực phía Bắc</h4>
+        <p>Lanest nhận giao hàng COD và hợp tác đại lý tại các tỉnh thành Miền Bắc — liên hệ hotline để nhận chính sách đại lý theo từng khu vực.</p>
+      </div>
+    </div>
+    <div class="province-cloud">
+      <span class="province-chip">Hà Nội</span>
+      <span class="province-chip">Hải Phòng</span>
+      <span class="province-chip">Quảng Ninh</span>
+      <span class="province-chip">Bắc Ninh</span>
+      <span class="province-chip">Bắc Giang</span>
+      <span class="province-chip">Hải Dương</span>
+      <span class="province-chip">Hưng Yên</span>
+      <span class="province-chip">Nam Định</span>
+      <span class="province-chip">Thái Bình</span>
+      <span class="province-chip">Ninh Bình</span>
+      <span class="province-chip">Vĩnh Phúc</span>
+      <span class="province-chip">Phú Thọ</span>
+      <span class="province-chip">Thái Nguyên</span>
+      <span class="province-chip">Lạng Sơn</span>
+      <span class="province-chip">Lào Cai</span>
+      <span class="province-chip">Hòa Bình</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container-narrow">
+    <div class="section-head center" style="margin-bottom:48px;">
+      <p class="eyebrow center">Hỏi đáp</p>
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <details class="faq-item" open>
+      <summary>Yến sào Lanest phù hợp với những ai?<span class="plus"></span></summary>
+      <p>Yến sào phù hợp với nhiều lứa tuổi và thường được các gia đình lựa chọn để bồi bổ cho người lớn tuổi, phụ nữ, người mới ốm dậy hoặc người cần chăm sóc sức khỏe hằng ngày. Với trẻ nhỏ, Lanest có dòng yến chưng riêng và sẽ tư vấn liều lượng theo độ tuổi.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Nên dùng yến vào thời điểm nào trong ngày?<span class="plus"></span></summary>
+      <p>Theo hướng dẫn trong cẩm nang của Lanest, nên dùng yến khi bụng đói — tốt nhất là buổi sáng sớm hoặc trước khi đi ngủ khoảng 30–45 phút, và duy trì đều đặn thay vì dùng quá nhiều trong một lần.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Yến hũ Lanest bảo quản như thế nào?<span class="plus"></span></summary>
+      <p>Yến chưng hũ không chứa chất bảo quản nên cần giữ trong ngăn mát tủ lạnh sau khi nhận hàng và dùng trong thời hạn in trên bao bì để đảm bảo hương vị và chất lượng tốt nhất.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Tổ yến tinh chế cần sơ chế thế nào trước khi chưng?<span class="plus"></span></summary>
+      <p>Tổ yến tinh chế đã được làm sạch lông hoàn toàn, anh chị chỉ cần ngâm nước sạch cho tơi sợi rồi chưng cách thủy với lửa nhỏ cùng nguyên liệu yêu thích như đường phèn, táo đỏ, hạt sen.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Chính sách đổi trả và bồi hoàn của Lanest ra sao?<span class="plus"></span></summary>
+      <p>Lanest hỗ trợ đổi trả linh hoạt trong vòng 15 ngày kể từ khi nhận hàng, và cam kết bồi hoàn gấp 10 lần nếu khách hàng phát hiện hàng giả.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Lanest giao hàng khu vực nào?<span class="plus"></span></summary>
+      <p>Lanest giao hàng COD toàn quốc — khách hàng được kiểm tra sản phẩm trước khi nhận. Ngoài trụ sở Cam Ranh, Lanest có chi nhánh tại Nha Trang, TP.HCM, Thanh Hóa, Nghệ An, Vĩnh Long, Quảng Ngãi và mạng lưới phân phối tại các tỉnh Miền Bắc.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Lanest có nhận hợp tác đại lý không?<span class="plus"></span></summary>
+      <p>Có. Lanest luôn chào đón đại lý trên toàn quốc. Vui lòng liên hệ hotline 025.8627.8627 hoặc Zalo 0962 227 862 để nhận bảng giá sỉ và chính sách hợp tác.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band">
+  <div class="container-narrow">
+    <p class="eyebrow center" style="color:var(--gold-bright);">Đặt hàng &amp; tư vấn</p>
+    <h2 style="margin-top:20px;">Trao món quà sức khỏe từ Yến Sào Lanest</h2>
+    <p>Gọi hotline hoặc nhắn Zalo — Lanest tư vấn đúng sản phẩm theo nhu cầu, báo giá rõ ràng và giao hàng tận nơi trên toàn quốc.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="tel:02586278627">Gọi 025.8627.8627</a>
+      <a class="btn btn-outline-photo" href="#lien-he">Gửi yêu cầu tư vấn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="lien-he">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">Liên hệ</p>
+        <h2 style="margin-top:18px;font-size:clamp(28px,3.6vw,42px);">Kết nối cùng Yến Sào Lanest</h2>
+        <div class="contact-list">
+          <div class="contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <div><strong>Trụ sở chính</strong><span>Kios 2 N3A, KĐT Căn Cứ Cam Ranh, P. Bắc Cam Ranh, Khánh Hòa</span></div>
+          </div>
+          <div class="contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.9 2.2z"/></svg>
+            <div><strong>Hotline</strong><a href="tel:02586278627">025.8627.8627</a></div>
+          </div>
+          <div class="contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            <div><strong>Email</strong><a href="mailto:Yensaolanest79@gmail.com">Yensaolanest79@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="17" rx="1"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+            <div><strong>Giờ làm việc</strong><span>Thứ 2 – Chủ nhật · 8:00 – 20:00</span></div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a class="social-link" href="https://www.facebook.com/yensaolanest79" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
+            Facebook
+          </a>
+          <a class="social-link" href="https://zalo.me/0962227862" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 9 9 0 01-3.3-.6L3 21l1.8-4.4A8.2 8.2 0 013 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5z"/></svg>
+            Zalo 0962 227 862
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@yensaolanest" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.2 1.8 3.7 4 4v3c-1.5 0-2.9-.4-4-1.2V15a6 6 0 11-6-6c.3 0 .7 0 1 .1v3.1a3 3 0 101 2.3V3h4z"/></svg>
+            TikTok
+          </a>
+          <a class="social-link" href="https://youtu.be/yv-USNf0pc0" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2A2.7 2.7 0 0019.7 5C18 4.5 12 4.5 12 4.5s-6 0-7.7.5A2.7 2.7 0 002.4 7.2 28 28 0 002 12a28 28 0 00.4 4.8A2.7 2.7 0 004.3 19c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.7 2.7 0 001.9-2.2A28 28 0 0022 12a28 28 0 00-.4-4.8zM10 15V9l5 3z"/></svg>
+            Video giới thiệu
+          </a>
+        </div>
+      </div>
+      <form class="form" id="contact-form">
+        <h3>Gửi yêu cầu tư vấn</h3>
+        <p>Để lại thông tin, Lanest sẽ liên hệ tư vấn sản phẩm phù hợp trong thời gian sớm nhất.</p>
+        <div class="field">
+          <label for="cf-name">Họ và tên</label>
+          <input type="text" id="cf-name" name="name" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Số điện thoại</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="09xx xxx xxx" required>
+        </div>
+        <div class="field">
+          <label for="cf-msg">Nội dung cần tư vấn</label>
+          <textarea id="cf-msg" name="message" placeholder="Tôi muốn tìm hiểu về set quà biếu cho dịp Tết..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-forest btn-block">Gửi yêu cầu</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="logo-footer.jpg" alt="Logo Yến Sào Lanest"></div>
+        <p class="footer-tagline">“Trao sức khỏe — Trao yêu thương.”</p>
+        <p class="footer-about">Công Ty TNHH Yến Sào Lanest — sản xuất và phân phối yến sào nguyên chất từ vùng nguyên liệu Cam Ranh, Khánh Hòa.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sản phẩm</h5>
+        <ul>
+          <li><a href="#san-pham">Yến chưng hũ 7g · 14 vị</a></li>
+          <li><a href="#san-pham">Tổ yến nguyên chất 100%</a></li>
+          <li><a href="#san-pham">Yến tinh chế cao cấp</a></li>
+          <li><a href="#san-pham">Set quà biếu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Khám phá</h5>
+        <ul>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#chung-nhan">Chứng nhận thương hiệu</a></li>
+          <li><a href="#quy-trinh">Quy trình sản xuất</a></li>
+          <li><a href="#cam-nang">Cẩm nang yến sào</a></li>
+          <li><a href="#chi-nhanh">Hệ thống chi nhánh</a></li>
+          <li><a href="#faq">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Liên hệ</h5>
+        <ul>
+          <li>Kios 2 N3A, KĐT Căn Cứ Cam Ranh, P. Bắc Cam Ranh, Khánh Hòa</li>
+          <li><a href="tel:02586278627">Hotline: 025.8627.8627</a></li>
+          <li><a href="https://zalo.me/0962227862" target="_blank" rel="noopener">Zalo: 0962 227 862</a></li>
+          <li><a href="mailto:Yensaolanest79@gmail.com">Yensaolanest79@gmail.com</a></li>
+          <li><a href="https://www.facebook.com/yensaolanest79" target="_blank" rel="noopener">Facebook · TikTok @yensaolanest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Công Ty TNHH Yến Sào Lanest. Bảo lưu mọi quyền.</span>
+      <span>Chứng nhận Sản phẩm – Dịch vụ tốt nhất vì người tiêu dùng 2024</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-stack">
+  <a class="float-btn zalo" href="https://zalo.me/0962227862" target="_blank" rel="noopener" aria-label="Nhắn Zalo Lanest">Zalo</a>
+  <a class="float-btn call" href="tel:02586278627" aria-label="Gọi hotline Lanest">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.9 2.2z"/></svg>
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll('nav.primary a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var t = document.getElementById('nav-toggle');
+      if(t) t.checked = false;
+    });
+  });
+  var form = document.getElementById('contact-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('cf-name').value;
+      var phone = document.getElementById('cf-phone').value;
+      var msg = document.getElementById('cf-msg').value;
+      var body = 'Ho ten: ' + name + '%0D%0ASo dien thoai: ' + phone + '%0D%0ANoi dung: ' + encodeURIComponent(msg);
+      window.location.href = 'mailto:Yensaolanest79@gmail.com?subject=' + encodeURIComponent('Yeu cau tu van tu website Lanest') + '&body=' + body;
+    });
+  }
+</script>
+</body></html>
