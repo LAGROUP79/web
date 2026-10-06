@@ -1,4 +1,86 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}  /* ============ GIO HANG ============ */
+  .gio-nut{
+    position:relative;display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border:1px solid var(--line);background:var(--surface);
+    color:var(--ink);border-radius:50%;cursor:pointer;flex:none;
+  }
+  .gio-nut svg{width:21px;height:21px;}
+  .gio-dem{
+    position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;
+    background:var(--ruby);color:#fff;border-radius:10px;font-size:11px;font-weight:700;
+    display:none;align-items:center;justify-content:center;line-height:1;
+  }
+  .gio-dem.hien{display:flex;}
+
+  .them-gio{
+    margin-top:12px;width:100%;padding:10px 12px;border:1px solid var(--gold);
+    background:transparent;color:var(--gold);font-family:inherit;font-size:12px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s ease;
+  }
+  .them-gio:hover{background:var(--gold);color:#fff;}
+  .them-gio.da-them{background:var(--forest);border-color:var(--forest);color:var(--gold-bright);}
+
+  .gio-lop{
+    position:fixed;inset:0;z-index:120;display:none;
+  }
+  .gio-lop.mo{display:block;}
+  .gio-nen{position:absolute;inset:0;background:rgba(12,52,39,.55);}
+  .gio-khay{
+    position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);
+    display:flex;flex-direction:column;box-shadow:var(--shadow);
+  }
+  .gio-dau{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:20px 22px;border-bottom:1px solid var(--line);background:var(--surface);
+  }
+  .gio-dau h3{margin:0;font-size:18px;font-weight:500;color:var(--ink);}
+  .gio-dong{
+    border:none;background:transparent;font-size:26px;line-height:1;color:var(--ink-soft);
+    cursor:pointer;padding:0 4px;
+  }
+  .gio-than{flex:1;overflow-y:auto;padding:16px 22px;}
+  .gio-trong{padding:40px 0;text-align:center;color:var(--ink-faint);font-size:14px;font-weight:300;}
+
+  .gio-dong-sp{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line-soft);}
+  .gio-anh{width:62px;height:62px;flex:none;overflow:hidden;background:var(--surface-2);}
+  .gio-anh img{width:100%;height:100%;object-fit:cover;}
+  .gio-tt{flex:1;min-width:0;}
+  .gio-ten{font-size:13.5px;font-weight:500;color:var(--ink);line-height:1.35;}
+  .gio-quy{font-size:11.5px;color:var(--ink-faint);margin-top:2px;}
+  .gio-hang-duoi{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;}
+  .gio-sl{display:flex;align-items:center;border:1px solid var(--line);}
+  .gio-sl button{
+    width:26px;height:26px;border:none;background:transparent;color:var(--ink);
+    font-size:15px;line-height:1;cursor:pointer;
+  }
+  .gio-sl span{min-width:26px;text-align:center;font-size:13px;font-weight:600;}
+  .gio-tien{font-size:13.5px;font-weight:600;color:var(--gold);white-space:nowrap;}
+  .gio-xoa{
+    border:none;background:transparent;color:var(--ink-faint);font-size:11px;
+    text-decoration:underline;cursor:pointer;padding:0;margin-top:6px;
+  }
+
+  .gio-chan{border-top:1px solid var(--line);background:var(--surface);padding:18px 22px;}
+  .gio-tong{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;}
+  .gio-tong span{font-size:13px;color:var(--ink-soft);}
+  .gio-tong strong{font-size:22px;font-weight:600;color:var(--gold);}
+  .gio-form{display:grid;gap:10px;}
+  .gio-form label{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+  .gio-form input,.gio-form textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--line);background:var(--bg);
+    font-family:inherit;font-size:14px;color:var(--ink);
+  }
+  .gio-form textarea{min-height:60px;resize:vertical;}
+  .gio-gui{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px;}
+  .gio-loi{font-size:12.5px;color:var(--ruby);display:none;}
+  .gio-loi.hien{display:block;}
+  .gio-ghi-chu{font-size:11.5px;color:var(--ink-faint);font-weight:300;margin:10px 0 0;line-height:1.5;}
+
+  @media (max-width:560px){
+    .gio-khay{width:100%;}
+    .gio-gui{grid-template-columns:1fr;}
+  }
+</style></head><body>
 <title>Yến Sào Lanest</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -870,6 +952,10 @@
       <a href="#lien-he">Liên hệ</a>
     </nav>
     <div class="nav-cta">
+      <button class="gio-nut" id="mo-gio" type="button" aria-label="Mo gio hang">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="gio-dem" id="gio-dem">0</span>
+      </button>
       <a class="btn btn-gold" href="tel:02586278627">Gọi 025.8627.8627</a>
       <label class="hamburger" for="nav-toggle" aria-label="Mở menu"><span></span></label>
     </div>
@@ -3300,4 +3386,278 @@
     });
   }
 </script>
+<!-- ============ GIO HANG ============ -->
+<div class="gio-lop" id="gio-hang" aria-hidden="true">
+  <div class="gio-nen" data-dong-gio></div>
+  <aside class="gio-khay" role="dialog" aria-label="Giỏ hàng">
+    <div class="gio-dau">
+      <h3>Giỏ hàng của bạn</h3>
+      <button class="gio-dong" type="button" data-dong-gio aria-label="Đóng giỏ hàng">×</button>
+    </div>
+    <div class="gio-than" id="gio-than"></div>
+    <div class="gio-chan">
+      <div class="gio-tong"><span>Tạm tính</span><strong id="gio-tong">0đ</strong></div>
+      <form class="gio-form" id="gio-form" novalidate>
+        <div>
+          <label for="dh-ten">Họ và tên</label>
+          <input type="text" id="dh-ten" name="ten" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div>
+          <label for="dh-sdt">Số điện thoại</label>
+          <input type="tel" id="dh-sdt" name="sdt" placeholder="09xx xxx xxx" required>
+        </div>
+        <div>
+          <label for="dh-dc">Địa chỉ nhận hàng</label>
+          <input type="text" id="dh-dc" name="diachi" placeholder="Số nhà, đường, phường, tỉnh/thành" required>
+        </div>
+        <div>
+          <label for="dh-note">Ghi chú</label>
+          <textarea id="dh-note" name="ghichu" placeholder="Giờ nhận hàng, yêu cầu gói quà…"></textarea>
+        </div>
+        <p class="gio-loi" id="gio-loi"></p>
+        <div class="gio-gui">
+          <button class="btn btn-gold" type="submit">Gửi đơn qua Zalo</button>
+          <button class="btn btn-outline" type="button" id="gui-mail">Gửi đơn qua email</button>
+        </div>
+      </form>
+      <p class="gio-ghi-chu">Đơn của anh chị được gửi về Yến Sào Lanest, nhân viên sẽ gọi lại xác nhận trước khi giao. Thanh toán khi nhận hàng. Sản phẩm ghi "Liên hệ" và đơn số lượng lớn, vui lòng gọi hotline <strong>025.8627.8627</strong>.</p>
+    </div>
+  </aside>
+</div>
+
+<script>
+/* ============ GIO HANG LANEST ============ */
+(function () {
+  var KHOA   = 'lanest-gio';
+  var MAIL   = 'Yensaolanest79@gmail.com';
+  var ZALO   = '0962227862';
+  var gio    = [];
+
+  /* ---- luu / doc ---- */
+  function doc() {
+    try { gio = JSON.parse(localStorage.getItem(KHOA) || '[]'); }
+    catch (e) { gio = []; }
+    if (!Array.isArray(gio)) gio = [];
+  }
+  function luu() {
+    try { localStorage.setItem(KHOA, JSON.stringify(gio)); } catch (e) {}
+  }
+
+  function tien(n) { return n.toLocaleString('vi-VN') + 'đ'; }
+  function soTien(s) {
+    var x = (s || '').replace(/[^0-9]/g, '');
+    return x ? parseInt(x, 10) : 0;
+  }
+
+  /* ---- doc thong tin tu the san pham ---- */
+  function layTT(the) {
+    var ten  = the.querySelector('.product-name');
+    var gia  = the.querySelector('.product-price');
+    var quy  = the.querySelector('.product-spec');
+    var anh  = the.querySelector('.product-art img');
+    if (!ten || !gia) return null;
+    var g = soTien(gia.textContent);
+    if (!g) return null;                     /* "Lien he" thi khong them gio */
+    return {
+      ma:   (ten.textContent.trim() + '|' + g),
+      ten:  ten.textContent.trim(),
+      gia:  g,
+      quy:  quy ? quy.textContent.trim() : '',
+      anh:  anh ? anh.getAttribute('src') : '',
+      sl:   1
+    };
+  }
+
+  function them(sp) {
+    var co = null;
+    for (var i = 0; i < gio.length; i++) { if (gio[i].ma === sp.ma) { co = gio[i]; break; } }
+    if (co) { co.sl += 1; } else { gio.push(sp); }
+    luu(); ve();
+  }
+
+  /* ---- gan nut "Them vao gio" vao moi the co gia ---- */
+  function ganNut() {
+    var cac = document.querySelectorAll('.product-card');
+    for (var i = 0; i < cac.length; i++) {
+      (function (the) {
+        if (the.querySelector('.them-gio')) return;
+        var sp = layTT(the);
+        if (!sp) return;
+        var than = the.querySelector('.product-body');
+        if (!than) return;
+        var nut = document.createElement('button');
+        nut.type = 'button';
+        nut.className = 'them-gio';
+        nut.textContent = 'Thêm vào giỏ';
+        nut.addEventListener('click', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          them(layTT(the));
+          nut.textContent = 'Đã thêm ✓';
+          nut.classList.add('da-them');
+          setTimeout(function () {
+            nut.textContent = 'Thêm vào giỏ';
+            nut.classList.remove('da-them');
+          }, 1400);
+        });
+        than.appendChild(nut);
+      })(cac[i]);
+    }
+
+    /* nut trong trang chi tiet san pham */
+    var ms = document.querySelectorAll('.sp-modal');
+    for (var k = 0; k < ms.length; k++) {
+      (function (m) {
+        var hd = m.querySelector('.sp-actions');
+        if (!hd || hd.querySelector('.them-gio-modal')) return;
+        var ten = m.querySelector('.sp-info h3');
+        var gia = m.querySelector('.sp-price');
+        var quy = m.querySelector('.sp-info .product-spec');
+        var anh = m.querySelector('.sp-photo img');
+        if (!ten || !gia) return;
+        var g = soTien(gia.childNodes[0] ? gia.childNodes[0].textContent : gia.textContent);
+        if (!g) return;
+        var nut = document.createElement('button');
+        nut.type = 'button';
+        nut.className = 'btn btn-gold them-gio-modal';
+        nut.textContent = 'Thêm vào giỏ';
+        nut.addEventListener('click', function (e) {
+          e.preventDefault();
+          them({
+            ma: ten.textContent.trim() + '|' + g,
+            ten: ten.textContent.trim(),
+            gia: g,
+            quy: quy ? quy.textContent.trim() : '',
+            anh: anh ? anh.getAttribute('src') : '',
+            sl: 1
+          });
+          moGio();
+        });
+        hd.insertBefore(nut, hd.firstChild);
+      })(ms[k]);
+    }
+  }
+
+  /* ---- ve lai gio ---- */
+  function ve() {
+    var than = document.getElementById('gio-than');
+    var tong = document.getElementById('gio-tong');
+    var dem  = document.getElementById('gio-dem');
+    if (!than) return;
+
+    var sl = 0, tt = 0, html = '';
+    for (var i = 0; i < gio.length; i++) { sl += gio[i].sl; tt += gio[i].sl * gio[i].gia; }
+
+    if (!gio.length) {
+      html = '<p class="gio-trong">Giỏ hàng đang trống.<br>Anh chị chọn sản phẩm ở mục “Danh mục &amp; bảng giá” nhé.</p>';
+    } else {
+      for (var j = 0; j < gio.length; j++) {
+        var s = gio[j];
+        html += '<div class="gio-dong-sp">'
+             +    (s.anh ? '<div class="gio-anh"><img src="' + s.anh + '" alt=""></div>' : '')
+             +    '<div class="gio-tt">'
+             +      '<div class="gio-ten">' + s.ten + '</div>'
+             +      (s.quy ? '<div class="gio-quy">' + s.quy + '</div>' : '')
+             +      '<div class="gio-hang-duoi">'
+             +        '<div class="gio-sl">'
+             +          '<button type="button" data-giam="' + j + '" aria-label="Bớt 1">−</button>'
+             +          '<span>' + s.sl + '</span>'
+             +          '<button type="button" data-tang="' + j + '" aria-label="Thêm 1">+</button>'
+             +        '</div>'
+             +        '<div class="gio-tien">' + tien(s.sl * s.gia) + '</div>'
+             +      '</div>'
+             +      '<button type="button" class="gio-xoa" data-xoa="' + j + '">Xoá</button>'
+             +    '</div>'
+             +  '</div>';
+      }
+    }
+    than.innerHTML = html;
+    if (tong) tong.textContent = tien(tt);
+    if (dem) {
+      dem.textContent = sl;
+      if (sl > 0) { dem.classList.add('hien'); } else { dem.classList.remove('hien'); }
+    }
+  }
+
+  function moGio()  { var l = document.getElementById('gio-hang'); if (l) { l.classList.add('mo'); l.setAttribute('aria-hidden', 'false'); } }
+  function dongGio(){ var l = document.getElementById('gio-hang'); if (l) { l.classList.remove('mo'); l.setAttribute('aria-hidden', 'true'); } }
+
+  /* ---- soan noi dung don ---- */
+  function soanDon() {
+    var ten = document.getElementById('dh-ten').value.trim();
+    var sdt = document.getElementById('dh-sdt').value.trim();
+    var dc  = document.getElementById('dh-dc').value.trim();
+    var gc  = document.getElementById('dh-note').value.trim();
+    var loi = document.getElementById('gio-loi');
+
+    if (!gio.length) { loi.textContent = 'Giỏ hàng đang trống.'; loi.classList.add('hien'); return null; }
+    if (!ten || !sdt || !dc) { loi.textContent = 'Anh chị điền giúp họ tên, số điện thoại và địa chỉ nhận hàng.'; loi.classList.add('hien'); return null; }
+    loi.classList.remove('hien');
+
+    var tt = 0, d = '';
+    for (var i = 0; i < gio.length; i++) {
+      var s = gio[i];
+      tt += s.sl * s.gia;
+      d += (i + 1) + '. ' + s.ten + (s.quy ? ' (' + s.quy + ')' : '')
+        + ' — SL ' + s.sl + ' x ' + tien(s.gia) + ' = ' + tien(s.sl * s.gia) + '\n';
+    }
+    return 'ĐƠN HÀNG TỪ WEBSITE LANEST\n'
+         + '-----------------------------\n'
+         + 'Khách hàng: ' + ten + '\n'
+         + 'Điện thoại: ' + sdt + '\n'
+         + 'Địa chỉ   : ' + dc + '\n'
+         + (gc ? 'Ghi chú   : ' + gc + '\n' : '')
+         + '-----------------------------\n'
+         + d
+         + '-----------------------------\n'
+         + 'TỔNG CỘNG: ' + tien(tt) + '\n'
+         + 'Thời gian: ' + new Date().toLocaleString('vi-VN') + '\n';
+  }
+
+  /* ---- khoi tao ---- */
+  function khoiTao() {
+    doc();
+    ganNut();
+    ve();
+
+    var mo = document.getElementById('mo-gio');
+    if (mo) mo.addEventListener('click', function (e) { e.preventDefault(); moGio(); });
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.closest && t.closest('[data-dong-gio]')) { dongGio(); return; }
+      if (!t.hasAttribute) return;
+      if (t.hasAttribute('data-tang')) { gio[+t.getAttribute('data-tang')].sl += 1; luu(); ve(); }
+      else if (t.hasAttribute('data-giam')) {
+        var i = +t.getAttribute('data-giam');
+        gio[i].sl -= 1; if (gio[i].sl < 1) gio.splice(i, 1);
+        luu(); ve();
+      }
+      else if (t.hasAttribute('data-xoa')) { gio.splice(+t.getAttribute('data-xoa'), 1); luu(); ve(); }
+    });
+
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dongGio(); });
+
+    var form = document.getElementById('gio-form');
+    if (form) form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var noi = soanDon();
+      if (!noi) return;
+      window.open('https://zalo.me/' + ZALO + '?text=' + encodeURIComponent(noi), '_blank');
+    });
+
+    var nm = document.getElementById('gui-mail');
+    if (nm) nm.addEventListener('click', function () {
+      var noi = soanDon();
+      if (!noi) return;
+      window.location.href = 'mailto:' + MAIL
+        + '?subject=' + encodeURIComponent('Đơn hàng mới từ website Lanest')
+        + '&body=' + encodeURIComponent(noi);
+    });
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', khoiTao); }
+  else { khoiTao(); }
+})();
+</script>
+
 </body></html>
