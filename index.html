@@ -919,11 +919,11 @@
   .cn-muc.dang-xem{display:grid;}
   @keyframes cn-hien{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
   .cn-muc{grid-template-columns:1fr 1.1fr;align-items:start;}
-  .award-photo.cn-anh{align-self:start;}
-  .award-photo.cn-anh::before{inset:-12px;}
-  .cn-muc .award-photo.cn-anh img{
-    width:100% !important;height:auto !important;aspect-ratio:auto !important;
-    object-fit:contain !important;display:block;background:#fff;padding:0;
+  .award-photo.cn-gt-anh{align-self:start;}
+  .award-photo.cn-gt-anh::before{inset:-12px;}
+  .award-photo.cn-gt-anh img{
+    width:100%;height:auto;aspect-ratio:auto;object-fit:contain;
+    display:block;background:#fff;padding:0;
   }
   .cn-dieu-khien{
     display:flex;align-items:center;justify-content:center;gap:18px;margin-top:46px;
@@ -943,6 +943,14 @@
     .cn-dieu-khien{margin-top:30px;gap:12px;}
     .cn-nut{width:38px;height:38px;font-size:20px;}
   }
+  @media (min-width:1081px) and (max-width:1480px){
+    .nav-row{gap:14px;}
+    nav.primary > a, .nav-item > .nav-trigger{padding:12px 7px;font-size:11.5px;letter-spacing:.03em;}
+    .nav-cta{gap:10px;}
+    .nav-cta .btn{padding:12px 14px;font-size:11px;}
+    .brand-word small{display:none;}
+  }
+  body{overflow-x:hidden;}
 </style>
 
 <!-- ============ TOP BAR ============ -->
@@ -1085,7 +1093,7 @@
     <div class="cn-slide" id="cn-slide">
 
       <article class="award-grid cn-muc dang-xem">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-thuong-hieu-so-1.jpg" alt="Chứng nhận Thương hiệu số 1 Việt Nam 2024 của Công ty TNHH Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1102,7 +1110,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-cup-thuong-hieu.jpg" alt="Cúp và chứng nhận Thương hiệu số 1 Việt Nam 2024 trưng bày tại Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1118,7 +1126,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-iso-22000.jpg" alt="Chứng chỉ ISO 22000:2018 hệ thống quản lý an toàn thực phẩm của Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1136,7 +1144,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-iso-quyet-dinh.jpg" alt="Quyết định chứng nhận hệ thống quản lý ISO 22000:2018 cho Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1153,7 +1161,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-ban-quyen-logo.jpg" alt="Giấy chứng nhận đăng ký quyền tác giả logo Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1170,7 +1178,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-viettel-2025.jpg" alt="Khen thưởng đơn vị bán hàng xuất sắc năm 2025 của Bưu chính Viettel Khánh Hòa cho Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -1186,7 +1194,7 @@
       </article>
 
       <article class="award-grid cn-muc">
-        <div class="award-photo cn-anh">
+        <div class="award-photo cn-gt-anh">
           <img src="cn-thu-cam-on.jpg" alt="Thư cảm ơn chương trình Hành trình Giấc Mơ Chapi gửi Yến Sào Lanest">
         </div>
         <div class="award-body">
@@ -2897,6 +2905,14 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
+          <a class="cn-the" href="cam-nang-cach-bao-quan-to-yen.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="bao-quan-to-yen-rut-long-kho.jpg" alt="Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">28 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-chung-tu-vi-ky-tu.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà" loading="lazy"></span>
             <span class="cn-noi">
@@ -2945,19 +2961,19 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="yen-chung-cho-tre-em-vi-dau.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
           <a class="cn-the" href="cam-nang-phan-biet-yen-sao-that-gia.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tinh-che-vun.jpg" alt="Cách Phân Biệt Yến Sào Thật – Giả, Tránh Mua Nhầm Hàng Kém Chất Lượng" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Cách Phân Biệt Yến Sào Thật – Giả, Tránh Mua Nhầm Hàng Kém Chất Lượng</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="yen-chung-gung-7g-yen-tuoi-am-bung-tieu-hoa.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -2969,6 +2985,14 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
+          <a class="cn-the" href="cam-nang-cach-bao-quan-to-yen.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="bao-quan-to-yen-rut-long-kho.jpg" alt="Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">28 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-chung-tu-vi-ky-tu.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà" loading="lazy"></span>
             <span class="cn-noi">
@@ -3017,14 +3041,6 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="yen-chung-cho-tre-em-vi-dau.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
           <a class="cn-the" href="cam-nang-phan-biet-yen-sao-that-gia.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tinh-che-vun.jpg" alt="Cách Phân Biệt Yến Sào Thật – Giả, Tránh Mua Nhầm Hàng Kém Chất Lượng" loading="lazy"></span>
             <span class="cn-noi">
@@ -3033,10 +3049,6 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-        </div>
-      </div>
-      <div class="cn-bang">
-        <div class="cn-chay nguoc">
           <a class="cn-the" href="yen-chung-gung-7g-yen-tuoi-am-bung-tieu-hoa.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest" loading="lazy"></span>
             <span class="cn-noi">
@@ -3045,11 +3057,15 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
+        </div>
+      </div>
+      <div class="cn-bang">
+        <div class="cn-chay nguoc">
+          <a class="cn-the" href="yen-chung-cho-tre-em-vi-dau.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3061,19 +3077,19 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
+          <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-chung-tao-do-hat-chia.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">19 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="quy-trinh-khep-kin-nen-tang-cho-su-tan-tam.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="xuong-nhat-yen-can-canh.jpg" alt="Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">29 &#183; 12 &#183; 2025</span>
-              <span class="cn-ten">Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3085,11 +3101,11 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-yen-chung-tao-do-mon-qua-duong-suc-vang-cho-suc-khoe.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe" loading="lazy"></span>
+          <a class="cn-the" href="quy-trinh-khep-kin-nen-tang-cho-su-tan-tam.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="xuong-nhat-yen-can-canh.jpg" alt="Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
-              <span class="cn-ten">Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe</span>
+              <span class="cn-ngay">29 &#183; 12 &#183; 2025</span>
+              <span class="cn-ten">Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3098,6 +3114,14 @@
             <span class="cn-noi">
               <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
               <span class="cn-ten">Hướng Dẫn Chưng Yến Đúng Cách</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-chung-tao-do-mon-qua-duong-suc-vang-cho-suc-khoe.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
+              <span class="cn-ten">Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3109,19 +3133,11 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="yen-chung-gung-7g-yen-tuoi-am-bung-tieu-hoa.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-gung.jpg" alt="Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest" loading="lazy"></span>
+          <a class="cn-the" href="yen-chung-cho-tre-em-vi-dau.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em-dau.jpg" alt="Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">21 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Gừng — 7g Yến Tươi Ấm Áp, Hỗ Trợ Tiêu Hóa Từ Yến Sào Lanest</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-ten">Yến Chưng Cho Trẻ Em Vị Dâu — 7g Yến Tươi Thơm Ngon, Dễ Uống Cho Bé</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3133,19 +3149,19 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
+          <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-chung-tao-do-hat-chia.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tao-do.jpg" alt="Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">19 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Yến Chưng Táo Đỏ Hạt Chia — Thanh Mát, Bổ Dưỡng, Đẹp Da</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="quy-trinh-khep-kin-nen-tang-cho-su-tan-tam.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="xuong-nhat-yen-can-canh.jpg" alt="Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">29 &#183; 12 &#183; 2025</span>
-              <span class="cn-ten">Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3157,11 +3173,11 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-yen-chung-tao-do-mon-qua-duong-suc-vang-cho-suc-khoe.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe" loading="lazy"></span>
+          <a class="cn-the" href="quy-trinh-khep-kin-nen-tang-cho-su-tan-tam.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="xuong-nhat-yen-can-canh.jpg" alt="Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
-              <span class="cn-ten">Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe</span>
+              <span class="cn-ngay">29 &#183; 12 &#183; 2025</span>
+              <span class="cn-ten">Quy Trình Khép Kín - Nền Tảng Cho Sự Tận Tâm</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3170,6 +3186,14 @@
             <span class="cn-noi">
               <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
               <span class="cn-ten">Hướng Dẫn Chưng Yến Đúng Cách</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-chung-tao-do-mon-qua-duong-suc-vang-cho-suc-khoe.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">24 &#183; 10 &#183; 2025</span>
+              <span class="cn-ten">Yến Chưng Táo Đỏ — Món Quà Dưỡng Sức Vàng Cho Sức Khỏe</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
