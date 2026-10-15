@@ -741,14 +741,8 @@
   a.guide-card:hover .guide-more{gap:11px;}
 
   /* ===== cam nang: 2 dong tu luot ===== */
-  .cn-bang{overflow:hidden;position:relative;}
-  .cn-bang + .cn-bang{margin-top:24px;}
-  .cn-bang::before,.cn-bang::after{
-    content:"";position:absolute;top:0;bottom:0;width:70px;z-index:3;pointer-events:none;
-  }
-  .cn-bang{--mau-nen:var(--surface-2);}
-  .cn-bang::before{left:0;background:linear-gradient(90deg,var(--mau-nen),transparent);}
-  .cn-bang::after{right:0;background:linear-gradient(270deg,var(--mau-nen),transparent);}
+  .cn-bang{position:relative;}
+
   @media (max-width:620px){ .cn-bang::before,.cn-bang::after{width:28px;} }
 
   .cn-chay{display:flex;gap:22px;width:max-content;animation:cn-truot 72s linear infinite;}
@@ -950,6 +944,38 @@
     .brand-word small{display:none;}
   }
   body{overflow-x:hidden;}
+  /* ---- bang cam nang: tu chay + keo tay + bam nut ---- */
+  .cn-khung{position:relative;}
+  .cn-khung + .cn-khung{margin-top:24px;}
+  .cn-bang{
+    overflow-x:auto;overflow-y:hidden;scroll-behavior:auto;
+    scrollbar-width:none;-ms-overflow-style:none;
+    cursor:grab;-webkit-overflow-scrolling:touch;
+  }
+  .cn-bang::-webkit-scrollbar{display:none;}
+  .cn-bang.dang-keo{cursor:grabbing;}
+  .cn-bang + .cn-bang{margin-top:0;}
+  .cn-chay{animation:none !important;}
+  .cn-khung::before,.cn-khung::after{
+    content:"";position:absolute;top:0;bottom:0;width:70px;z-index:3;pointer-events:none;
+  }
+  .cn-khung::before{left:0;background:linear-gradient(90deg,var(--surface-2),transparent);}
+  .cn-khung::after{right:0;background:linear-gradient(270deg,var(--surface-2),transparent);}
+  .cn-dieu{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
+    background:var(--surface);color:var(--ink);font-size:22px;line-height:1;
+    cursor:pointer;box-shadow:var(--shadow-sm);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .25s ease,color .25s ease,border-color .25s ease;
+  }
+  .cn-dieu:hover{background:var(--gold);border-color:var(--gold);color:#fff;}
+  .cn-dieu.cn-trai{left:6px;}
+  .cn-dieu.cn-phai{right:6px;}
+  @media (max-width:560px){
+    .cn-dieu{width:36px;height:36px;font-size:18px;}
+    .cn-khung::before,.cn-khung::after{width:34px;}
+  }
 </style>
 
 <!-- ============ TOP BAR ============ -->
@@ -2870,99 +2896,35 @@
     <div class="guide-bang">
       <div class="cn-bang">
         <div class="cn-chay">
-          <a class="cn-the" href="cam-nang-cach-chon-mua-yen-sao.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="cach-chon-mua-yen-sao-hop-tinh-che.jpg" alt="Cách Chọn Mua Yến Sào Chuẩn, Tránh Các Chiêu Trò Thường Gặp" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-nhap-si-yen-sao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nhap-si-yen-sao-thung-hang-lanest.jpg" alt="Nhập Sỉ Yến Sào: Kinh Nghiệm Chọn Nguồn Hàng Uy Tín" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">11 &#183; 10 &#183; 2026</span>
-              <span class="cn-ten">Cách Chọn Mua Yến Sào Chuẩn, Tránh Các Chiêu Trò Thường Gặp</span>
+              <span class="cn-ngay">15 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Nhập Sỉ Yến Sào: Kinh Nghiệm Chọn Nguồn Hàng Uy Tín</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-lam-dai-ly-yen-sao-lanest.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="lam-dai-ly-yen-sao-hang-giao-dai-ly.jpg" alt="Hợp Tác Làm Đại Lý Yến Sào Lanest: Điều Kiện, Quyền Lợi, Cách Bắt Đầu" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-qua-bieu-yen-sao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="qua-bieu-yen-sao-hop-do-6-hu.jpg" alt="Set Quà Biếu Yến Sào: Gợi Ý Chọn Quà Sức Khỏe Cho Sếp, Đối Tác, Gia Đình" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">10 &#183; 10 &#183; 2026</span>
-              <span class="cn-ten">Hợp Tác Làm Đại Lý Yến Sào Lanest: Điều Kiện, Quyền Lợi, Cách Bắt Đầu</span>
+              <span class="cn-ngay">14 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Set Quà Biếu Yến Sào: Gợi Ý Chọn Quà Sức Khỏe Cho Sếp, Đối Tác, Gia Đình</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-uong-yen-hu-moi-ngay.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="uong-yen-hu-moi-ngay-3-hu-hat-chia-saffron.jpg" alt="Uống Yến Hũ Chưng Sẵn Mỗi Ngày Có Tốt Không? Nên Dùng Lúc Nào" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-yen-sao-cho-nguoi-tieu-duong.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="yen-sao-cho-nguoi-tieu-duong-vi-an-kieng.jpg" alt="Yến Sào Cho Người Tiểu Đường, Huyết Áp Cao: Dùng Sao Cho An Toàn" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">09 &#183; 10 &#183; 2026</span>
-              <span class="cn-ten">Uống Yến Hũ Chưng Sẵn Mỗi Ngày Có Tốt Không? Nên Dùng Lúc Nào</span>
+              <span class="cn-ngay">13 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cho Người Tiểu Đường, Huyết Áp Cao: Dùng Sao Cho An Toàn</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cau-chuyen-thuong-hieu-yen-sao-lanest.html">
-            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="cau-chuyen-lanest-1.jpg" alt="Câu Chuyện Thương Hiệu Lanest: Từ Xưởng Nhỏ Đến Hệ Thống Đại Lý" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-cac-loai-to-yen.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="cac-loai-to-yen-rut-long-kho.jpg" alt="Các Loại Tổ Yến: Phân Loại Theo Phần Tổ, Cách Làm Sạch Và Màu Sắc" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">08 &#183; 10 &#183; 2026</span>
-              <span class="cn-ten">Câu Chuyện Thương Hiệu Lanest: Từ Xưởng Nhỏ Đến Hệ Thống Đại Lý</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-yen-hu-chung-san-hay-tu-chung.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="yen-hu-hay-tu-chung-1.jpg" alt="Vì Sao Nên Chọn Yến Hũ Chưng Sẵn Thay Vì Tự Chưng Tại Nhà?" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">07 &#183; 10 &#183; 2026</span>
-              <span class="cn-ten">Vì Sao Nên Chọn Yến Hũ Chưng Sẵn Thay Vì Tự Chưng Tại Nhà?</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="quy-trinh-lam-yen-xuong-lanest.html">
-            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-nhat-yen-toan-canh.jpg" alt="Bên Trong Xưởng Yến Lanest: 4 Chốt Kiểm Và Cam Kết 3 Không" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">29 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Bên Trong Xưởng Yến Lanest: 4 Chốt Kiểm Và Cam Kết 3 Không</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-cach-bao-quan-to-yen.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="bao-quan-to-yen-rut-long-kho.jpg" alt="Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">28 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-yen-chung-tu-vi-ky-tu.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">27 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-to-yen-tho-va-yen-tinh-che.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="soi-100.jpg" alt="Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">26 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-yen-sao-cho-nguoi-cao-tuoi.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-1.png" alt="Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">25 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="yen-sao-cam-ranh-khanh-hoa.html">
-            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-moi.jpg" alt="Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">24 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
-          <a class="cn-the" href="cam-nang-yen-chung-dong-trung-ha-thao.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">23 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng</span>
+              <span class="cn-ngay">12 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Các Loại Tổ Yến: Phân Loại Theo Phần Tổ, Cách Làm Sạch Và Màu Sắc</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3046,19 +3008,115 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="yen-sao-cam-ranh-khanh-hoa.html">
-            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-moi.jpg" alt="Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-nhap-si-yen-sao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nhap-si-yen-sao-thung-hang-lanest.jpg" alt="Nhập Sỉ Yến Sào: Kinh Nghiệm Chọn Nguồn Hàng Uy Tín" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">24 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?</span>
+              <span class="cn-ngay">15 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Nhập Sỉ Yến Sào: Kinh Nghiệm Chọn Nguồn Hàng Uy Tín</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-yen-chung-dong-trung-ha-thao.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng" loading="lazy"></span>
+          <a class="cn-the" href="cam-nang-qua-bieu-yen-sao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="qua-bieu-yen-sao-hop-do-6-hu.jpg" alt="Set Quà Biếu Yến Sào: Gợi Ý Chọn Quà Sức Khỏe Cho Sếp, Đối Tác, Gia Đình" loading="lazy"></span>
             <span class="cn-noi">
-              <span class="cn-ngay">23 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng</span>
+              <span class="cn-ngay">14 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Set Quà Biếu Yến Sào: Gợi Ý Chọn Quà Sức Khỏe Cho Sếp, Đối Tác, Gia Đình</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-sao-cho-nguoi-tieu-duong.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="yen-sao-cho-nguoi-tieu-duong-vi-an-kieng.jpg" alt="Yến Sào Cho Người Tiểu Đường, Huyết Áp Cao: Dùng Sao Cho An Toàn" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">13 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cho Người Tiểu Đường, Huyết Áp Cao: Dùng Sao Cho An Toàn</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-cac-loai-to-yen.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="cac-loai-to-yen-rut-long-kho.jpg" alt="Các Loại Tổ Yến: Phân Loại Theo Phần Tổ, Cách Làm Sạch Và Màu Sắc" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">12 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Các Loại Tổ Yến: Phân Loại Theo Phần Tổ, Cách Làm Sạch Và Màu Sắc</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-cach-chon-mua-yen-sao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="cach-chon-mua-yen-sao-hop-tinh-che.jpg" alt="Cách Chọn Mua Yến Sào Chuẩn, Tránh Các Chiêu Trò Thường Gặp" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">11 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Cách Chọn Mua Yến Sào Chuẩn, Tránh Các Chiêu Trò Thường Gặp</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-lam-dai-ly-yen-sao-lanest.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="lam-dai-ly-yen-sao-hang-giao-dai-ly.jpg" alt="Hợp Tác Làm Đại Lý Yến Sào Lanest: Điều Kiện, Quyền Lợi, Cách Bắt Đầu" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">10 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Hợp Tác Làm Đại Lý Yến Sào Lanest: Điều Kiện, Quyền Lợi, Cách Bắt Đầu</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-uong-yen-hu-moi-ngay.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="uong-yen-hu-moi-ngay-3-hu-hat-chia-saffron.jpg" alt="Uống Yến Hũ Chưng Sẵn Mỗi Ngày Có Tốt Không? Nên Dùng Lúc Nào" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">09 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Uống Yến Hũ Chưng Sẵn Mỗi Ngày Có Tốt Không? Nên Dùng Lúc Nào</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cau-chuyen-thuong-hieu-yen-sao-lanest.html">
+            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="cau-chuyen-lanest-1.jpg" alt="Câu Chuyện Thương Hiệu Lanest: Từ Xưởng Nhỏ Đến Hệ Thống Đại Lý" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">08 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Câu Chuyện Thương Hiệu Lanest: Từ Xưởng Nhỏ Đến Hệ Thống Đại Lý</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-hu-chung-san-hay-tu-chung.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="yen-hu-hay-tu-chung-1.jpg" alt="Vì Sao Nên Chọn Yến Hũ Chưng Sẵn Thay Vì Tự Chưng Tại Nhà?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">07 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Vì Sao Nên Chọn Yến Hũ Chưng Sẵn Thay Vì Tự Chưng Tại Nhà?</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="quy-trinh-lam-yen-xuong-lanest.html">
+            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-nhat-yen-toan-canh.jpg" alt="Bên Trong Xưởng Yến Lanest: 4 Chốt Kiểm Và Cam Kết 3 Không" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">29 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Bên Trong Xưởng Yến Lanest: 4 Chốt Kiểm Và Cam Kết 3 Không</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-cach-bao-quan-to-yen.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="bao-quan-to-yen-rut-long-kho.jpg" alt="Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">28 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Cách Bảo Quản Tổ Yến Khô Và Yến Đã Chưng Đúng Cách</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-chung-tu-vi-ky-tu.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tu-vi.jpg" alt="Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">27 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Tứ Vị Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử: Cách Làm Tại Nhà</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-to-yen-tho-va-yen-tinh-che.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="soi-100.jpg" alt="Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">26 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Tổ Yến Thô Và Yến Tinh Chế Khác Nhau Thế Nào? Nên Chọn Loại Nào?</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-sao-cho-nguoi-cao-tuoi.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-1.png" alt="Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">25 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3066,6 +3124,22 @@
       </div>
       <div class="cn-bang">
         <div class="cn-chay nguoc">
+          <a class="cn-the" href="yen-sao-cam-ranh-khanh-hoa.html">
+            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-moi.jpg" alt="Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">24 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-chung-dong-trung-ha-thao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">23 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-sao-cho-tre-em.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em.jpg" alt="Yến Sào Cho Trẻ Em: Mấy Tuổi Ăn Được, Liều Lượng, Cách Chưng Dễ Ăn" loading="lazy"></span>
             <span class="cn-noi">
@@ -3098,19 +3172,19 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-yen-sao-cho-ba-bau.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
           <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-sao-cho-ba-bau.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3162,6 +3236,22 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
+          <a class="cn-the" href="yen-sao-cam-ranh-khanh-hoa.html">
+            <span class="cn-anh"><span class="cn-nhan">Tin t&#7913;c</span><img src="xuong-moi.jpg" alt="Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">24 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cam Ranh – Khánh Hòa: Chọn Đúng Nơi Uy Tín Như Thế Nào?</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-chung-dong-trung-ha-thao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-dong-trung.jpg" alt="Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">23 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Chưng Đông Trùng Hạ Thảo: Công Thức Bồi Bổ Cơ Thể, Tăng Đề Kháng</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-yen-sao-cho-tre-em.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="vi-tre-em.jpg" alt="Yến Sào Cho Trẻ Em: Mấy Tuổi Ăn Được, Liều Lượng, Cách Chưng Dễ Ăn" loading="lazy"></span>
             <span class="cn-noi">
@@ -3194,19 +3284,19 @@
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
-          <a class="cn-the" href="cam-nang-yen-sao-cho-ba-bau.html">
-            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng" loading="lazy"></span>
-            <span class="cn-noi">
-              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
-              <span class="cn-ten">Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng</span>
-              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
-            </span>
-          </a>
           <a class="cn-the" href="yen-chung-tu-vi-tao-do-long-nhan-hat-sen-ky-tu.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="tu-vi.jpg" alt="Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi" loading="lazy"></span>
             <span class="cn-noi">
               <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Yến Chưng Tứ Vị — Táo Đỏ, Long Nhãn, Hạt Sen, Kỷ Tử Hòa Quyện Trong Từng Hũ Yến Tươi</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-yen-sao-cho-ba-bau.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nguyen-to-2.jpg" alt="Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">20 &#183; 09 &#183; 2026</span>
+              <span class="cn-ten">Yến Sào Cho Bà Bầu: Dùng Đúng Cách, Đúng Liều Lượng</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3924,6 +4014,140 @@
   khung.addEventListener('mouseleave', dat);
 
   dat();
+})();
+</script>
+
+<script>
+/* ---- bang cam nang: tu chay, keo tay, bam nut, xem lai bai da qua ---- */
+(function () {
+  var cac = document.querySelectorAll('#cam-nang .cn-bang');
+  if (!cac.length) return;
+
+  for (var i = 0; i < cac.length; i++) { dungBang(cac[i]); }
+
+  function dungBang(bang) {
+    var chay = bang.querySelector('.cn-chay');
+    if (!chay) return;
+    var nguoc = chay.classList.contains('nguoc');
+
+    /* bọc khung + thêm 2 nút */
+    var khung = document.createElement('div');
+    khung.className = 'cn-khung';
+    bang.parentNode.insertBefore(khung, bang);
+    khung.appendChild(bang);
+
+    var nTrai = document.createElement('button');
+    nTrai.type = 'button';
+    nTrai.className = 'cn-dieu cn-trai';
+    nTrai.setAttribute('aria-label', 'Xem bài trước');
+    nTrai.innerHTML = '&#8249;';
+
+    var nPhai = document.createElement('button');
+    nPhai.type = 'button';
+    nPhai.className = 'cn-dieu cn-phai';
+    nPhai.setAttribute('aria-label', 'Xem bài kế tiếp');
+    nPhai.innerHTML = '&#8250;';
+
+    khung.appendChild(nTrai);
+    khung.appendChild(nPhai);
+
+    var nua = 0;
+    function doNua() { nua = chay.scrollWidth / 2; }
+    doNua();
+    window.addEventListener('resize', doNua);
+    setTimeout(doNua, 1200);
+
+    if (nguoc) { bang.scrollLeft = nua; }
+
+    var tocDo  = nguoc ? -0.55 : 0.55;
+    var dungDen = 0;
+    var dangKeo = false;
+    var viTri   = bang.scrollLeft;
+    var dangRe  = false;
+
+    function vong() {
+      if (document.hidden) return;
+      if (!dangKeo && !dangRe && Date.now() > dungDen && nua > 0) {
+        viTri += tocDo;
+        if (viTri >= nua) { viTri -= nua; }
+        else if (viTri < 0) { viTri += nua; }
+        bang.scrollLeft = viTri;
+      } else {
+        viTri = bang.scrollLeft;
+      }
+    }
+    setInterval(vong, 25);
+
+
+    function hoan(ms) { dungDen = Date.now() + (ms || 2500); }
+
+    /* rê chuột thì dừng */
+    khung.addEventListener('mouseenter', function () { dangRe = true; });
+    khung.addEventListener('mouseleave', function () { dangRe = false; dungDen = 0; });
+
+    /* bấm nút lướt 1 thẻ */
+    var dangLuot = null;
+    function luot(huong) {
+      var the = chay.querySelector('.cn-the');
+      var buoc = the ? the.getBoundingClientRect().width + 22 : 314;
+      hoan(3000);
+      if (dangLuot) clearInterval(dangLuot);
+      var conLai = buoc, moiLan = buoc / 16;
+      dangLuot = setInterval(function () {
+        var di = Math.min(moiLan, conLai);
+        viTri = bang.scrollLeft + huong * di;
+        if (nua > 0) {
+          if (viTri >= nua) { viTri -= nua; }
+          else if (viTri < 0) { viTri += nua; }
+        }
+        bang.scrollLeft = viTri;
+        conLai -= di;
+        if (conLai <= 0.5) { clearInterval(dangLuot); dangLuot = null; }
+      }, 16);
+    }
+    nTrai.addEventListener('click', function () { luot(-1); });
+    nPhai.addEventListener('click', function () { luot(1); });
+
+    /* kéo bằng chuột */
+    var batDauX = 0, batDauCuon = 0, daDi = 0;
+    bang.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      dangKeo = true; daDi = 0;
+      batDauX = e.clientX;
+      batDauCuon = bang.scrollLeft;
+      bang.classList.add('dang-keo');
+      bang.setPointerCapture(e.pointerId);
+    });
+    bang.addEventListener('pointermove', function (e) {
+      if (!dangKeo) return;
+      var d = e.clientX - batDauX;
+      daDi = Math.abs(d);
+      bang.scrollLeft = batDauCuon - d;
+    });
+    function thaKeo(e) {
+      if (!dangKeo) return;
+      dangKeo = false;
+      bang.classList.remove('dang-keo');
+      try { bang.releasePointerCapture(e.pointerId); } catch (x) {}
+      hoan(2500);
+    }
+    bang.addEventListener('pointerup', thaKeo);
+    bang.addEventListener('pointercancel', thaKeo);
+
+    /* kéo xong thì đừng mở bài */
+    bang.addEventListener('click', function (e) {
+      if (daDi > 6) { e.preventDefault(); e.stopPropagation(); daDi = 0; }
+    }, true);
+
+    /* vuốt trên điện thoại / lăn chuột ngang */
+    bang.addEventListener('scroll', function () {
+      if (nua <= 0) return;
+      if (bang.scrollLeft >= nua) { bang.scrollLeft -= nua; }
+      else if (bang.scrollLeft <= 0) { bang.scrollLeft += nua; }
+    }, { passive: true });
+    bang.addEventListener('touchstart', function () { hoan(6000); }, { passive: true });
+    bang.addEventListener('wheel', function () { hoan(4000); }, { passive: true });
+  }
 })();
 </script>
 
