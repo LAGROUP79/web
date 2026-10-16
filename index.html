@@ -976,6 +976,14 @@
     .cn-dieu{width:36px;height:36px;font-size:18px;}
     .cn-khung::before,.cn-khung::after{width:34px;}
   }
+  .gio-xong{padding:46px 10px;text-align:center;}
+  .gio-xong-dau{
+    width:58px;height:58px;margin:0 auto 18px;border-radius:50%;
+    background:var(--forest);color:var(--gold-bright);
+    display:flex;align-items:center;justify-content:center;font-size:28px;
+  }
+  .gio-xong h4{margin:0 0 10px;font-size:19px;font-weight:500;color:var(--ink);}
+  .gio-xong p{margin:0;font-size:14px;font-weight:300;color:var(--ink-soft);line-height:1.6;}
 </style>
 
 <!-- ============ TOP BAR ============ -->
@@ -2896,6 +2904,14 @@
     <div class="guide-bang">
       <div class="cn-bang">
         <div class="cn-chay">
+          <a class="cn-the" href="cam-nang-gia-to-yen-phu-thuoc-yeu-to-nao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="gia-to-yen-rut-long-kho-nguyen-to.jpg" alt="Giá Tổ Yến Phụ Thuộc Vào Những Yếu Tố Nào?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">16 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Giá Tổ Yến Phụ Thuộc Vào Những Yếu Tố Nào?</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
           <a class="cn-the" href="cam-nang-nhap-si-yen-sao.html">
             <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="nhap-si-yen-sao-thung-hang-lanest.jpg" alt="Nhập Sỉ Yến Sào: Kinh Nghiệm Chọn Nguồn Hàng Uy Tín" loading="lazy"></span>
             <span class="cn-noi">
@@ -3005,6 +3021,14 @@
             <span class="cn-noi">
               <span class="cn-ngay">25 &#183; 09 &#183; 2026</span>
               <span class="cn-ten">Yến Sào Cho Người Cao Tuổi: Công Dụng, Cách Dùng Và Những Lưu Ý Quan Trọng</span>
+              <span class="cn-more">&#272;&#7885;c b&#224;i</span>
+            </span>
+          </a>
+          <a class="cn-the" href="cam-nang-gia-to-yen-phu-thuoc-yeu-to-nao.html">
+            <span class="cn-anh"><span class="cn-nhan">C&#7849;m nang y&#7871;n s&#224;o</span><img src="gia-to-yen-rut-long-kho-nguyen-to.jpg" alt="Giá Tổ Yến Phụ Thuộc Vào Những Yếu Tố Nào?" loading="lazy"></span>
+            <span class="cn-noi">
+              <span class="cn-ngay">16 &#183; 10 &#183; 2026</span>
+              <span class="cn-ten">Giá Tổ Yến Phụ Thuộc Vào Những Yếu Tố Nào?</span>
               <span class="cn-more">&#272;&#7885;c b&#224;i</span>
             </span>
           </a>
@@ -3737,6 +3761,7 @@
   var KHOA   = 'lanest-gio';
   var MAIL   = 'Yensaolanest79@gmail.com';
   var TIEU_DE_DON = 'Đơn hàng mới từ website Lanest';
+  var URL_NHAN_DON = '';   /* dan dia chi Apps Script vao day */
   var gio    = [];
 
   /* ---- luu / doc ---- */
@@ -3943,25 +3968,73 @@
 
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dongGio(); });
 
-    function guiDonQuaMail() {
-      var noi = soanDon();
-      if (!noi) return;
+    /* gom don thanh du lieu de gui di */
+    function duLieuDon() {
+      var ten = document.getElementById('dh-ten').value.trim();
+      var sdt = document.getElementById('dh-sdt').value.trim();
+      var dc  = document.getElementById('dh-dc').value.trim();
+      var gc  = document.getElementById('dh-note').value.trim();
+      var tt = 0, ds = [];
+      for (var i = 0; i < gio.length; i++) {
+        tt += gio[i].sl * gio[i].gia;
+        ds.push({ ten: gio[i].ten, quy: gio[i].quy, gia: gio[i].gia, sl: gio[i].sl });
+      }
+      return { ten: ten, sdt: sdt, diaChi: dc, ghiChu: gc, hang: ds, tong: tt };
+    }
+
+    function moMailThuCong(noi) {
       window.location.href = 'mailto:' + MAIL
         + '?subject=' + encodeURIComponent(TIEU_DE_DON)
         + '&body=' + encodeURIComponent(noi);
+    }
+
+    function guiDonQuaMail() {
+      var noi = soanDon();
+      if (!noi) return;
+
+      /* chua khai bao dia chi nhan don -> mo ung dung mail nhu truoc */
+      if (!URL_NHAN_DON) { moMailThuCong(noi); return; }
+
+      var nut = document.getElementById('gui-mail');
+      var chuCu = nut ? nut.textContent : '';
+      if (nut) { nut.disabled = true; nut.textContent = 'Äang gá»­iâ€¦'; }
+
+      fetch(URL_NHAN_DON, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(duLieuDon())
+      }).then(function () {
+        xongDon();
+      }).catch(function () {
+        if (nut) { nut.disabled = false; nut.textContent = chuCu; }
+        moMailThuCong(noi);
+      });
+    }
+
+    function xongDon() {
+      var than = document.getElementById('gio-than');
+      var chan = document.querySelector('.gio-chan');
+      if (than) {
+        than.innerHTML = '<div class="gio-xong">'
+          + '<div class="gio-xong-dau">&#10003;</div>'
+          + '<h4>Lanest Ä‘Ã£ nháº­n Ä‘Æ¡n cá»§a anh chá»‹</h4>'
+          + '<p>NhÃ¢n viÃªn sáº½ gá»i láº¡i xÃ¡c nháº­n trong giá» hÃ nh chÃ­nh (8:00 â€“ 17:30, Thá»© 2 â€“ Thá»© 7). '
+          + 'Cáº§n gáº¥p, anh chá»‹ gá»i <strong>025.8627.8627</strong>.</p>'
+          + '</div>';
+      }
+      if (chan) { chan.style.display = 'none'; }
+      gio = [];
+      luu();
+      var dem = document.getElementById('gio-dem');
+      if (dem) { dem.textContent = '0'; dem.classList.remove('hien'); }
     }
 
     var form = document.getElementById('gio-form');
     if (form) form.addEventListener('submit', function (e) { e.preventDefault(); guiDonQuaMail(); });
 
     var nm = document.getElementById('gui-mail');
-    if (nm) nm.addEventListener('click', function () {
-      var noi = soanDon();
-      if (!noi) return;
-      window.location.href = 'mailto:' + MAIL
-        + '?subject=' + encodeURIComponent('Đơn hàng mới từ website Lanest')
-        + '&body=' + encodeURIComponent(noi);
-    });
+    if (nm) nm.addEventListener('click', guiDonQuaMail);
   }
 
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', khoiTao); }
