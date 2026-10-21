@@ -32,6 +32,7 @@
   '.lnc-than{flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:8px;overscroll-behavior:contain}' +
   '.lnc-b{max-width:84%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}' +
   '.lnc-b a{color:inherit;text-decoration:underline}' +
+  '.lnc-b strong{font-weight:700}.lnc-li{display:block;padding-left:1.1em;text-indent:-.75em}.lnc-li:before{content:"\\2022";display:inline-block;width:.75em;text-indent:0}' +
   '.lnc-b.khach{align-self:flex-end;background:var(--lnc-xanh);color:#F4EBD6;border-bottom-right-radius:4px}' +
   '.lnc-b.bot,.lnc-b.sale{align-self:flex-start;background:var(--lnc-mat);border:1px solid var(--lnc-vien);border-bottom-left-radius:4px}' +
   '.lnc-b.sale{border-color:var(--lnc-vang)}.lnc-ai{font-size:11px;color:var(--lnc-mo);margin:2px 4px -4px}' +
@@ -90,6 +91,23 @@
       .replace(/(https?:\/\/[^\s<]+[^\s<.,;:!?)])/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
       .replace(/(0?25\.?8627\.?8627)/g, '<a href="' + TEL + '">$1</a>');
   }
+  // Tin cua bot/nhan vien: doi **dam**, *nghieng*, dong "- " / "* " thanh gach dau dong; giu xuong dong
+  function depMd(s) {
+    var GACH = /^\s*[-*]\s+(.*)$/;
+    var dong = String(s).split('\n'), ra = '';
+    function chu(x) {
+      return dep(x)
+        .replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[^*\w])\*([^*\n]+?)\*(?!\*)/g, '$1<em>$2</em>');
+    }
+    for (var i = 0; i < dong.length; i++) {
+      var g = dong[i].match(GACH);
+      if (g) { ra += '<span class="lnc-li">' + chu(g[1]) + '</span>'; continue; }
+      ra += chu(dong[i]);
+      if (i < dong.length - 1 && !GACH.test(dong[i + 1])) ra += '\n';
+    }
+    return ra;
+  }
   function veTin(m) {
     if (m.vai === 'sale' || m.vai === 'bot') {
       var ai = document.createElement('div'); ai.className = 'lnc-ai';
@@ -98,7 +116,7 @@
     }
     var d = document.createElement('div');
     d.className = m.vai === 'he' ? 'lnc-he' : 'lnc-b ' + m.vai;
-    d.innerHTML = dep(m.nd);
+    d.innerHTML = (m.vai === 'bot' || m.vai === 'sale') ? depMd(m.nd) : dep(m.nd);
     than.appendChild(d);
   }
   function cuon() { than.scrollTop = than.scrollHeight; }
