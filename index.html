@@ -4262,34 +4262,42 @@
     nPhai.addEventListener('click', function () { luot(1); });
 
     /* kéo bằng chuột */
-    var batDauX = 0, batDauCuon = 0, daDi = 0;
+    var batDauX = 0, batDauCuon = 0, daDi = 0, sanSangKeo = false;
+    var NGUONG = 10;   // pháº£i rÃª quÃ¡ 10px má»›i coi lÃ  kÃ©o, dÆ°á»›i má»©c Ä‘Ã³ váº«n lÃ  cÃº báº¥m má»Ÿ bÃ i
     bang.addEventListener('pointerdown', function (e) {
-      if (e.pointerType === 'mouse' && e.button !== 0) return;
-      dangKeo = true; daDi = 0;
+      if (e.pointerType === 'touch') return;   // Ä‘iá»‡n thoáº¡i: Ä‘á»ƒ trÃ¬nh duyá»‡t tá»± vuá»‘t, khÃ´ng can thiá»‡p
+      if (e.button !== 0) return;
+      sanSangKeo = true; dangKeo = false; daDi = 0;
       batDauX = e.clientX;
       batDauCuon = bang.scrollLeft;
-      bang.classList.add('dang-keo');
-      bang.setPointerCapture(e.pointerId);
+      hoan(1500);   // đang giữ chuột thì băng đừng tự trôi
     });
     bang.addEventListener('pointermove', function (e) {
-      if (!dangKeo) return;
-      var d = e.clientX - batDauX;
-      daDi = Math.abs(d);
-      bang.scrollLeft = batDauCuon - d;
+      if (!sanSangKeo) return;
+      var x = e.clientX - batDauX;
+      if (!dangKeo) {
+        if (Math.abs(x) < NGUONG) return;
+        dangKeo = true;
+        bang.classList.add('dang-keo');
+      }
+      daDi = Math.abs(x);
+      bang.scrollLeft = batDauCuon - x;
+      e.preventDefault();
     });
-    function thaKeo(e) {
+    function thaKeo() {
+      sanSangKeo = false;
       if (!dangKeo) return;
       dangKeo = false;
       bang.classList.remove('dang-keo');
-      try { bang.releasePointerCapture(e.pointerId); } catch (x) {}
       hoan(2500);
     }
-    bang.addEventListener('pointerup', thaKeo);
-    bang.addEventListener('pointercancel', thaKeo);
+    window.addEventListener('pointerup', thaKeo);
+    window.addEventListener('pointercancel', thaKeo);
 
     /* kéo xong thì đừng mở bài */
     bang.addEventListener('click', function (e) {
-      if (daDi > 6) { e.preventDefault(); e.stopPropagation(); daDi = 0; }
+      if (daDi > NGUONG) { e.preventDefault(); e.stopPropagation(); }
+      daDi = 0;
     }, true);
 
     /* vuốt trên điện thoại / lăn chuột ngang */
