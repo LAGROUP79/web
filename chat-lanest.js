@@ -141,8 +141,12 @@
     if (!bat && g) g.remove();
   }
   function goi(du) {
-    return fetch(DIA_CHI, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(du)})
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    // Cho toi da 20 giay (AI thuong tra loi 2-4 giay); qua lau coi nhu may chu loi
+    var ctl = window.AbortController ? new AbortController() : null;
+    var hh = ctl ? setTimeout(function () { ctl.abort(); }, 20000) : null;
+    return fetch(DIA_CHI, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(du), signal: ctl ? ctl.signal : undefined})
+      .then(function (r) { clearTimeout(hh); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); },
+            function (e) { clearTimeout(hh); throw e; });
   }
   function nhanTin(ds) {
     (ds || []).forEach(function (m) {
@@ -167,9 +171,33 @@
       })
       .catch(function () {
         clearTimeout(cho); dangGo(false);
-        them({vai: 'he', nd: 'Kết nối đang chập chờn. Anh/chị gửi lại giúp em, hoặc gọi hotline ' + HOTLINE + ' ạ.'});
+        duPhong(nd);
       })
       .then(function () { dangGui = false; gui.disabled = false; henHoi(); });
+  }
+  // May chu tu van khong tra loi -> xin so dien thoai, gui ve Google Form "KHACH DE LAI SO" de khong mat khach
+  var FORM_DP = 'https://docs.google.com/forms/d/e/1FAIpQLSdL5L5CKwsjFCUksQUzq65zBuEs0Q6rSGcSX_-rFX_ybOJomQ/formResponse';
+  var daXinSo = false, daGuiSo = '';
+  function duPhong(nd) {
+    var so = String(nd).replace(/[\s.\-()]/g, '').match(/(\+84|0)\d{9,10}/);
+    if (so && so[0] !== daGuiSo) {
+      daGuiSo = so[0];
+      var lich = tin.filter(function (m) { return m.vai === 'khach'; }).map(function (m) { return m.nd; }).slice(-10).join('\n');
+      var du = new URLSearchParams();
+      du.append('entry.1548133256', 'Khung chat web (bot tạm gián đoạn) - ' + location.pathname);
+      du.append('entry.67681077', '');
+      du.append('entry.673667126', so[0]);
+      du.append('entry.634407155', 'Khách nhắn trong khung chat:\n' + lich);
+      fetch(FORM_DP, {method: 'POST', mode: 'no-cors', body: du}).catch(function () {});
+      them({vai: 'bot', nd: 'Dạ em đã nhận số ' + so[0] + ' ạ. Nhân viên Lanest sẽ gọi lại cho anh/chị sớm nhất (giờ làm việc 8:00–17:30, thứ Hai–thứ Bảy). Cần gấp anh/chị gọi hotline ' + HOTLINE + ' nhé.'});
+      return;
+    }
+    if (!daXinSo) {
+      daXinSo = true;
+      them({vai: 'bot', nd: 'Dạ hệ thống tư vấn tự động đang bận một chút ạ. Anh/chị để lại số điện thoại ngay tại đây, nhân viên Lanest sẽ gọi lại tư vấn cho anh/chị. Hoặc gọi hotline ' + HOTLINE + ' để được hỗ trợ ngay ạ.'});
+    } else {
+      them({vai: 'bot', nd: 'Dạ anh/chị gõ giúp em số điện thoại (10 số) để nhân viên gọi lại, hoặc gọi hotline ' + HOTLINE + ' ạ.'});
+    }
   }
   // Hoi xem nhan vien da nhan gi chua: 5 giay/lan khi dang mo, 20 giay/lan khi dong; dung sau 30 phut khong hoat dong
   function henHoi() {
