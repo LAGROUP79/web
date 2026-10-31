@@ -615,9 +615,47 @@
     display:grid;grid-template-columns:.82fr 1.18fr;
   }
   @media (max-width:860px){ .sp-dialog{grid-template-columns:1fr;margin:2vh auto;max-height:96vh;} }
-  .sp-photo{background:var(--surface-2);position:relative;}
+  .sp-photo{background:var(--surface-2);position:relative;align-self:start;}
   .sp-photo img{width:100%;height:100%;object-fit:cover;min-height:260px;}
   @media (max-width:860px){ .sp-photo img{aspect-ratio:4/3;height:auto;min-height:0;} }
+
+  /* --- bo anh san pham: anh lon + dai anh nho keo ngang, bam de xem to --- */
+  /* bo khung cao co dinh: anh hien dung ty le that, khong bi cat mat san pham */
+  .sp-photo.co-bo img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain;cursor:zoom-in;display:block;}
+  @media (max-width:860px){ .sp-photo.co-bo img{aspect-ratio:auto;} }
+  .sp-dai{
+    display:flex;gap:6px;padding:8px;overflow-x:auto;scroll-behavior:auto;
+    background:var(--surface-2);border-top:1px solid var(--line-soft);
+    -webkit-overflow-scrolling:touch;scrollbar-width:thin;
+  }
+  .sp-nho{
+    flex:0 0 62px;height:62px;padding:0;margin:0;cursor:pointer;
+    border:1px solid var(--line);background:none;overflow:hidden;line-height:0;
+    transition:border-color .18s ease,opacity .18s ease;opacity:.72;
+  }
+  .sp-nho img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto;min-height:0;display:block;cursor:pointer;}
+  .sp-nho:hover{opacity:1;}
+  .sp-nho.dang-chon{border-color:var(--gold);opacity:1;box-shadow:inset 0 0 0 1px var(--gold);}
+  .sp-dem{
+    position:absolute;top:12px;left:12px;z-index:3;padding:4px 10px;
+    background:rgba(8,26,19,.62);color:#FFF8E8;font-size:11.5px;font-weight:300;letter-spacing:.06em;
+  }
+  /* khung xem anh to */
+  .sp-xem{position:fixed;inset:0;z-index:300;background:rgba(8,26,19,.93);display:none;}
+  .sp-xem.hien{display:flex;align-items:center;justify-content:center;padding:24px;}
+  .sp-xem img{max-width:94vw;max-height:88vh;object-fit:contain;display:block;}
+  .sp-xem-nut{
+    position:absolute;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,248,232,.14);color:#FFF8E8;border:1px solid rgba(255,248,232,.3);
+    font-size:24px;line-height:1;cursor:pointer;padding:0;font-weight:300;
+  }
+  .sp-xem-nut:hover{background:var(--gold);border-color:var(--gold);}
+  .sp-xem-dong{top:18px;right:18px;}
+  .sp-xem-truoc{top:50%;left:18px;transform:translateY(-50%);}
+  .sp-xem-sau{top:50%;right:18px;transform:translateY(-50%);}
+  .sp-xem-dem{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#FFF8E8;
+    font-size:12.5px;font-weight:300;letter-spacing:.08em;}
+  @media (max-width:560px){ .sp-xem-truoc{left:8px} .sp-xem-sau{right:8px} .sp-xem-nut{width:40px;height:40px;font-size:20px} }
   .sp-close{
     position:absolute;top:12px;right:12px;z-index:4;width:40px;height:40px;
     display:flex;align-items:center;justify-content:center;text-decoration:none;
@@ -2369,7 +2407,7 @@
   <a class="sp-overlay" href="#san-pham" aria-label="Đóng"></a>
   <div class="sp-dialog">
     <a class="sp-close" href="#san-pham" aria-label="Đóng">×</a>
-    <div class="sp-photo"><img src="rut-long-kho-2026.jpg" alt="Tổ Yến Rút Lông Khô Cao Cấp Lanest — hộp bát giác, tem chống hàng giả, mã QR truy xuất nguồn gốc"></div>
+    <div class="sp-photo" data-bo="rut-long-kho-2026.jpg::Tổ Yến Rút Lông Khô Cao Cấp Lanest — hộp bát giác, tem chống hàng giả, mã QR truy xuất nguồn gốc||rut-long-kho-2026-2.jpg::Hộp tổ yến rút lông khô nhìn từ trên, sợi yến xếp vòng đều||rut-long-kho-2026-3.jpg::Hộp tổ yến rút lông khô cùng túi quà Lanest||rut-long-kho-2026-4.jpg::Tổ yến rút lông khô bày cùng táo đỏ, hạt sen, đông trùng||rut-long-kho-2026-5.jpg::Tổ yến rút lông khô nguyên dáng tổ xếp hình cánh hoa trong hũ"><img src="rut-long-kho-2026.jpg" alt="Tổ Yến Rút Lông Khô Cao Cấp Lanest — hộp bát giác, tem chống hàng giả, mã QR truy xuất nguồn gốc"></div>
     <div class="sp-info">
       <div class="sp-head-row">
         <div><h3>Yến Rút Lông Khô Cao Cấp</h3><span class="product-spec">Hộp hút ẩm 100g · 50g</span></div>
@@ -4065,6 +4103,106 @@
       })(ms[k]);
     }
   }
+
+  /* ---- bo anh san pham: dai anh nho keo ngang + bam xem to ---- */
+  function boAnhSanPham() {
+    var khung = document.createElement('div');
+    khung.className = 'sp-xem';
+    khung.innerHTML = '<img alt=""><button class="sp-xem-nut sp-xem-dong" type="button" aria-label="Đóng">×</button>'
+      + '<button class="sp-xem-nut sp-xem-truoc" type="button" aria-label="Ảnh trước">‹</button>'
+      + '<button class="sp-xem-nut sp-xem-sau" type="button" aria-label="Ảnh sau">›</button>'
+      + '<span class="sp-xem-dem"></span>';
+    document.body.appendChild(khung);
+    var anhTo = khung.querySelector('img'), demTo = khung.querySelector('.sp-xem-dem');
+    var ds = [], vt = 0;
+
+    function hienTo() {
+      if (!ds.length) return;
+      if (vt < 0) vt = ds.length - 1;
+      if (vt >= ds.length) vt = 0;
+      anhTo.src = ds[vt].src;
+      anhTo.alt = ds[vt].alt;
+      demTo.textContent = (vt + 1) + ' / ' + ds.length;
+      var nut = khung.querySelectorAll('.sp-xem-truoc, .sp-xem-sau');
+      for (var i = 0; i < nut.length; i++) nut[i].style.display = ds.length > 1 ? '' : 'none';
+      demTo.style.display = ds.length > 1 ? '' : 'none';
+    }
+    function moTo(danhSach, i) { ds = danhSach; vt = i; hienTo(); khung.classList.add('hien'); }
+    function dongTo() { khung.classList.remove('hien'); }
+
+    khung.querySelector('.sp-xem-dong').onclick = dongTo;
+    khung.querySelector('.sp-xem-truoc').onclick = function (e) { e.stopPropagation(); vt--; hienTo(); };
+    khung.querySelector('.sp-xem-sau').onclick   = function (e) { e.stopPropagation(); vt++; hienTo(); };
+    khung.addEventListener('click', function (e) { if (e.target === khung || e.target === anhTo) dongTo(); });
+    document.addEventListener('keydown', function (e) {
+      if (!khung.classList.contains('hien')) return;
+      if (e.key === 'Escape') dongTo();
+      else if (e.key === 'ArrowLeft')  { vt--; hienTo(); }
+      else if (e.key === 'ArrowRight') { vt++; hienTo(); }
+    });
+
+    var o = document.querySelectorAll('.sp-photo');
+    for (var k = 0; k < o.length; k++) {
+      (function (hop) {
+        var lon = hop.querySelector('img');
+        if (!lon) return;
+        var khai = hop.getAttribute('data-bo');
+        var anhs = [];
+        if (khai) {
+          var phan = khai.split('||');
+          for (var i = 0; i < phan.length; i++) {
+            var c = phan[i].split('::');
+            if (c[0]) anhs.push({ src: c[0].trim(), alt: (c[1] || '').trim() });
+          }
+        }
+        if (!anhs.length) anhs = [{ src: lon.getAttribute('src'), alt: lon.getAttribute('alt') || '' }];
+
+        hop.classList.add('co-bo');
+        lon.style.cursor = 'zoom-in';
+        var dangO = 0;
+
+        if (anhs.length > 1) {
+          var dem = document.createElement('span');
+          dem.className = 'sp-dem';
+          dem.textContent = '1 / ' + anhs.length;
+          hop.appendChild(dem);
+
+          var dai = document.createElement('div');
+          dai.className = 'sp-dai';
+          for (var j = 0; j < anhs.length; j++) {
+            (function (chiSo) {
+              var b = document.createElement('button');
+              b.type = 'button';
+              b.className = 'sp-nho' + (chiSo === 0 ? ' dang-chon' : '');
+              b.setAttribute('aria-label', 'Xem ảnh ' + (chiSo + 1));
+              var t = document.createElement('img');
+              t.src = anhs[chiSo].src;
+              t.alt = '';
+              t.loading = 'lazy';
+              b.appendChild(t);
+              b.onclick = function () {
+                dangO = chiSo;
+                lon.src = anhs[chiSo].src;
+                lon.alt = anhs[chiSo].alt;
+                dem.textContent = (chiSo + 1) + ' / ' + anhs.length;
+                var cac = dai.querySelectorAll('.sp-nho');
+                for (var z = 0; z < cac.length; z++) cac[z].classList.remove('dang-chon');
+                b.classList.add('dang-chon');
+              };
+              dai.appendChild(b);
+            })(j);
+          }
+          hop.appendChild(dai);
+
+          /* tai san cac anh con lai cho muot khi khach bam */
+          for (var p = 1; p < anhs.length; p++) { var tr = new Image(); tr.src = anhs[p].src; }
+        }
+
+        lon.onclick = function () { moTo(anhs, dangO); };
+      })(o[k]);
+    }
+  }
+  boAnhSanPham();
 
   /* ---- ve lai gio ---- */
   function ve() {
