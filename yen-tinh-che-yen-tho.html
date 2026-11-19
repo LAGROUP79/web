@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yến Tinh Chế & Yến Thô Lanest</title>
+<meta name="description" content="13 loại yến tinh chế, chân yến, yến rút lông khô và yến thô của Lanest, xem ảnh thật từng loại. 100% yến thật, không tẩy trắng, ISO 22000. Để lại số, nhân viên Lanest báo giá.">
+<meta property="og:title" content="Yến tinh chế & yến thô Lanest — xem ảnh thật từng loại trước khi chọn">
+<meta property="og:description" content="13 loại từ sợi 100%, thượng hạng, hoa hồng, chân yến VIP tới tổ yến thô. 100% yến thật, không tẩy trắng, ISO 22000.">
+<meta property="og:image" content="lp-thuong-hang-4.jpg">
+<link rel="icon" href="logo-header.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing-chung.css">
+<link rel="stylesheet" href="landing-hieu-ung.css">
+<style>
+/* rieng trang yen tinh che + yen tho (tien to lp-) */
+.lp-muc{position:sticky;top:60px;z-index:15;background:var(--bg);border-bottom:1px solid var(--line)}
+.lp-muc .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.lp-muc .wrap::-webkit-scrollbar{display:none}
+.lp-muc a{flex:none;text-decoration:none;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;color:var(--ink-soft)}
+.lp-muc a:hover{border-color:var(--gold);color:var(--gold)}
+.lp-nhom{scroll-margin-top:120px}
+.lp-luoi{display:grid;gap:18px;margin-top:26px}
+@media(min-width:640px){.lp-luoi{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.lp-luoi{grid-template-columns:repeat(3,1fr)}}
+.lp-sp{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:120px}
+.lp-anh{position:relative;aspect-ratio:4/5;background:#11231b;cursor:zoom-in}
+.lp-anh img{width:100%;height:100%;object-fit:cover}
+.lp-anh img.ngang{object-fit:contain}
+.lp-dem{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;border-radius:999px;padding:3px 9px}
+.lp-minh-hoa{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);color:#fff;font-size:11px;border-radius:999px;padding:3px 9px}
+.lp-nho{display:flex;gap:6px;padding:8px 10px 0;overflow-x:auto;scrollbar-width:none}
+.lp-nho::-webkit-scrollbar{display:none}
+.lp-nho button{flex:none;width:52px;height:52px;border-radius:8px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:none;opacity:.7}
+.lp-nho button.dang{border-color:var(--gold);opacity:1}
+.lp-nho img{width:100%;height:100%;object-fit:cover}
+.lp-than{padding:14px 18px 20px;display:flex;flex-direction:column;flex:1}
+.lp-than h3{font-size:26px}
+.lp-than p{color:var(--ink-soft);margin-top:6px;font-size:15px}
+.lp-than ul.ticks{margin-top:8px;font-size:15px}
+.lp-chan{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lp-gia{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;color:var(--gold);line-height:1.1}
+.lp-gia small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:12px;font-weight:400;color:var(--ink-faint)}
+.lp-chan .btn{min-height:44px;padding:0 18px;font-size:15px}
+/* 3 muc lam sach */
+.lp-muc-sach{display:grid;gap:12px;margin-top:24px}
+@media(min-width:760px){.lp-muc-sach{grid-template-columns:repeat(3,1fr)}}
+.lp-muc-sach div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.lp-muc-sach b{display:block;font-size:17px;margin-bottom:4px}
+.lp-muc-sach i{font-style:normal;display:inline-block;font-size:12px;font-weight:600;color:var(--gold);background:var(--gold-pale);border-radius:999px;padding:2px 10px;margin-bottom:8px}
+.lp-muc-sach span{color:var(--ink-soft);font-size:15px}
+/* xem anh lon */
+.lp-xem{position:fixed;inset:0;z-index:50;background:rgba(5,12,9,.94);display:none;align-items:center;justify-content:center}
+.lp-xem.mo{display:flex}
+.lp-xem img{max-width:94vw;max-height:84vh;object-fit:contain;border-radius:8px}
+.lp-xem button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:26px;cursor:pointer}
+.lp-xem .dong{top:14px;right:14px}
+.lp-xem .lui{left:10px;top:50%;transform:translateY(-50%)}
+.lp-xem .toi{right:10px;top:50%;transform:translateY(-50%)}
+.lp-xem p{position:absolute;bottom:14px;left:16px;right:16px;text-align:center;color:#ddd;font-size:14px}
+</style>
+</head>
+<body data-trang="yen-tinh-che-yen-tho">
+<!-- Landing gioi thieu dong yen tinh che / chan yen / rut long kho / yen tho.
+     Gia tinh/tho KHONG dang cong khai (chi Le dan 31/10/2026): moi san pham ghi "Lien he". Anh lay tu Drive "YEN TINH - YEN THO". -->
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><img src="logo-header.jpg" alt="Logo Yến Sào Lanest"><b>Yến Sào Lanest</b></a>
+  <a class="top-tel" href="tel:02586278627">☎ 025.8627.8627</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="nhan-mua"><i></i>Yến tổ · Xưởng tinh chế Cam Ranh</div>
+    <h1 class="tieu-de"><span class="dong">Xem tận mắt</span><span class="dong">từng loại yến</span><span class="dong"><span class="vang">rồi hãy chọn.</span></span></h1>
+    <p class="phu-de">13 loại yến tinh chế, chân yến, yến rút lông khô và yến thô của Lanest. Mỗi loại đều có ảnh thật để anh chị so sánh sợi, màu và dáng tổ.</p>
+    <ul class="the-nho">
+      <li>100% yến thật, không pha trộn</li>
+      <li>Không tẩy trắng, không hóa chất</li>
+      <li>Hộp hút ẩm 50g · 100g</li>
+      <li>ISO 22000 · có hóa đơn</li>
+    </ul>
+    <div class="btn-row"><a class="btn btn-gold" href="#san-pham">Xem các loại yến</a><a class="btn btn-line" href="#dang-ky">Nhận báo giá</a></div>
+  </div>
+  <div class="hero-img"><img src="lp-thuong-hang-4.jpg" alt="Hộp yến tinh chế thượng hạng Lanest đặt trước hộp quà đỏ" fetchpriority="high"></div>
+</div></section>
+
+<div class="trust"><div class="wrap"><ul>
+  <li><b>13 loại</b>tinh chế, chân yến, thô</li>
+  <li><b>50g · 100g</b>hộp hút ẩm</li>
+  <li><b>ISO 22000</b>an toàn thực phẩm</li>
+  <li><b>GS1</b>mã vạch đã xác thực</li>
+</ul></div></div>
+
+<!-- 3 muc lam sach: tho / rut long kho / tinh che (nguon: wiki dong-san-pham-yen-tho-va-tinh-che) -->
+<section><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Chọn đúng loại</div>
+    <h2>Ba mức làm sạch, ba cách dùng</h2>
+    <p class="lead">Khác nhau ở chỗ tổ yến đã được làm sạch tới đâu trước khi tới tay anh chị.</p>
+  </div>
+  <div class="lp-muc-sach">
+    <div><i>Yến thô</i><b>Làm sạch nhẹ bên ngoài</b><span>Nhặt bớt lông, bỏ vỏ trứng, chải bớt bụi. Chưa phun sương, chưa ngâm nước. Về nhà ngâm 1–2 giờ rồi nhặt lông trước khi chưng.</span></div>
+    <div><i>Rút lông khô</i><b>Phun sương, rút lông bằng tay</b><span>Không ngâm nước, giữ nguyên dáng tổ, sạch 98–99% lông tơ. Ngâm 15–20 phút là chưng được.</span></div>
+    <div><i>Tinh chế</i><b>Nhặt sạch hoàn toàn thủ công</b><span>Sạch lông, sẵn để chưng. Chia theo tỷ lệ sợi và dáng: tổ sợi, xơ, vụn, viên, hoa hồng, chân yến.</span></div>
+  </div>
+</div></section>
+
+<nav class="lp-muc" aria-label="Các nhóm sản phẩm"><div class="wrap">
+  <a href="#tinh-che">Yến tinh chế</a>
+  <a href="#chan-tinh-che">Chân yến tinh chế</a>
+  <a href="#rut-long">Rút lông khô</a>
+  <a href="#yen-tho">Yến thô</a>
+  <a href="#dang-ky">Nhận báo giá</a>
+</div></nav>
+
+<div id="san-pham"></div>
+
+<!-- NHOM 1: YEN TINH CHE -->
+<section class="lp-nhom" id="tinh-che"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Nhóm 1 · 8 loại</div>
+    <h2>Yến tinh chế</h2>
+    <p class="lead">Đã nhặt sạch lông bằng tay tại xưởng, sấy khô tự nhiên. Từ dòng nhiều sợi nhất tới dòng tiết kiệm để dùng hằng ngày.</p>
+  </div>
+  <div class="lp-luoi">
+
+    <article class="lp-sp" id="soi-100" data-anh="lp-soi-100-1.jpg|lp-soi-100-3.jpg|lp-soi-100-4.jpg|lp-soi-100-2.jpg|lp-soi-100-5.jpg">
+      <div class="lp-anh"><img src="lp-soi-100-1.jpg" alt="Hộp yến tinh chế 100% sợi Lanest đặt trên nền đỏ" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Nhiều sợi nhất</span>
+        <h3>Yến Tinh Chế 100% Sợi</h3>
+        <p>Giữ nguyên sợi yến, không pha vụn. Sợi trắng ngà, dai nhẹ, thơm dịu.</p>
+        <ul class="ticks"><li>Làm sạch hoàn toàn bằng tay</li><li>Ngâm 15–20 phút là chưng được</li><li>Hộp 100g · 50g, hợp làm quà</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế 100% sợi">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="thuong-hang" data-anh="lp-thuong-hang-4.jpg|lp-thuong-hang-2.jpg|lp-thuong-hang-3.jpg|lp-thuong-hang-1.jpg|lp-thuong-hang-5.jpg">
+      <div class="lp-anh"><img src="lp-thuong-hang-4.jpg" alt="Hộp yến tinh chế thượng hạng Lanest trước hộp quà đỏ" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">70% sợi · 30% xơ</span>
+        <h3>Yến Tinh Chế Thượng Hạng</h3>
+        <p>70% sợi yến nguyên vẹn, 30% xơ mướp bụng. Chưng nở đều, sợi dai mềm.</p>
+        <ul class="ticks"><li>Tinh chế thủ công, không chất bảo quản</li><li>Chưng đường phèn, hầm, nấu súp</li><li>Hộp 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế thượng hạng">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="xo-rai-soi" data-anh="lp-xo-rai-soi-1.jpg|lp-xo-rai-soi-2.jpg|lp-xo-rai-soi-4.jpg|lp-xo-rai-soi-3.jpg|lp-xo-rai-soi-5.jpg">
+      <div class="lp-anh"><img src="lp-xo-rai-soi-1.jpg" alt="Hộp yến tinh chế xơ rải sợi Lanest, tổ yến xếp vòng" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Tinh chế 2</span>
+        <h3>Yến Tinh Chế Xơ Rải Sợi</h3>
+        <p>Tổ yến xơ rải sợi, dáng tổ đều, xếp vòng đẹp trong hộp.</p>
+        <ul class="ticks"><li>Nhặt sạch thủ công</li><li>Sấy khô tự nhiên</li><li>Hộp 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế xơ rải sợi">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="xo-soi-20-to" data-anh="lp-xo-soi-20-to-1.jpg|lp-xo-soi-20-to-2.jpg|lp-xo-soi-20-to-3.jpg|lp-xo-soi-20-to-4.jpg">
+      <div class="lp-anh"><img src="lp-xo-soi-20-to-1.jpg" alt="Hộp yến tinh chế xơ sợi Lanest, nhiều tổ nhỏ xếp vòng" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Tổ nhỏ</span>
+        <h3>Yến Tinh Chế Xơ Sợi – 20 Tổ</h3>
+        <p>Tổ yến xơ sợi dáng nhỏ, xếp vòng kín hộp.</p>
+        <ul class="ticks"><li>Tinh chế thủ công</li><li>Không tẩy trắng, không hóa chất</li><li>Hộp 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế xơ sợi 20 tổ">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="xo-muop-bung" data-anh="lp-xo-muop-bung-1.jpg|lp-xo-muop-bung-2.jpg|lp-xo-muop-bung-3.jpg|lp-xo-muop-bung-4.jpg">
+      <div class="lp-anh"><img src="lp-xo-muop-bung-1.jpg" alt="Cận cảnh sợi yến tinh chế xơ mướp bụng Lanest, sợi mảnh và tơi" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Sợi non · sợi ngắn</span>
+        <h3>Yến Tinh Chế Xơ Mướp Bụng</h3>
+        <p>Phần bụng trong tổ, sợi mảnh và mềm đan như xơ mướp. Nhẹ, dễ nở, vị thanh.</p>
+        <ul class="ticks"><li>Hợp người lớn tuổi, người cần bồi bổ</li><li>Ngâm 15–20 phút</li><li>Hộp 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế xơ mướp bụng (sợi non)">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="hoa-hong" data-anh="lp-hoa-hong-1.jpg|lp-hoa-hong-2.jpg|lp-hoa-hong-3.jpg|lp-hoa-hong-5.jpg|lp-hoa-hong-4.jpg">
+      <div class="lp-anh"><img src="lp-hoa-hong-1.jpg" alt="Hộp tròn yến tinh chế hoa hồng Lanest, từng bông xếp kín hộp" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Đẹp để biếu</span>
+        <h3>Yến Tinh Chế Hoa Hồng</h3>
+        <p>Sợi yến đắp tay thành từng bông hoa hồng nhỏ, mỗi bông bọc riêng, xếp trong hộp tròn nắp trong.</p>
+        <ul class="ticks"><li>Chia sẵn từng phần, lấy bông nào chưng bông đó</li><li>Phần chưa dùng vẫn kín, đỡ hút ẩm</li><li>Hợp biếu lễ Tết, mừng thọ</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>theo quy cách hộp</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế hoa hồng">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="vien-xo-rai-soi" data-anh="lp-vien-xo-rai-soi-1.jpg|lp-vien-xo-rai-soi-3.jpg|lp-vien-xo-rai-soi-2.jpg|lp-vien-xo-rai-soi-5.jpg|lp-vien-xo-rai-soi-4.jpg">
+      <div class="lp-anh"><img src="lp-vien-xo-rai-soi-1.jpg" alt="Hộp yến tinh chế viên xơ rải sợi Lanest, viên yến xếp kín hộp" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Dạng viên</span>
+        <h3>Yến Tinh Chế Viên Xơ Rải Sợi</h3>
+        <p>Xơ yến rải sợi, chia sẵn thành từng viên tròn, tiện lấy ra cho mỗi lần chưng.</p>
+        <ul class="ticks"><li>Nhặt sạch thủ công</li><li>Sấy khô tự nhiên</li><li>Tiện cho người mới dùng yến</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế viên xơ rải sợi">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="vun" data-anh="lp-vun-1.jpg|lp-vun-3.jpg|lp-vun-4.jpg|lp-vun-5.jpg|lp-vun-2.jpg">
+      <div class="lp-anh"><img src="lp-vun-1.jpg" alt="Hộp yến tinh chế vụn Lanest đắp lại thành tổ" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Tiết kiệm</span>
+        <h3>Yến Tinh Chế Vụn</h3>
+        <p>Mảnh yến rơi ra khi tinh chế, vẫn 100% yến thật, đắp lại thành tổ hoặc chia viên.</p>
+        <ul class="ticks"><li>Lựa chọn kinh tế để dùng hằng ngày</li><li>Ngâm 10–15 phút</li><li>Hộp 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến tinh chế vụn">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- NHOM 2: CHAN YEN TINH CHE -->
+<section class="lp-nhom" id="chan-tinh-che" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Nhóm 2 · 2 loại</div>
+    <h2>Chân yến tinh chế</h2>
+    <p class="lead">Chân yến là phần gốc bám vào vách nhà yến, nơi sợi dày và chắc nhất của tổ. Chưng xong vẫn giòn sần sật.</p>
+  </div>
+  <div class="lp-luoi">
+
+    <article class="lp-sp" id="chan-tinh-vip" data-anh="lp-chan-tinh-vip-2.jpg|lp-chan-tinh-vip-3.jpg|lp-chan-tinh-vip-1.jpg|lp-chan-tinh-vip-4.jpg">
+      <div class="lp-anh"><img src="lp-chan-tinh-vip-2.jpg" alt="Một miếng chân yến tinh chế VIP Lanest dáng xòe, cầm bằng găng tay" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Dáng xòe</span>
+        <h3>Chân Yến Tinh Chế VIP</h3>
+        <p>Miếng chân lớn, sợi xòe dài, nhặt sạch lông thủ công từng miếng.</p>
+        <ul class="ticks"><li>Sợi dày, chắc, thơm đậm</li><li>Ngâm 30–45 phút cho nở mềm</li><li>Không tẩy trắng, không hóa chất</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Chân yến tinh chế VIP">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="chan-tinh-mini" data-anh="lp-chan-tinh-mini-1.jpg|lp-chan-tinh-mini-2.jpg|lp-chan-tinh-mini-3.jpg|lp-chan-tinh-mini-4.jpg|lp-chan-tinh-mini-5.jpg">
+      <div class="lp-anh"><img src="lp-chan-tinh-mini-1.jpg" alt="Hộp chân yến tinh chế mini Lanest nhìn từ trên" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Miếng nhỏ</span>
+        <h3>Chân Yến Tinh Chế Mini</h3>
+        <p>Chân yến miếng nhỏ, nhặt sạch lông thủ công. Cùng chất sợi chân yến, dễ chia khẩu phần.</p>
+        <ul class="ticks"><li>Sợi dày, giòn khi chưng</li><li>Chưng đường phèn, nấu chè, súp</li><li>Không tẩy trắng, không hóa chất</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo lô hàng</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Chân yến tinh chế mini">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- NHOM 3: RUT LONG KHO -->
+<section class="lp-nhom" id="rut-long"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Nhóm 3 · Dòng cao cấp nhất</div>
+    <h2>Yến rút lông khô</h2>
+    <p class="lead">Không ngâm nước: chỉ phun sương làm ẩm rồi rút lông bằng nhíp, giữ nguyên dáng tổ và hương vị.</p>
+  </div>
+  <div class="lp-luoi">
+
+    <article class="lp-sp" id="rut-long-kho" data-anh="lp-rut-long-kho-1.jpg|lp-rut-long-kho-3.jpg|lp-rut-long-kho-4.jpg|lp-rut-long-kho-2.jpg|lp-rut-long-kho-5.jpg">
+      <div class="lp-anh"><img src="lp-rut-long-kho-1.jpg" alt="Hộp yến rút lông khô cao cấp Lanest, tổ yến xếp vòng như cánh hoa" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Cao cấp</span>
+        <h3>Yến Rút Lông Khô Cao Cấp</h3>
+        <p>Tổ yến tuyển chọn, làm sạch 98–99% lông tơ hoàn toàn thủ công, sợi dày dẻo không rã.</p>
+        <ul class="ticks"><li>Phun sương, không ngâm nước</li><li>Hộp có tem chống hàng giả, mã QR</li><li>Mở hộp nên dùng trong 30 ngày</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>hộp 100g · 50g</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Yến rút lông khô cao cấp">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- NHOM 4: YEN THO -->
+<section class="lp-nhom" id="yen-tho" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Nhóm 4 · 2 loại</div>
+    <h2>Yến thô</h2>
+    <p class="lead">Tổ yến từ nhà yến ven biển miền Trung, chỉ làm sạch nhẹ bên ngoài. Giữ nguyên dáng tổ, màu và mùi tự nhiên.</p>
+  </div>
+  <div class="lp-luoi">
+
+    <article class="lp-sp" id="to-tho" data-anh="lp-to-tho-1.jpg|lp-to-tho-2.jpg|lp-to-tho-3.jpg|lp-to-tho-4.jpg|lp-to-tho-5.jpg">
+      <div class="lp-anh"><img src="lp-to-tho-1.jpg" alt="Nong tổ yến thô Lanest còn nguyên dáng tổ và lông tự nhiên" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Nguyên bản</span>
+        <h3>Tổ Yến Thô</h3>
+        <p>Đã nhặt bớt lông, bỏ vỏ trứng, chải bớt bụi. Chưa phun sương, chưa ngâm nước.</p>
+        <ul class="ticks"><li>Ngâm 1–2 giờ, nhặt sạch lông rồi chưng</li><li>Giữ nguyên chân tổ, thấy rõ nguồn gốc</li><li>Hộp hút ẩm 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo thời vụ</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Tổ yến thô">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+    <article class="lp-sp" id="chan-tho" data-anh="lp-chan-tho-1.jpg|lp-chan-tho-2.jpg|lp-chan-tho-3.jpg">
+      <div class="lp-anh"><img src="lp-chan-tho-1.jpg" alt="Hộp chân yến thô Lanest nhìn từ trên" loading="lazy"></div>
+      <div class="lp-nho"></div>
+      <div class="lp-than">
+        <span class="tag">Phần gốc tổ</span>
+        <h3>Chân Yến Thô</h3>
+        <p>Phần gốc tổ, sợi dày và chắc nhất, chưng lên thơm đậm hơn yến tinh chế.</p>
+        <ul class="ticks"><li>Làm sạch nhẹ, không ngâm, không tẩy trắng</li><li>Ngâm 1–2 giờ, nhặt lông rồi chưng</li><li>Hộp hút ẩm 100g · 50g</li></ul>
+        <div class="lp-chan"><div class="lp-gia">Liên hệ<small>giá theo thời vụ</small></div><a class="btn btn-gold" href="#dang-ky" data-chon="Chân yến thô">Nhận báo giá</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- Uy tin (dung lai anh chung nhan da co tren web) -->
+<section><div class="wrap">
+  <div class="center">
+    <div class="eyebrow">Vì sao chọn yến Lanest</div>
+    <h2>Giấy tờ đủ, anh chị yên tâm khi mua và khi biếu</h2>
+    <p class="lead">Công ty TNHH Yến Sào Lanest (MST 4201991164), xưởng tinh chế tại Cam Ranh, Khánh Hòa.</p>
+  </div>
+  <div class="chung-nhan">
+    <figure><img src="cn-iso-22000.jpg" alt="Giấy chứng nhận ISO 22000:2018 của Công ty TNHH Yến Sào Lanest" loading="lazy"><figcaption><b>ISO 22000:2018</b>An toàn thực phẩm, hiệu lực tới 23/09/2027</figcaption></figure>
+    <figure><img src="xuong-nhat-yen-can-canh.jpg" alt="Thợ Lanest nhặt lông yến bằng tay tại xưởng Cam Ranh" loading="lazy"><figcaption><b>Nhặt lông bằng tay</b>Tại xưởng tinh chế Cam Ranh</figcaption></figure>
+    <figure><img src="xac-thuc-gs1-yen-tinh-che-lanest.jpg" alt="Trang xác thực sản phẩm Yến Sào Tinh Chế Lanest trên hệ thống mã số mã vạch quốc gia" loading="lazy"><figcaption><b>Mã vạch GS1 đã xác thực</b>Khách quét mã là thấy sản phẩm</figcaption></figure>
+    <figure><img src="cn-thuong-hieu-so-1.jpg" alt="Chứng nhận Sản phẩm – Dịch vụ tốt nhất vì người tiêu dùng 2024" loading="lazy"><figcaption><b>Vì người tiêu dùng 2024</b>Vietnam No.1 Brand Awards</figcaption></figure>
+  </div>
+  <div class="loi-ich" style="margin-top:22px">
+    <div><b>100% yến thật</b><span>Không pha trộn, không độn, không đường hay chất tạo trọng lượng.</span></div>
+    <div><b>Không tẩy trắng, không hóa chất</b><span>Màu sợi là màu tự nhiên của tổ yến.</span></div>
+    <div><b>Có hóa đơn từng đơn</b><span>Mua biếu doanh nghiệp, đối tác vẫn đủ chứng từ.</span></div>
+    <div><b>Có tem, có mã truy xuất</b><span>Đóng hộp hút ẩm, dán tem chống hàng giả.</span></div>
+  </div>
+</div></section>
+
+<!-- Hoi dap ngan -->
+<section style="padding-top:0"><div class="wrap" style="max-width:760px">
+  <div class="center"><div class="eyebrow">Anh chị hay hỏi</div><h2>Trước khi chọn loại yến</h2></div>
+  <details><summary>Sao không ghi giá trên trang?</summary><p>Giá tổ yến thay đổi theo thời vụ và từng lô hàng. Anh chị để lại số điện thoại, nhân viên Lanest báo đúng giá đang áp dụng cho loại và cỡ hộp anh chị chọn.</p></details>
+  <details><summary>Mới dùng yến lần đầu nên chọn loại nào?</summary><p>Loại đã tinh chế (sạch lông, ngâm là chưng được). Dạng viên hoặc hoa hồng chia sẵn từng phần nên dễ dùng nhất. Yến thô hợp người đã quen tự nhặt lông ở nhà.</p></details>
+  <details><summary>Mua để biếu thì loại nào đẹp?</summary><p>Yến tinh chế 100% sợi, thượng hạng, rút lông khô hoặc hoa hồng. Nhân viên Lanest tư vấn thêm hộp quà theo dịp.</p></details>
+  <details><summary>Có nhận đơn sỉ, đại lý không?</summary><p>Có. Anh chị chọn "Nhập sỉ / bán lại" trong ô bên dưới, nhân viên chăm sóc khách hàng Lanest sẽ liên hệ tư vấn chính sách riêng.</p></details>
+</div></section>
+
+<section id="dang-ky" class="band"><div class="wrap">
+  <div class="center">
+    <h2>Để lại thông tin, nhân viên Lanest báo giá cho anh chị</h2>
+    <p class="lead">Liên hệ lại trong ngày làm việc (8:00–17:30, Thứ 2 đến Thứ 7). Cần gấp, anh chị gọi 025.8627.8627.</p>
+  </div>
+  <div class="form-box" style="color:var(--ink)">
+    <form onsubmit="return guiForm(this)">
+      <label>Họ tên <span class="req">*</span></label>
+      <input name="ho_ten" data-nhan="Họ tên" required autocomplete="name">
+      <label>Số điện thoại <span class="req">*</span></label>
+      <input name="so_dien_thoai" data-nhan="SĐT" type="tel" required pattern="[0-9 .+]{9,15}" autocomplete="tel">
+      <label>Loại yến quan tâm</label>
+      <select name="san_pham" id="o-combo" data-nhan="Loại yến">
+        <option>Chưa biết, cần tư vấn</option>
+        <option>Yến tinh chế 100% sợi</option>
+        <option>Yến tinh chế thượng hạng</option>
+        <option>Yến tinh chế xơ rải sợi</option>
+        <option>Yến tinh chế xơ sợi 20 tổ</option>
+        <option>Yến tinh chế xơ mướp bụng (sợi non)</option>
+        <option>Yến tinh chế hoa hồng</option>
+        <option>Yến tinh chế viên xơ rải sợi</option>
+        <option>Yến tinh chế vụn</option>
+        <option>Chân yến tinh chế VIP</option>
+        <option>Chân yến tinh chế mini</option>
+        <option>Yến rút lông khô cao cấp</option>
+        <option>Tổ yến thô</option>
+        <option>Chân yến thô</option>
+      </select>
+      <label>Anh chị mua để</label>
+      <select name="muc_dich" data-nhan="Mua để">
+        <option>Dùng trong gia đình</option>
+        <option>Biếu tặng</option>
+        <option>Nhập sỉ / bán lại</option>
+      </select>
+      <label>Tỉnh / thành</label>
+      <input name="tinh" data-nhan="Tỉnh">
+      <label>Cỡ hộp, số lượng, câu hỏi</label>
+      <textarea name="ghi_chu" data-nhan="Ghi chú" placeholder="Ví dụ: 2 hộp 100g để biếu Tết"></textarea>
+      <button class="btn btn-gold" type="submit">Nhận báo giá</button>
+      <p class="nho">Lanest chỉ dùng số này để báo giá và tư vấn.</p>
+    </form>
+    <div class="ket-qua">
+      <h3>Lanest đã nhận thông tin</h3>
+      <p class="da-gui">Nhân viên chăm sóc khách hàng sẽ liên hệ anh chị trong ngày làm việc.</p>
+      <p class="chua-gui">Anh chị gọi hoặc nhắn fanpage kèm thông tin dưới đây để được báo giá ngay nhé.</p>
+      <pre></pre>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-gold" href="tel:02586278627">Gọi 025.8627.8627</a>
+        <a class="btn btn-line" href="https://m.me/yensaolanest79" target="_blank" rel="noopener">Nhắn fanpage</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>Công ty TNHH Yến Sào Lanest</b> · MST 4201991164</p>
+  <p>Kios 2 N3A, KĐT Căn Cứ Cam Ranh, P. Bắc Cam Ranh, Khánh Hòa</p>
+  <p>Hotline 025.8627.8627 · Yensaolanest79@gmail.com · <a href="dat-yen-hu.html">Mua yến hũ</a> · <a href="nhap-yen-dai-ly.html">Làm đại lý</a></p>
+  <p class="canh-bao">Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+</div></footer>
+
+<nav class="dock">
+  <a class="btn btn-line" href="tel:02586278627">Gọi</a>
+  <a class="btn btn-gold" href="#dang-ky">Nhận báo giá</a>
+</nav>
+
+<div class="lp-xem" role="dialog" aria-label="Xem ảnh lớn">
+  <img alt="">
+  <button class="dong" aria-label="Đóng">×</button>
+  <button class="lui" aria-label="Ảnh trước">‹</button>
+  <button class="toi" aria-label="Ảnh sau">›</button>
+  <p></p>
+</div>
+
+<script>
+// Bo anh moi san pham: dai anh nho bam doi anh lon, bam anh lon mo khung xem toan man hinh.
+(function () {
+  var xem = document.querySelector('.lp-xem'), xemAnh = xem.querySelector('img'), xemChu = xem.querySelector('p');
+  var bo = [], vt = 0, ten = '';
+  function ngang(img) { img.classList.toggle('ngang', img.naturalWidth > img.naturalHeight * 1.05); }
+  function hien() { xemAnh.src = bo[vt]; xemChu.textContent = ten + ' · ' + (vt + 1) + '/' + bo.length; }
+  document.querySelectorAll('.lp-sp').forEach(function (sp) {
+    var anh = sp.getAttribute('data-anh').split('|');
+    var lon = sp.querySelector('.lp-anh img'), khung = sp.querySelector('.lp-anh'), dai = sp.querySelector('.lp-nho');
+    var dem = document.createElement('span'); dem.className = 'lp-dem'; khung.appendChild(dem);
+    var mh = document.createElement('span'); mh.className = 'lp-minh-hoa'; mh.textContent = 'Ảnh thật'; khung.appendChild(mh);
+    var dang = 0;
+    function chon(i) {
+      dang = i; lon.src = anh[i]; dem.textContent = (i + 1) + '/' + anh.length;
+      dai.querySelectorAll('button').forEach(function (b, k) { b.classList.toggle('dang', k === i); });
+    }
+    lon.addEventListener('load', function () { ngang(lon); });
+    if (lon.complete) ngang(lon);
+    anh.forEach(function (a, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ảnh ' + (i + 1));
+      b.innerHTML = '<img src="' + a + '" alt="" loading="lazy">';
+      b.addEventListener('click', function () { chon(i); });
+      dai.appendChild(b);
+    });
+    chon(0);
+    khung.addEventListener('click', function () {
+      bo = anh; vt = dang; ten = sp.querySelector('h3').textContent; hien(); xem.classList.add('mo');
+    });
+  });
+  function dong() { xem.classList.remove('mo'); }
+  xem.querySelector('.dong').addEventListener('click', dong);
+  xem.querySelector('.lui').addEventListener('click', function (e) { e.stopPropagation(); vt = (vt - 1 + bo.length) % bo.length; hien(); });
+  xem.querySelector('.toi').addEventListener('click', function (e) { e.stopPropagation(); vt = (vt + 1) % bo.length; hien(); });
+  xem.addEventListener('click', function (e) { if (e.target === xem) dong(); });
+  document.addEventListener('keydown', function (e) {
+    if (!xem.classList.contains('mo')) return;
+    if (e.key === 'Escape') dong();
+    if (e.key === 'ArrowLeft') xem.querySelector('.lui').click();
+    if (e.key === 'ArrowRight') xem.querySelector('.toi').click();
+  });
+})();
+</script>
+<script src="landing-form.js"></script>
+<script src="landing-hieu-ung.js"></script>
+<script src="chat-lanest.js" defer></script>
+</body>
+</html>
