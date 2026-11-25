@@ -4534,7 +4534,11 @@
   var KHOA   = 'lanest-gio';
   var MAIL   = 'Yensaolanest79@gmail.com';
   var TIEU_DE_DON = 'Đơn hàng mới từ website Lanest';
-  var URL_NHAN_DON = '';   /* dan dia chi Apps Script vao day */
+  /* Don khach dat tren web -> app LA (Hop thu Hoi thoai + CRM khach moi + bao dien thoai).
+     Doi khoa: app LA -> Hoi thoai -> Cai dat -> Tao khoa moi, roi dan lai vao KHOA_DON duoi day. */
+  var URL_NHAN_DON = 'https://oubxfxeosmozsttsobsw.supabase.co/functions/v1/la';
+  var KHOA_CONG = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im91YnhmeGVvc21venN0dHNvYnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyNjg2MjEsImV4cCI6MjEwNjg0NDYyMX0.Vq0h8A8J3OO3KwwzFf_j69JRCQoSZSCvumZRvH5Mhxg';
+  var KHOA_DON  = 'w5nEoz7cBc3XyuLhSbKSWRLecxj4P';
   var gio    = [];
 
   /* ---- luu / doc ---- */
@@ -4872,12 +4876,15 @@
       var chuCu = nut ? nut.textContent : '';
       if (nut) { nut.disabled = true; nut.textContent = 'Đang gửi…'; }
 
+      /* Gửi thẳng vào app LA: vào Hộp thư Hội thoại (nguồn Website) + CRM khách mới + báo điện thoại cho chị Lê và kế toán. */
       fetch(URL_NHAN_DON, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(duLieuDon())
-      }).then(function () {
+        headers: { 'Content-Type': 'application/json', 'apikey': KHOA_CONG, 'Authorization': 'Bearer ' + KHOA_CONG },
+        body: JSON.stringify({ f: 'fbDonWeb', a: [KHOA_DON, duLieuDon()] })
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; });
+      }).then(function (k) {
+        if (k && k.loi) throw new Error(k.loi);
         xongDon();
       }).catch(function () {
         if (nut) { nut.disabled = false; nut.textContent = chuCu; }
