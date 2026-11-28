@@ -865,6 +865,9 @@
   .branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:900px){ .branch-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .branch-grid{grid-template-columns:1fr;} }
+  .branch-card.rong{grid-column:span 2;}
+  /* dien thoai 1 cot: o nay cung chi chiem 1 cot, neu khong luoi se tu de ra cot thu 2 (chi Le 28/11/2026) */
+  @media (max-width:560px){ .branch-card.rong{grid-column:auto;} }
   .branch-card{background:var(--surface);padding:30px 28px;display:flex;flex-direction:column;gap:8px;}
   .branch-card.hq{background:var(--forest);color:var(--forest-ink);}
   .branch-card.hq h4{color:#fff;}
@@ -970,6 +973,11 @@
   .cn-muc.dang-xem{display:grid;}
   @keyframes cn-hien{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
   .cn-muc{grid-template-columns:1fr 1.1fr;align-items:start;}
+  /* dien thoai: xep doc, khong de chu bi ep thanh cot hep (chi Le 28/11/2026) */
+  @media (max-width:900px){
+    .cn-muc{grid-template-columns:1fr;gap:34px;}
+    .award-photo.cn-gt-anh{max-width:420px;margin:0 auto;width:100%;}
+  }
   .award-photo.cn-gt-anh{align-self:start;}
   .award-photo.cn-gt-anh::before{inset:-12px;}
   .award-photo.cn-gt-anh img{
@@ -4283,7 +4291,7 @@
         <h4>Quảng Ngãi</h4>
         <p>Sơn Mai, Minh Long, Quảng Ngãi</p>
       </div>
-      <div class="branch-card" style="grid-column:span 2;">
+      <div class="branch-card rong">
         <span class="branch-label">Mạng lưới phân phối Miền Bắc</span>
         <h4>Giao hàng &amp; hợp tác đại lý khu vực phía Bắc</h4>
         <p>Lanest nhận giao hàng COD và hợp tác đại lý tại các tỉnh thành Miền Bắc — liên hệ hotline để nhận chính sách đại lý theo từng khu vực.</p>
